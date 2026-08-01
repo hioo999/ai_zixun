@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write # Need write to commit the generated report
+  pages: write     # Need write to deploy GitHub Pages
 
 jobs:
   generate:
@@ -30,12 +31,13 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK }}
           DEEPSEEK_MODEL: ${{ secrets.DEEPSEEK_MODEL || 'deepseek-chat' }}
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          HTML_BASE_URL: https://hioo999.github.io/ai_zixun
         run: python generate_ai_news.py
 
       - name: Commit and push
         run: |
           git config user.name "AI News Bot"
           git config user.email "actions@github.com"
-          git add ai_news_*.md
+          git add ai_news_*.md ai_news_*.html
           git diff --staged --quiet || git commit -m "AI News Daily - $(TZ='Asia/Shanghai' date '+%Y-%m-%d')"
           git push

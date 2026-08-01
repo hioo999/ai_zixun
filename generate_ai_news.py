@@ -9,6 +9,8 @@ AI News Daily Generator
 import os
 import sys
 import json
+import re
+import html as html_lib
 import requests
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -158,49 +160,189 @@ def synthesize_with_deepseek(news_text, date_display, item_count):
         return None
 
 
-def send_webhook(content, webhook_url):
+def markdown_to_html(md_text, date_display):
+    """Convert the AI news markdown report into a styled HTML page."""
+    lines = md_text.strip().split("\n")
+    cards = []
+    current_card = None
+
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("## "):
+            if current_card:
+                cards.append(current_card)
+            title = stripped[3:].strip()
+            current_card = {"title": title, "source": "", "summary": "", "insight": ""}
+        elif current_card is not None:
+            if stripped.startswith("**来源") or stripped.startswith("**来源"):
+                current_card["source"] = stripped.replace("**", "").replace("来源：", "").replace("来源:", "").strip()
+            elif stripped.startswith("**启示") or stripped.startswith("**启示"):
+                current_card["insight"] = stripped.replace("**", "").replace("启示：", "").replace("启示:", "").strip()
+            elif stripped and not stripped.startswith("---") and not stripped.startswith(">") and not stripped.startswith("#"):
+                if not current_card["summary"]:
+                    current_card["summary"] = stripped
+                elif current_card["insight"] and not stripped.startswith("**"):
+                    current_card["insight"] += " " + stripped
+                elif not current_card["insight"]:
+                    current_card["summary"] += " " + stripped
+
+    if current_card:
+        cards.append(current_card)
+
+    # Extract keywords
+    keywords = ""
+    for line in lines:
+        if "今日关键词" in line:
+            keywords = line.replace(">", "").replace("**", "").replace("今日关键词：", "").strip()
+            break
+
+    # Build cards HTML
+    card_colors = ["#e74c3c", "#3498db", "#2ecc71", "#9b59b6", "#e67e22"]
+    cards_html = ""
+    for i, card in enumerate(cards):
+        color = card_colors[i % len(card_colors)]
+        num = i + 1
+        cards_html += f"""
+        <div class="card" style="border-left: 4px solid {color};">
+            <div class="card-header">
+                <span class="card-num" style="background:{color};">{num}</span>
+                <h2 class="card-title">{html_lib.escape(card['title'])}</h2>
+            </div>
+            <div class="card-source">来源：{html_lib.escape(card['source'])}</div>
+            <div class="card-summary">{html_lib.escape(card['summary'])}</div>
+            <div class="card-insight">
+                <span class="insight-label">启示</span>
+                <p>{html_lib.escape(card['insight'])}</p>
+            </div>
+        </div>"""
+
+    keywords_html = ""
+    if keywords:
+        kw_items = "".join(f'<span class="keyword">{html_lib.escape(k.strip())}</span>' for k in keywords.split("×"))
+        keywords_html = f'<div class="keywords">{kw_items}</div>'
+
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 行业日报 — {html_lib.escape(date_display)}</title>
+    <style>
+        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.8;
+            padding: 20px;
+        }}
+        .container {{ max-width: 720px; margin: 0 auto; }}
+        .header {{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 36px 28px;
+            border-radius: 16px 16px 0 0;
+            text-align: center;
+        }}
+        .header h1 {{ font-size: 26px; margin-bottom: 8px; font-weight: 700; }}
+        .header .subtitle {{ font-size: 14px; opacity: 0.85; }}
+        .card {{
+            background: #fff;
+            margin: 0;
+            padding: 24px 28px;
+            border-bottom: 1px solid #f0f0f0;
+        }}
+        .card:last-of-type {{ border-bottom: none; }}
+        .card-header {{ display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }}
+        .card-num {{
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; border-radius: 50%;
+            color: #fff; font-size: 14px; font-weight: 700; flex-shrink: 0;
+        }}
+        .card-title {{ font-size: 17px; font-weight: 600; color: #1a1a1a; line-height: 1.5; }}
+        .card-source {{ font-size: 12px; color: #999; margin-bottom: 10px; }}
+        .card-summary {{ font-size: 14px; color: #555; margin-bottom: 14px; }}
+        .card-insight {{
+            background: #f8f9fa; border-radius: 8px; padding: 14px 16px;
+        }}
+        .insight-label {{
+            display: inline-block; font-size: 12px; font-weight: 600;
+            color: #667eea; margin-bottom: 6px;
+        }}
+        .card-insight p {{ font-size: 13px; color: #666; }}
+        .keywords {{ padding: 20px 28px; background: #fff; text-align: center; }}
+        .keyword {{
+            display: inline-block; margin: 4px; padding: 4px 14px;
+            background: #f0f2f5; border-radius: 20px; font-size: 13px; color: #666;
+        }}
+        .footer {{
+            background: #fff; border-radius: 0 0 16px 16px;
+            padding: 16px 28px; text-align: center;
+            font-size: 12px; color: #bbb;
+        }}
+        .footer a {{ color: #667eea; text-decoration: none; }}
+        @media (max-width: 600px) {{
+            body {{ padding: 10px; }}
+            .header h1 {{ font-size: 22px; }}
+            .card {{ padding: 18px 20px; }}
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI 行业日报</h1>
+            <div class="subtitle">{html_lib.escape(date_display)} · 精选5条今日最有价值的AI资讯</div>
+        </div>
+        {cards_html}
+        {keywords_html}
+        <div class="footer">
+            数据来源：<a href="https://aihot.virxact.com">AI HOT</a> · 由 DeepSeek AI 自动生成
+        </div>
+    </div>
+</body>
+</html>"""
+
+
+def send_webhook(content, webhook_url, html_url=None):
     """Send report to WeChat Work (企业微信) group webhook.
 
-   企微 markdown 消息上限 2048 字节，超长时自动截取前5条标题+摘要精简版。
+    企微 markdown 消息上限 2048 字节，超长时自动截取精简版 + HTML 链接。
     """
-    import re
-
-    # Try full markdown first; if too long, send condensed version
     def _try_send(md_text):
         payload = {"msgtype": "markdown", "markdown": {"content": md_text}}
         resp = requests.post(webhook_url, json=payload, timeout=15)
         print(f"[Webhook] Status: {resp.status_code}, Resp: {resp.text[:200]}")
         return resp
 
-    full_bytes = len(content.encode("utf-8"))
-    if full_bytes <= 2000:
-        _try_send(content)
-        return
-
-    # Too long — build a condensed version (titles + 1-line summary each)
-    print(f"[Webhook] Report {full_bytes}B > 2048 limit, sending condensed version...")
+    # Build a concise message: title + 5 headlines + link
     lines = content.split("\n")
-    condensed = []
-    condensed.append(lines[0] if lines else "AI 行业日报")  # title line
-    condensed.append("")
+    title_line = lines[0] if lines else "AI 行业日报"
+
+    msg_parts = [f"## {title_line.lstrip('# ').strip()}\n"]
 
     for line in lines:
         stripped = line.strip()
-        # Grab section headers and bold lines
         if stripped.startswith("## "):
-            condensed.append(stripped)
-        elif stripped.startswith("**来源") or stripped.startswith("**启示"):
-            condensed.append(stripped)
-        elif stripped and not stripped.startswith("---") and not stripped.startswith(">"):
-            # First non-empty line after header = summary snippet
-            if condensed and condensed[-1].startswith("## "):
-                condensed.append(stripped[:80] + "..." if len(stripped) > 80 else stripped)
+            # Use enterprise WeChat font color tags for visual appeal
+            msg_parts.append(f"**{stripped[3:].strip()}**")
 
-        if len("\n".join(condensed).encode("utf-8")) > 1900:
-            break
+    if html_url:
+        msg_parts.append(f"\n> 📄 完整报告：[点击查看]({html_url})")
+    else:
+        msg_parts.append("\n> 完整报告请查看仓库文件")
 
-    condensed.append("\n> 完整报告请查看仓库文件")
-    _try_send("\n".join(condensed))
+    condensed = "\n".join(msg_parts)
+    if len(condensed.encode("utf-8")) > 2000:
+        # Ultra-condensed: just titles
+        ultra = [msg_parts[0]]
+        for p in msg_parts[1:-1]:
+            ultra.append(p[:40] + "..." if len(p) > 40 else p)
+        if html_url:
+            ultra.append(f"\n> 📄 [点击查看完整报告]({html_url})")
+        condensed = "\n".join(ultra)
+
+    _try_send(condensed)
 
 
 def main():
@@ -229,17 +371,29 @@ def main():
         sys.exit(1)
 
     # Step 3: Save
-    print("[3/3] Saving report...")
+    print("[3/4] Saving report...")
     output_dir = os.environ.get("OUTPUT_DIR", ".")
     filepath = Path(output_dir) / f"ai_news_{date_str}.md"
     filepath.parent.mkdir(parents=True, exist_ok=True)
     filepath.write_text(report, encoding="utf-8")
-    print(f"  -> {filepath}\n")
+    print(f"  -> {filepath}")
+
+    # Step 4: Generate HTML
+    print("[4/4] Generating HTML...")
+    html_content = markdown_to_html(report, date_display)
+    html_filepath = Path(output_dir) / f"ai_news_{date_str}.html"
+    html_filepath.write_text(html_content, encoding="utf-8")
+    print(f"  -> {html_filepath}\n")
+
+    # Build HTML URL (GitHub Pages)
+    html_url = os.environ.get("HTML_BASE_URL", "")
+    if html_url:
+        html_url = html_url.rstrip("/") + f"/ai_news_{date_str}.html"
 
     # Optional webhook
     webhook_url = os.environ.get("WEBHOOK_URL", "")
     if webhook_url:
-        send_webhook(report, webhook_url)
+        send_webhook(report, webhook_url, html_url)
 
     print("=== Done! ===\n")
     print("=" * 60)
