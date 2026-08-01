@@ -159,16 +159,48 @@ def synthesize_with_deepseek(news_text, date_display, item_count):
 
 
 def send_webhook(content, webhook_url):
-    """Optionally send report to a webhook (Server酱/PushPlus/custom)."""
-    try:
-        resp = requests.post(
-            webhook_url,
-            json={"text": content, "desp": content, "title": "AI行业日报"},
-            timeout=15,
-        )
-        print(f"[Webhook] Sent. Status: {resp.status_code}")
-    except Exception as e:
-        print(f"[Webhook] Failed: {e}")
+    """Send report to WeChat Work (企业微信) group webhook.
+
+   企微 markdown 消息上限 2048 字节，超长时自动截取前5条标题+摘要精简版。
+    """
+    import re
+
+    # Try full markdown first; if too long, send condensed version
+    def _try_send(md_text):
+        payload = {"msgtype": "markdown", "markdown": {"content": md_text}}
+        resp = requests.post(webhook_url, json=payload, timeout=15)
+        print(f"[Webhook] Status: {resp.status_code}, Resp: {resp.text[:200]}")
+        return resp
+
+    full_bytes = len(content.encode("utf-8"))
+    if full_bytes <= 2000:
+        _try_send(content)
+        return
+
+    # Too long — build a condensed version (titles + 1-line summary each)
+    print(f"[Webhook] Report {full_bytes}B > 2048 limit, sending condensed version...")
+    lines = content.split("\n")
+    condensed = []
+    condensed.append(lines[0] if lines else "AI 行业日报")  # title line
+    condensed.append("")
+
+    for line in lines:
+        stripped = line.strip()
+        # Grab section headers and bold lines
+        if stripped.startswith("## "):
+            condensed.append(stripped)
+        elif stripped.startswith("**来源") or stripped.startswith("**启示"):
+            condensed.append(stripped)
+        elif stripped and not stripped.startswith("---") and not stripped.startswith(">"):
+            # First non-empty line after header = summary snippet
+            if condensed and condensed[-1].startswith("## "):
+                condensed.append(stripped[:80] + "..." if len(stripped) > 80 else stripped)
+
+        if len("\n".join(condensed).encode("utf-8")) > 1900:
+            break
+
+    condensed.append("\n> 完整报告请查看仓库文件")
+    _try_send("\n".join(condensed))
 
 
 def main():
