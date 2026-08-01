@@ -193,24 +193,15 @@ def generate_dashboard_html(daily_data, deepseek_report=None):
         date_display = date
         weekday = ""
 
-    # Section stats
-    stats_html = ""
-    for s in sections:
-        label = s.get("label", "")
-        count = len(s.get("items", []))
-        meta = SECTION_META.get(label, {"color": "#6366f1", "bg": "#f0f0f0", "icon": "?"})
-        stats_html += f"""<div class="stat-chip" style="background:{meta['bg']};border-color:{meta['color']}">
-            <span class="stat-icon" style="background:{meta['color']}">{meta['icon']}</span>
-            <div class="stat-text"><span class="stat-count" style="color:{meta['color']}">{count}</span><span class="stat-label">{label}</span></div>
-        </div>"""
-
-    # Nav
+    # Nav with integrated section counts (no separate hero stats)
     nav_html = ""
     for s in sections:
         label = s.get("label", "")
         anchor = f"sec-{label.replace('/', '')}"
         meta = SECTION_META.get(label, {"color": "#6366f1"})
-        nav_html += f'<a href="#{anchor}" class="nav-link" style="border-color:{meta["color"]};color:{meta["color"]}">{label}</a>'
+        count = len(s.get("items", []))
+        short_label = label.replace("/更新", "/更").replace("论文", "论文").replace("技巧与观点", "技巧")  # compact labels
+        nav_html += f'<a href="#{anchor}" class="nav-link" style="--accent:{meta["color"]}"><span class="nav-count">{count}</span><span class="nav-text">{short_label}</span></a>'
 
     # Sections with cards
     sections_html = ""
@@ -294,23 +285,20 @@ def generate_dashboard_html(daily_data, deepseek_report=None):
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}}
 .container{{max-width:960px;margin:0 auto;padding:16px}}
-.hero{{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:40px 32px;color:#fff;text-align:center;margin-bottom:24px;position:relative;overflow:hidden}}
+.hero{{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}}
 .hero::before{{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}}
-.hero-date{{font-size:32px;font-weight:800;letter-spacing:-0.5px;margin-bottom:6px}}
-.hero-weekday{{font-size:14px;color:#94a3b8;margin-bottom:20px}}
-.hero-total{{display:inline-flex;align-items:baseline;gap:6px;background:rgba(255,255,255,0.1);border-radius:12px;padding:10px 24px;margin-bottom:24px}}
-.hero-total-num{{font-size:36px;font-weight:800;color:#818cf8}}
-.hero-total-label{{font-size:14px;color:#cbd5e1}}
-.hero-window{{font-size:12px;color:#64748b;margin-top:12px}}
-.stats{{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:20px}}
-.stat-chip{{display:flex;align-items:center;gap:10px;padding:10px 18px;border-radius:12px;border:1.5px solid}}
-.stat-icon{{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;flex-shrink:0}}
-.stat-text{{display:flex;flex-direction:column;line-height:1.3}}
-.stat-count{{font-size:20px;font-weight:800}}
-.stat-label{{font-size:11px;color:#64748b}}
-.nav{{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px;padding:16px;background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}}
-.nav-link{{padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all 0.2s}}
-.nav-link:hover{{opacity:0.8;transform:translateY(-1px)}}
+.hero-top{{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}}
+.hero-left{{flex:1;text-align:left}}
+.hero-date{{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}}
+.hero-weekday{{font-size:13px;color:#94a3b8}}
+.hero-window{{font-size:11px;color:#64748b;margin-top:8px}}
+.hero-right{{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}}
+.hero-total-num{{font-size:38px;font-weight:800;color:#818cf8;line-height:1}}
+.hero-total-label{{font-size:11px;color:#cbd5e1;margin-top:4px}}
+.nav{{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}}
+.nav-link{{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}}
+.nav-link:hover{{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}}
+.nav-count{{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}}
 .news-section{{margin-bottom:36px;scroll-margin-top:80px}}
 .section-header{{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}}
 .section-icon{{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}}
@@ -334,17 +322,23 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hir
 .keyword{{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}}
 .footer{{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}}
 .footer a{{color:#6366f1;text-decoration:none}}
-@media(max-width:640px){{.hero{{padding:28px 20px}}.hero-date{{font-size:24px}}.card-grid{{grid-template-columns:1fr}}.stats{{flex-direction:column;align-items:center}}.nav{{position:static}}}}
+@media(max-width:640px){{.hero{{padding:24px 18px}}.hero-top{{flex-direction:column;align-items:flex-start;gap:12px}}.hero-date{{font-size:22px}}.card-grid{{grid-template-columns:1fr}}.nav{{position:static}}}}
 </style>
 </head>
 <body>
 <div class="container">
     <div class="hero">
-        <div class="hero-date">{date_display}</div>
-        <div class="hero-weekday">{weekday} · AI 晨报仪表盘</div>
-        <div class="hero-total"><span class="hero-total-num">{total}</span><span class="hero-total-label">条资讯精选</span></div>
-        <div class="stats">{stats_html}</div>
-        <div class="hero-window">数据时间窗：{window}</div>
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">{date_display}</div>
+                <div class="hero-weekday">{weekday} · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：{window}</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">{total}</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
     </div>
     <nav class="nav">{nav_html}</nav>
     {sections_html}
@@ -396,7 +390,7 @@ def parse_news_cards(md_text):
 # ============ WeChat Work Push ============
 
 def send_webhook(content, webhook_url, html_url=None):
-    """Send full report to WeChat Work in 3 messages with font colors."""
+    """Send a single concise summary message to WeChat Work."""
     title, cards, keywords = parse_news_cards(content)
     num_colors = ["warning", "info", "info", "warning", "info"]
 
@@ -406,42 +400,21 @@ def send_webhook(content, webhook_url, html_url=None):
         print(f"[Webhook] Status: {resp.status_code}, Resp: {resp.text[:200]}")
         return resp
 
-    # Message 1: Header + first 2 cards
-    msg1 = f"# {title}\n> 精选5条今日最有价值的AI资讯\n\n"
-    for i, card in enumerate(cards[:2]):
+    # Single message: date header + headlines list + link
+    msg = f"# {title}\n"
+    msg += f"<font color=\"comment\">今日精选 5 条 · 点击链接看完整仪表盘（含 {len(cards)} 条深度解读）</font>\n\n"
+
+    for i, card in enumerate(cards):
         c = num_colors[i]
-        msg1 += f"## <font color=\"{c}\">{i+1}. {card['title']}</font>\n"
-        msg1 += f"<font color=\"comment\">来源：{card['source']}</font>\n"
-        msg1 += f"{card['summary']}\n\n"
-        msg1 += f"<font color=\"warning\">启示：</font>{card['insight']}\n\n"
-    _send(msg1)
-    time.sleep(1)
+        msg += f"<font color=\"{c}\">{i+1}. {card['title']}</font>\n"
 
-    # Message 2: Cards 3-4
-    msg2 = ""
-    for i, card in enumerate(cards[2:4], 3):
-        c = num_colors[i-1]
-        msg2 += f"## <font color=\"{c}\">{i}. {card['title']}</font>\n"
-        msg2 += f"<font color=\"comment\">来源：{card['source']}</font>\n"
-        msg2 += f"{card['summary']}\n\n"
-        msg2 += f"<font color=\"warning\">启示：</font>{card['insight']}\n\n"
-    _send(msg2)
-    time.sleep(1)
-
-    # Message 3: Card 5 + keywords + link
-    msg3 = ""
-    if len(cards) >= 5:
-        card = cards[4]
-        c = num_colors[4]
-        msg3 += f"## <font color=\"{c}\">5. {card['title']}</font>\n"
-        msg3 += f"<font color=\"comment\">来源：{card['source']}</font>\n"
-        msg3 += f"{card['summary']}\n\n"
-        msg3 += f"<font color=\"warning\">启示：</font>{card['insight']}\n\n"
     if keywords:
-        msg3 += f"<font color=\"info\">今日关键词：{keywords}</font>\n\n"
+        msg += f"\n<font color=\"info\">关键词：{keywords}</font>\n"
+
     if html_url:
-        msg3 += f"> 📄 完整仪表盘：[点击查看]({html_url})"
-    _send(msg3)
+        msg += f"\n> 📊 [点击查看完整仪表盘]({html_url})"
+
+    _send(msg)
 
 
 # ============ Main ============
