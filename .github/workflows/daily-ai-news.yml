@@ -1,0 +1,41 @@
+name: Daily AI News
+
+on:
+  schedule:
+    # 1:00 AM UTC = 9:00 AM Beijing time (UTC+8)
+    - cron: '0 1 * * *'
+  workflow_dispatch: # Allow manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write # Need write to commit the generated report
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate AI news report
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_MODEL: ${{ secrets.DEEPSEEK_MODEL || 'deepseek-chat' }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        run: python generate_ai_news.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "AI News Bot"
+          git config user.email "actions@github.com"
+          git add ai_news_*.md
+          git diff --staged --quiet || git commit -m "AI News Daily - $(TZ='Asia/Shanghai' date '+%Y-%m-%d')"
+          git push
