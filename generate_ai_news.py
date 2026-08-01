@@ -304,45 +304,106 @@ def markdown_to_html(md_text, date_display):
 </html>"""
 
 
-def send_webhook(content, webhook_url, html_url=None):
-    """Send report to WeChat Work (企业微信) group webhook.
+def parse_news_cards(md_text):
+    """Parse markdown report into structured news cards."""
+    lines = md_text.strip().split("\n")
+    cards = []
+    current = None
+    keywords = ""
+    title = ""
 
-    企微 markdown 消息上限 2048 字节，超长时自动截取精简版 + HTML 链接。
+    for line in lines:
+        s = line.strip()
+        if s.startswith("# AI") or s.startswith("# AI 行业日报"):
+            title = s.lstrip("# ").strip()
+        elif s.startswith("## "):
+            if current:
+                cards.append(current)
+            current = {"title": s[3:].strip(), "source": "", "summary": "", "insight": ""}
+        elif current is not None:
+            if s.startswith("**来源"):
+                current["source"] = s.replace("**", "").replace("来源：", "").replace("来源:", "").strip()
+            elif s.startswith("**启示"):
+                current["insight"] = s.replace("**", "").replace("启示：", "").replace("启示:", "").strip()
+            elif s and not s.startswith("---") and not s.startswith(">") and not s.startswith("#"):
+                if current["insight"]:
+                    if not s.startswith("**"):
+                        current["insight"] += s
+                elif not current["summary"]:
+                    current["summary"] = s
+                else:
+                    current["summary"] += s
+        elif "今日关键词" in s:
+            keywords = s.replace(">", "").replace("**", "").replace("今日关键词：", "").strip()
+
+    if current:
+        cards.append(current)
+
+    return title, cards, keywords
+
+
+def send_webhook(content, webhook_url, html_url=None):
+    """Send full report to WeChat Work (企业微信) in multiple messages.
+
+    企微单条 markdown 上限 2048 字节，自动拆分为多条连续发送，
+    每条包含完整的新闻内容（标题+来源+摘要+启示），并使用企微 font 标签美化。
     """
-    def _try_send(md_text):
+    import time
+
+    title, cards, keywords = parse_news_cards(content)
+
+    # Colors for each card number (企微只支持 info/comment/warning 三色)
+    num_colors = ["warning", "info", "info", "warning", "info"]
+
+    def _send(md_text):
         payload = {"msgtype": "markdown", "markdown": {"content": md_text}}
         resp = requests.post(webhook_url, json=payload, timeout=15)
         print(f"[Webhook] Status: {resp.status_code}, Resp: {resp.text[:200]}")
         return resp
 
-    # Build a concise message: title + 5 headlines + link
-    lines = content.split("\n")
-    title_line = lines[0] if lines else "AI 行业日报"
+    # Message 1: Header + first 2 cards
+    msg1 = f"# {title}\n"
+    msg1 += "> 精选5条今日最有价值的AI资讯\n\n"
 
-    msg_parts = [f"## {title_line.lstrip('# ').strip()}\n"]
+    for i, card in enumerate(cards[:2]):
+        c = num_colors[i]
+        msg1 += f"## <font color=\"{c}\">{i+1}. {card['title']}</font>\n"
+        msg1 += f"<font color=\"comment\">来源：{card['source']}</font>\n"
+        msg1 += f"{card['summary']}\n\n"
+        msg1 += f"<font color=\"warning\">启示：</font>{card['insight']}\n\n"
 
-    for line in lines:
-        stripped = line.strip()
-        if stripped.startswith("## "):
-            # Use enterprise WeChat font color tags for visual appeal
-            msg_parts.append(f"**{stripped[3:].strip()}**")
+    _send(msg1)
+    time.sleep(1)
+
+    # Message 2: Cards 3-4
+    msg2 = ""
+    for i, card in enumerate(cards[2:4], 3):
+        c = num_colors[i-1]
+        msg2 += f"## <font color=\"{c}\">{i}. {card['title']}</font>\n"
+        msg2 += f"<font color=\"comment\">来源：{card['source']}</font>\n"
+        msg2 += f"{card['summary']}\n\n"
+        msg2 += f"<font color=\"warning\">启示：</font>{card['insight']}\n\n"
+
+    _send(msg2)
+    time.sleep(1)
+
+    # Message 3: Card 5 + keywords + link
+    msg3 = ""
+    if len(cards) >= 5:
+        card = cards[4]
+        c = num_colors[4]
+        msg3 += f"## <font color=\"{c}\">5. {card['title']}</font>\n"
+        msg3 += f"<font color=\"comment\">来源：{card['source']}</font>\n"
+        msg3 += f"{card['summary']}\n\n"
+        msg3 += f"<font color=\"warning\">启示：</font>{card['insight']}\n\n"
+
+    if keywords:
+        msg3 += f"<font color=\"info\">今日关键词：{keywords}</font>\n\n"
 
     if html_url:
-        msg_parts.append(f"\n> 📄 完整报告：[点击查看]({html_url})")
-    else:
-        msg_parts.append("\n> 完整报告请查看仓库文件")
+        msg3 += f"> 📄 完整报告：[点击查看]({html_url})"
 
-    condensed = "\n".join(msg_parts)
-    if len(condensed.encode("utf-8")) > 2000:
-        # Ultra-condensed: just titles
-        ultra = [msg_parts[0]]
-        for p in msg_parts[1:-1]:
-            ultra.append(p[:40] + "..." if len(p) > 40 else p)
-        if html_url:
-            ultra.append(f"\n> 📄 [点击查看完整报告]({html_url})")
-        condensed = "\n".join(ultra)
-
-    _try_send(condensed)
+    _send(msg3)
 
 
 def main():
