@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年8月3日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年8月3日</div>
+                <div class="hero-weekday">周一 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：08月02日 08:00 — 08月03日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">5</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-产品发布更新" class="nav-link" style="--accent:#ec4899"><span class="nav-count">1</span><span class="nav-text">产品发布/更</span></a><a href="#sec-行业动态" class="nav-link" style="--accent:#f59e0b"><span class="nav-count">1</span><span class="nav-text">行业动态</span></a><a href="#sec-技巧与观点" class="nav-link" style="--accent:#06b6d4"><span class="nav-count">3</span><span class="nav-text">技巧</span></a></nav>
+    <section id="sec-产品发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#ec4899">
+                <span class="section-icon" style="background:#ec4899">P</span>
+                <h2 class="section-title">产品发布/更新</h2>
+                <span class="section-count" style="background:#fdf2f8;color:#ec4899">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://x.com/elonmusk/status/2083800942927839307','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">Grok 支持分析任意视频</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">X：Elon Musk (@elonmusk, xAI)</span></div>
+                    <p class="card-summary">Grok 可以分析任何视频 https://grok.com/share/bGVnYWN5_8013f7a3-f604-...</p>
+                    <a href="https://x.com/elonmusk/status/2083800942927839307" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-行业动态" class="news-section">
+            <div class="section-header" style="border-left-color:#f59e0b">
+                <span class="section-icon" style="background:#f59e0b">I</span>
+                <h2 class="section-title">行业动态</h2>
+                <span class="section-count" style="background:#fffbeb;color:#f59e0b">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://blog.cloudflare.com/agents-week-welcome','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">Cloudflare 开启 Agents Week：探讨面向智能体的 Agent Cloud 形态</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Cloudflare Blog</span></div>
+                    <p class="card-summary">Cloudflare 启动为期五天的 Agents Week，核心议题是“Agent Cloud”应具备何种形态。其认为...</p>
+                    <a href="https://blog.cloudflare.com/agents-week-welcome" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-技巧与观点" class="news-section">
+            <div class="section-header" style="border-left-color:#06b6d4">
+                <span class="section-icon" style="background:#06b6d4">T</span>
+                <h2 class="section-title">技巧与观点</h2>
+                <span class="section-count" style="background:#ecfeff;color:#06b6d4">3 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://x.com/AYi_AInotes/status/2083867265179537565','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">Codex 用 Sol 指挥 Luna Max 省额度翻倍产出</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">X：阿易 AI Notes (@AYi_AInotes)</span></div>
+                    <p class="card-summary">Codex 高阶玩法：让 Sol 在 `~/.codex/agents/` 下创建 `luna-worker.toml`...</p>
+                    <a href="https://x.com/AYi_AInotes/status/2083867265179537565" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://garymarcus.substack.com/p/openais-amazing-but-vastly-oversold','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">4</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 新模型 Astra 数学表现出色，但被过度吹捧</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Gary Marcus：The Road to AI We Can Trust（RSS）</span></div>
+                    <p class="card-summary">OpenAI 内部测试的新模型 Astra 在数学问题上表现惊艳，但 Gary Marcus 指出相关讨论犯了“合成谬误...</p>
+                    <a href="https://garymarcus.substack.com/p/openais-amazing-but-vastly-oversold" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">5</div>
+                <div class="card-body">
+                    <h3 class="card-title">最新开源模型盘点（#23）：Laguna S2.1、Inkling 与 Kimi K3 展现开源模型在帕累托前沿的价值</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Nathan Lambert：Interconnects（RSS）</span></div>
+                    <p class="card-summary">Thinking Machines 发布首个模型 Inkling，为 975B-A41B 多模态 MoE，支持文本、图像...</p>
+                    <a href="https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. 阿里发布 Qwen3.8-Max：2.4T 参数开源最强模型，下周开放权重</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">Qwen Blog / IT之家 / X</span></div>
+                        <p class="card-summary">阿里巴巴今日正式发布旗舰模型 Qwen3.8-Max，总参数 2.4T（95B 激活），主打自主编码与多模态能力，可完成 10 天以上自进化开发及 500+ 轮芯片设计优化。这是 Qwen 首次开源 Max 级权重，下周同步开源 Qwen3.8-27B，API 定价为输入 $2.0/M tokens、输出 $6.0/M tokens（国内 12 元/36 元每百万 tokens）。该模型已接入&quot;千问办公&quot;Agent 产品并登顶 Text Arena 第二。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">2T 参数级开源模型竞争正式进入白热化（继 Kimi K3 后第二个），对创业者而言是重大利好——顶级模型能力即将免费可得，应密切关注下周权重开源后的本地部署成本与微调空间。同时，阿里将旗舰模型与&quot;千问办公&quot;等企业级 Agent 产品深度绑定，提示应用层创业者需尽快在模型能力之上构建数据壁垒和场景粘性，而非仅依赖模型 API 调用。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. MiniMax H3 开源：通用视频模型 Day 0 接入 ComfyUI/vLLM，成本仅为竞品 1/3</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">MiniMax / IT之家</span></div>
+                        <p class="card-summary">MiniMax 正式开源新一代通用视频模型 H3，可统一理解文本、图像、视频和音频构成的多模态上下文，生成最高 2K 分辨率、最长 15 秒且带原生立体声音频的视频。该模型发布当天即原生集成 ComfyUI（支持五种工作流）、获得 vLLM-Omni 与 LMSYS Day 0 支持，性能对标 Seedance 2.0 但成本仅为后者三分之一，本地运行（2x 5090 或 1 RTX 6000）完全免费。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">H3 的开源策略堪称教科书级——Day 0 全生态接入（推理框架、UI 工具、评测榜单）大幅降低了开发者的采用门槛。视频生成赛道的成本拐点已至，创业者应抓住窗口期，基于 H3 构建视频创作、营销、教育等垂直应用。同时注意&quot;本地免费运行&quot;意味着算力成本不再是壁垒，产品差异化和工作流体验才是竞争核心。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. 百度萝卜快跑启动香港、伦敦无人驾驶测试，右舵市场全球首创</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">X：百度 Baidu</span></div>
+                        <p class="card-summary">百度 Apollo Go 在香港启动完全无人驾驶试运营，这是右舵驾驶市场的全球首创，同时伦敦也已开始道路测试。百度 AI Pulse 还披露了一位总统的首次自动驾驶体验等进展。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">萝卜快跑出海节奏明显提速，从国内左舵市场拓展至右舵市场意味着其技术栈已具备跨市场适配能力。对自动驾驶产业链创业者而言，关注两个机会：一是萝卜快跑出海带来的传感器、高精地图、仿真测试等配套需求；二是右舵市场的法规合规经验本身正在成为可输出的服务。同时需警惕海外市场的监管风险与本地化运营挑战。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. 自变量机器人开源 HOST 框架：机器人看 29 秒视频即可学会新技能</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">IT之家</span></div>
+                        <p class="card-summary">自变量机器人发布并开源 HOST 框架，让机器人仅观察一段数十秒的人类视频就能学会新技能，同时保留已掌握技能。从 29 秒人类视频中学习技能的成功率达 62%，超越零样本基线 45%，相比 Pi-0.5 + 微调方案数据量减少 50 倍、学习速度提升 500 倍。HOST 采用&quot;按任务进度对齐&quot;和双专家 MoT 架构，论文与代码已全部开源。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">具身智能领域&quot;数据效率&quot;是最大瓶颈，HOST 将学习所需数据量降低两个数量级，意味着小团队也能在缺乏大规模机器人数据的情况下探索技能学习。创业者应重点关注该框架在垂直场景（如工业分拣、家庭服务）的落地可能性，同时&quot;保留已掌握技能&quot;这一特性对持续学习场景至关重要。开源策略也降低了入局门槛，技术选型时应优先考虑。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. 开源生态竞争加剧：Claude Code 插件减 94% 代码量，Codex 多代理协作成新范式</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">X：阿易 AI Notes / swyx / Greg Brockman</span></div>
+                        <p class="card-summary">今日多个信号指向 AI 编程工具进入精细化竞争阶段：开源插件 Ponytail 针对 Claude Code 过度生成代码的问题，强制前置检查功能是否已存在，使代码量减少 80%-94%、成本降低 47%-77%、速度提升 3-6 倍；Codex 高阶玩法通过 Sol 创建子代理 Luna Max 实现任务拆解与代码审查的自动分工；Greg Brockman 则展示了 Codex 用于企业运营的场景。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">第一代 AI 编程工具解决&quot;能不能生成代码&quot;，第二代正在解决&quot;如何少生成代码&quot;——Ponytail 提示成本优化和代码精简本身就是巨大的产品机会。Codex 的多代理协作模式（调度代理 + 执行代理）预示了 Agent 架构的新范式，创业者应关注代理编排层的工具链需求。此外，AI 编程正从&quot;写代码&quot;延伸到&quot;运营业务&quot;，这为垂直行业 Agent 产品打开了新空间。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 5 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：08月03日 08:00</div>
+</div>
+</body>
+</html>
