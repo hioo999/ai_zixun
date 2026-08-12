@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年8月12日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年8月12日</div>
+                <div class="hero-weekday">周三 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：08月11日 08:00 — 08月12日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">26</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-模型发布更新" class="nav-link" style="--accent:#6366f1"><span class="nav-count">3</span><span class="nav-text">模型发布/更</span></a><a href="#sec-产品发布更新" class="nav-link" style="--accent:#ec4899"><span class="nav-count">5</span><span class="nav-text">产品发布/更</span></a><a href="#sec-行业动态" class="nav-link" style="--accent:#f59e0b"><span class="nav-count">7</span><span class="nav-text">行业动态</span></a><a href="#sec-论文研究" class="nav-link" style="--accent:#10b981"><span class="nav-count">3</span><span class="nav-text">论文研究</span></a><a href="#sec-技巧与观点" class="nav-link" style="--accent:#06b6d4"><span class="nav-count">8</span><span class="nav-text">技巧</span></a></nav>
+    <section id="sec-模型发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#6366f1">
+                <span class="section-icon" style="background:#6366f1">M</span>
+                <h2 class="section-title">模型发布/更新</h2>
+                <span class="section-count" style="background:#eef2ff;color:#6366f1">3 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://blogs.nvidia.com/blog/local-ai-open-source-models-agents-nemotron','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">NVIDIA 推出 Nemotron 3.5 Lightning，加速本地智能体任务</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">NVIDIA Blog（RSS）</span></div>
+                    <p class="card-summary">NVIDIA 发布 Nemotron 3.5 Lightning，一款可定制的开源 30B 混合专家（MoE）模型，专为...</p>
+                    <a href="https://blogs.nvidia.com/blog/local-ai-open-source-models-agents-nemotron" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.lmsys.org/blog/2026-08-11-nemotron-3-5-lightning','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">SGLang 宣布 Day-0 支持 NVIDIA Nemotron 3.5 Lightning</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">LMSYS：Blog（Chatbot Arena 团队）</span></div>
+                    <p class="card-summary">SGLang 宣布对 NVIDIA Nemotron 3.5 Lightning 提供 Day-0 支持，该开源模型为 ...</p>
+                    <a href="https://www.lmsys.org/blog/2026-08-11-nemotron-3-5-lightning" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkyODk2MDQwNw%3D%3D&mid=2247487491&idx=1&sn=fcb14aceb054f9a24e22525d3dae6fa0','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">Ling-3.0-tiny 正式开源：1.3B 激活参数如何进入真实任务</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">公众号：蚂蚁百灵（Ling）</span></div>
+                    <p class="card-summary">蚂蚁百灵开源 Ling-3.0-tiny，一款总参数 7.9B、推理时仅激活 1.3B 参数的原生混合推理模型，同步提供...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=MzkyODk2MDQwNw%3D%3D&mid=2247487491&idx=1&sn=fcb14aceb054f9a24e22525d3dae6fa0" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-产品发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#ec4899">
+                <span class="section-icon" style="background:#ec4899">P</span>
+                <h2 class="section-title">产品发布/更新</h2>
+                <span class="section-count" style="background:#fdf2f8;color:#ec4899">5 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://x.com/runwayml/status/2087251184658657346','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">4</div>
+                <div class="card-body">
+                    <h3 class="card-title">Runway Seedance 2.5 上线，支持50角色参考</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">X：Runway (@runwayml)</span></div>
+                    <p class="card-summary">完整阵容，完整曲目，一次生成一个。 Seedance 2.5 已在 Runway 上线，支持 50 个独特角色参考，以及...</p>
+                    <a href="https://x.com/runwayml/status/2087251184658657346" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://cloud.google.com/blog/products/databases/accelerate-postgresql-migrations-with-gemini-in-dms','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">5</div>
+                <div class="card-body">
+                    <h3 class="card-title">Gemini 助力 Database Migration Service 加速 PostgreSQL 迁移</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Google Cloud：Databases（RSS）</span></div>
+                    <p class="card-summary">Google Cloud 在 Database Migration Service（DMS）中推出由 Gemini 驱动...</p>
+                    <a href="https://cloud.google.com/blog/products/databases/accelerate-postgresql-migrations-with-gemini-in-dms" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494052&idx=1&sn=ee3ab3d0f4550e9120927c53a27522c9','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">6</div>
+                <div class="card-body">
+                    <h3 class="card-title">ZCode全面升级：Goal、Subagents、Remote Control与闲时任务四大功能上线</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">公众号：智谱（GLM）</span></div>
+                    <p class="card-summary">ZCode针对GLM深度优化，今日上线Goal、Subagents、Remote Control与闲时任务四大功能。在Z...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494052&idx=1&sn=ee3ab3d0f4550e9120927c53a27522c9" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/OpenAIDevs/status/2087242829076791392','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">7</div>
+                <div class="card-body">
+                    <h3 class="card-title">ChatGPT 桌面端支持导入其他智能体工作数据</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">X：OpenAI Developers (@OpenAIDevs)</span></div>
+                    <p class="card-summary">你现在可以将其他智能体的工作内容与 ChatGPT Work 和 Codex 保持同步。 可导入项目、聊天记录、技能和插...</p>
+                    <a href="https://x.com/OpenAIDevs/status/2087242829076791392" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.databricks.com/blog/open-sourcing-metals-v2-databricks-java-and-scala-language-server-multi-million-line-codebases','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">8</div>
+                <div class="card-body">
+                    <h3 class="card-title">Databricks 开源 Metals v2：面向数百万行代码库的 Java 和 Scala 语言服务器</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Databricks：Blog（RSS）</span></div>
+                    <p class="card-summary">Databricks 开源 Metals v2，这是其面向数百万行代码库的 Java 和 Scala 语言服务器。Met...</p>
+                    <a href="https://www.databricks.com/blog/open-sourcing-metals-v2-databricks-java-and-scala-language-server-multi-million-line-codebases" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-行业动态" class="news-section">
+            <div class="section-header" style="border-left-color:#f59e0b">
+                <span class="section-icon" style="background:#f59e0b">I</span>
+                <h2 class="section-title">行业动态</h2>
+                <span class="section-count" style="background:#fffbeb;color:#f59e0b">7 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://the-decoder.com/but-marinade-and-leaked-passwords-are-what-researchers-found-in-chatgpts-hidden-reasoning','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">9</div>
+                <div class="card-body">
+                    <h3 class="card-title">研究人员发现可读取ChatGPT等模型加密推理过程的API漏洞</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">The Decoder：AI News（RSS）</span></div>
+                    <p class="card-summary">Alexander Panfilov团队发现OpenAI、Anthropic、Google等主要AI提供商API存在漏洞...</p>
+                    <a href="https://the-decoder.com/but-marinade-and-leaked-passwords-are-what-researchers-found-in-chatgpts-hidden-reasoning" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.ithome.com/0/988/239.htm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">10</div>
+                <div class="card-body">
+                    <h3 class="card-title">消息称 Anthropic 最快今年 9 月上市，向投资者淡化 AI 模型竞争等挑战</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">IT之家（RSS）</span></div>
+                    <p class="card-summary">Anthropic 正与潜在投资者接触，为可能成为史上规模最大的 IPO 做准备，计划今年 9 月或 10 月初正式上市...</p>
+                    <a href="https://www.ithome.com/0/988/239.htm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/sundarpichai/status/2087222656819241292','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">11</div>
+                <div class="card-body">
+                    <h3 class="card-title">Gemini月活破10亿，成谷歌增长最快产品</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">X：Sundar Pichai (@sundarpichai)</span></div>
+                    <p class="card-summary">每月已有超过 10 亿人使用 @Geminiapp 激发新想法、完成工作。这是我们有史以来增长最快的产品，也是第 14 ...</p>
+                    <a href="https://x.com/sundarpichai/status/2087222656819241292" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.ithome.com/0/988/524.htm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">12</div>
+                <div class="card-body">
+                    <h3 class="card-title">消息称英伟达开发万亿参数开源 AI 模型 Nemotron 4，目标挑战全球顶级</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">IT之家（RSS）</span></div>
+                    <p class="card-summary">英伟达正在研发新一代开源 AI 模型系列 Nemotron 4，规模最大的模型预计至少拥有 1 万亿个参数，旨在与全球最...</p>
+                    <a href="https://www.ithome.com/0/988/524.htm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://blogs.nvidia.com/blog/800-vdc-power-architecture-ai-factory','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">13</div>
+                <div class="card-body">
+                    <h3 class="card-title">NVIDIA 为何需要新供电架构以扩展 AI 算力性能</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">NVIDIA Blog（RSS）</span></div>
+                    <p class="card-summary">NVIDIA 主张以 800 VDC 直流配电替代传统交流多次转换，以降低损耗、支撑 AI 算力扩展。NVIDIA 与 ...</p>
+                    <a href="https://blogs.nvidia.com/blog/800-vdc-power-architecture-ai-factory" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://garymarcus.substack.com/p/breaking-circular-financing-reaches','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">14</div>
+                <div class="card-body">
+                    <h3 class="card-title">英伟达循环融资达到新高度，黄仁勋是否过度出牌？</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Gary Marcus：The Road to AI We Can Trust（RSS）</span></div>
+                    <p class="card-summary">英伟达股价在相关消息公布后小幅下滑，收盘报217.55美元，盘前略有回升。金融记者Holger Zschaepitz和曾...</p>
+                    <a href="https://garymarcus.substack.com/p/breaking-circular-financing-reaches" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.databricks.com/blog/electric-joins-databricks-bring-wasm-postgres-ai-agent-sandboxes','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">15</div>
+                <div class="card-body">
+                    <h3 class="card-title">Electric 加入 Databricks，将 WASM Postgres 引入 AI 智能体沙箱</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Databricks：Blog（RSS）</span></div>
+                    <p class="card-summary">Databricks 宣布 Electric 团队加入，将 WASM Postgres 引入 AI 智能体沙箱。该技术让...</p>
+                    <a href="https://www.databricks.com/blog/electric-joins-databricks-bring-wasm-postgres-ai-agent-sandboxes" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-论文研究" class="news-section">
+            <div class="section-header" style="border-left-color:#10b981">
+                <span class="section-icon" style="background:#10b981">R</span>
+                <h2 class="section-title">论文研究</h2>
+                <span class="section-count" style="background:#ecfdf5;color:#10b981">3 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">16</div>
+                <div class="card-body">
+                    <h3 class="card-title">Apple Silicon 与 macOS 虚拟机：借助 Llama.cpp 实现 11–16 倍的 LLM 推理加速</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+                    <p class="card-summary">研究团队为 macOS 虚拟机中的 Metal 能力查询构建进程级兼容层，使 llama.cpp 能选用更新的 Meta...</p>
+                    <a href="https://github.com/trycua/cua/blob/main/blog/gpu-passthrough-macos-vms.md" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.lmsys.org/blog/2026-08-11-unified-radix-cache','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">17</div>
+                <div class="card-body">
+                    <h3 class="card-title">统一 Radix 缓存：为混合模型前缀缓存构建单一树结构</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">LMSYS：Blog（Chatbot Arena 团队）</span></div>
+                    <p class="card-summary">LMSYS 团队提出 Unified Radix Cache，用单一 token 键控 radix 拓扑统一管理混合模型...</p>
+                    <a href="https://www.lmsys.org/blog/2026-08-11-unified-radix-cache" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">18</div>
+                <div class="card-body">
+                    <h3 class="card-title">AMIE 研究医疗 AI 系统首次展示实时临床视频问诊能力</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">Google Blog：AI（RSS）</span></div>
+                    <p class="card-summary">Google Research 与 Google DeepMind 推进医疗 AI 系统 AMIE，实现实时临床视频问诊...</p>
+                    <a href="https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-技巧与观点" class="news-section">
+            <div class="section-header" style="border-left-color:#06b6d4">
+                <span class="section-icon" style="background:#06b6d4">T</span>
+                <h2 class="section-title">技巧与观点</h2>
+                <span class="section-count" style="background:#ecfeff;color:#06b6d4">8 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://www.theverge.com/ai-artificial-intelligence/977273/the-ai-takeover-of-mathematics-has-begun','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">19</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 用 Astra 模型攻克 10 道数学难题，数学家既兴奋又担忧</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">The Verge：AI（RSS）</span></div>
+                    <p class="card-summary">OpenAI 宣布其未发布的 Astra 模型解决了 10 道长期悬而未决的数学难题，涵盖球体堆积、纠错码、非 sofi...</p>
+                    <a href="https://www.theverge.com/ai-artificial-intelligence/977273/the-ai-takeover-of-mathematics-has-begun" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.marktechpost.com/2026/08/10/implementing-a-minimax-h3-multimodal-video-and-audio-generation-pipeline-with-comfyui-apis','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">20</div>
+                <div class="card-body">
+                    <h3 class="card-title">用 ComfyUI API 实现 MiniMax-H3 多模态视频与音频生成流水线</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">MarkTechPost（RSS）</span></div>
+                    <p class="card-summary">本教程演示如何以 ComfyUI 为无头推理后端，构建端到端的 MiniMax-H3 视频生成工作流。通过 Python...</p>
+                    <a href="https://www.marktechpost.com/2026/08/10/implementing-a-minimax-h3-multimodal-video-and-audio-generation-pipeline-with-comfyui-apis" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.lighthousenewsletter.com/p/i-put-github-copilot-behind-a-mitm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">21</div>
+                <div class="card-body">
+                    <h3 class="card-title">将 GitHub Copilot 置于中间人（MitM）代理之后后，我学到了什么</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+                    <p class="card-summary">作者通过 mitmproxy 对 VS Code 中的 GitHub Copilot 进行中间人代理拦截，逆向分析其网络...</p>
+                    <a href="https://www.lighthousenewsletter.com/p/i-put-github-copilot-behind-a-mitm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('http://danluu.com/pl-tokens','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">22</div>
+                <div class="card-body">
+                    <h3 class="card-title">编写智能体时，哪种编程语言最合适？</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+                    <p class="card-summary">针对“动态语言比静态语言更省 LLM token”的流行说法，作者用 GPT-5.6 Sol 让智能体实现 zstd 解...</p>
+                    <a href="http://danluu.com/pl-tokens" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685081&idx=1&sn=13a05578a3959c047209c8e74b56fa48','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">23</div>
+                <div class="card-body">
+                    <h3 class="card-title">微信小微AI帮写与AI点评内测：朋友圈最后一点人味正在消失</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">公众号：数字生命卡兹克</span></div>
+                    <p class="card-summary">微信基于小微推出朋友圈AI帮写与AI点评内测功能，前者可根据图片和已写文字生成3条朋友圈文案，后者可长按文字生成评价或快...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685081&idx=1&sn=13a05578a3959c047209c8e74b56fa48" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.dwarkesh.com/p/ryan-greenblatt','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">24</div>
+                <div class="card-body">
+                    <h3 class="card-title">Ryan Greenblatt：人类级AI或于2032年前通过递归自我改进催生失控超级智能</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Dwarkesh Patel：Podcast &amp; Blog（RSS）</span></div>
+                    <p class="card-summary">Dwarkesh Patel与Redwood Research首席科学家Ryan Greenblatt探讨递归自我改进（...</p>
+                    <a href="https://www.dwarkesh.com/p/ryan-greenblatt" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.tomtunguz.com/a-winner-in-every-category','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">25</div>
+                <div class="card-body">
+                    <h3 class="card-title">每个类别都有赢家：AI 时代 SaaS 龙头的估值溢价</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Tomer Tunguz 博客（VC 分析）</span></div>
+                    <p class="card-summary">SaaS 估值整体承压，但每个细分赛道都跑出了 AI 龙头：CrowdStrike 以 34.4x 前瞻收入领跑安全（中...</p>
+                    <a href="https://www.tomtunguz.com/a-winner-in-every-category" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.youtube.com/watch?v=cIMlBw2nqfA','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">26</div>
+                <div class="card-body">
+                    <h3 class="card-title">Can you trust what AI tells you?</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Claude：YouTube（RSS）</span></div>
+                    <p class="card-summary"></p>
+                    <a href="https://www.youtube.com/watch?v=cIMlBw2nqfA" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. ChatGPT 与 Gemini 双双突破 10 亿用户，AI 超级应用时代正式开启</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">The Verge / Sundar Pichai</span></div>
+                        <p class="card-summary">OpenAI 与 Google 的聊天机器人均跨过 10 亿月活用户门槛，OpenAI 在 8 月 6 日博文中披露 ChatGPT 月活超 10 亿，Google CEO 皮查伊则宣布 Gemini 月活达 10 亿，成为其史上增长最快的产品。Gemini 从 2 月的 7.5 亿月活迅速攀升，增长势头明显更猛。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">10 亿用户意味着 AI 聊天机器人已从&quot;工具&quot;变为&quot;超级入口&quot;，流量红利正在向头部平台集中。对于创业者，应优先考虑在 ChatGPT/Gemini 生态内构建应用（如 GPTs、Gemini Extensions），借助平台分发降低获客成本；对于从业者，需要重新审视产品策略——独立 AI 应用的生存空间正在被压缩，与平台深度整合（数据同步、工作流嵌入）成为必然选择。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. 消息称 Anthropic 最快今年 9 月上市，估值高达 9650 亿美元</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">IT之家</span></div>
+                        <p class="card-summary">Anthropic 正与潜在投资者接触，为可能成为史上规模最大的 IPO 做准备，计划今年 9 月或 10 月初上市。公司估值高达 9,650 亿美元，年化收入已超 470 亿美元，并计划拓展 AI 在医疗和生物学领域的应用。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">Anthropic 的 IPO 将是 AI 行业的重要风向标，其估值与收入比将为整个赛道的估值体系定下基调。对创业者而言，关注 IPO 后的资金流向——Anthropic 明确表示将加码医疗和生物领域，这意味着这些垂直赛道的竞争将加剧，但同时也说明资本正在向&quot;AI+科学&quot;倾斜。对从业者来说，Anthropic 上市可能引发人才流动和薪酬结构调整，是评估职业机会的重要参考。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. NVIDIA 发布 Nemotron 3.5 Lightning 开源模型，并推进万亿参数 Nemotron 4</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">NVIDIA Blog / LMSYS / IT之家</span></div>
+                        <p class="card-summary">NVIDIA 发布 Nemotron 3.5 Lightning，一款 30B 总参数、3B 激活的 MoE 开源模型，专为常驻智能体设计，token 生成速度最高提升 4 倍、任务完成时间缩短 30%，支持在 RTX PC、DGX Spark 及 Jetson 上运行。同时，消息称英伟达正在研发至少万亿参数的 Nemotron 4，目标挑战全球顶级开源模型。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">NVIDIA 从&quot;卖算力&quot;延伸到&quot;做模型&quot;，意图通过开放权重模型生态拉动 GPU 需求，这对依赖 NVIDIA 硬件的 AI 创业者是重大利好——本地化、低延迟的智能体部署将更加经济。Nemotron 3.5 Lightning 的 MoE 架构（30B 总参/3B 激活）和 Day-0 生态支持（SGLang）值得立即上手测试，尤其适合做端侧或私有化部署的团队。同时，万亿参数开源模型的入局将加剧开源与闭源模型的竞争，模型选型策略需要保持灵活性。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. 研究人员发现可读取 ChatGPT 等模型加密推理过程的 API 漏洞</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">The Decoder</span></div>
+                        <p class="card-summary">Alexander Panfilov 团队发现 OpenAI、Anthropic、Google 等主要 AI 提供商 API 存在漏洞，可读取推理模型的加密思考过程。扫描约 7000 条公开会话发现 62 个 API 密钥、33 个邮箱和 33 个密码；通过越狱，Anthropic 的 Haiku 4.5 可逐字转写 Opus 4.8 的原始推理，解码 10000 条推理轨迹的 API 成本约 720 美元。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">推理过程的&quot;加密&quot;并非绝对安全，这对依赖 API 构建应用的团队是重要安全警示：不要在提示词或推理上下文中放入敏感数据。同时，该漏洞也暴露了推理模型的&quot;思维链&quot;可被提取——对于依赖私有推理逻辑构建产品壁垒的团队，需要重新评估护城河的有效性。建议立即审查自身 API 调用链路，排查密钥泄露风险，并关注各厂商的修复进展。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. OpenAI Astra 模型攻克 10 道数学难题，数学家既兴奋又担忧</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">The Verge</span></div>
+                        <p class="card-summary">OpenAI 宣布其未发布的 Astra 模型解决了 10 道长期悬而未决的数学难题，涵盖球体堆积、纠错码、非 sofic 群存在性等领域，并发布超 250 页论文及 Lean 验证结果。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">AI 从&quot;辅助数学&quot;走向&quot;独立解决开放问题&quot;，这是推理能力质变的标志性事件。对创业者而言，&quot;AI+科学发现&quot;（数学、材料、生物）正在从概念验证进入实际产出阶段，Science AI 赛道的投资和创业窗口已经打开。对从业者来说，Astra 的 Lean 验证方式提示：AI 生成结果的可验证性将成为企业采用的关键门槛，产品设计中应优先考虑可验证、可追溯的输出机制。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 26 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：08月12日 08:00</div>
+</div>
+</body>
+</html>
