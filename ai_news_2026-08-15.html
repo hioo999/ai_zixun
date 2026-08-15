@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年8月15日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年8月15日</div>
+                <div class="hero-weekday">周六 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：08月14日 08:00 — 08月15日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">15</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-模型发布更新" class="nav-link" style="--accent:#6366f1"><span class="nav-count">4</span><span class="nav-text">模型发布/更</span></a><a href="#sec-产品发布更新" class="nav-link" style="--accent:#ec4899"><span class="nav-count">1</span><span class="nav-text">产品发布/更</span></a><a href="#sec-行业动态" class="nav-link" style="--accent:#f59e0b"><span class="nav-count">4</span><span class="nav-text">行业动态</span></a><a href="#sec-技巧与观点" class="nav-link" style="--accent:#06b6d4"><span class="nav-count">6</span><span class="nav-text">技巧</span></a></nav>
+    <section id="sec-模型发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#6366f1">
+                <span class="section-icon" style="background:#6366f1">M</span>
+                <h2 class="section-title">模型发布/更新</h2>
+                <span class="section-count" style="background:#eef2ff;color:#6366f1">4 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg%3D%3D&mid=2247496140&idx=1&sn=5239a5fbb115c58d2ae0056bb32789ff','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">公众号：小红书技术（dots.llm）</span></div>
+                    <p class="card-summary">小红书技术开源 dots3-note Preview，这是 dots3 系列最轻量模型，总参数 280B、激活参数 16...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg%3D%3D&mid=2247496140&idx=1&sn=5239a5fbb115c58d2ae0056bb32789ff" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494084&idx=1&sn=a2e5cd9a534a4825feb3633ea1b6d492','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">GLM-5.3 发布：编程能力开源第一，并涌现网络安全能力</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">公众号：智谱（GLM）</span></div>
+                    <p class="card-summary">智谱发布GLM-5.3，基于与GLM-5.2相同的基座，通过极致的后训练Scaling提升智能上界，编程能力较前代提升5...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494084&idx=1&sn=a2e5cd9a534a4825feb3633ea1b6d492" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/GeminiApp/status/2088326407730692538','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">Gemini 3.7 Flash 全面上线 Pro 与 Ultra 用户</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">X：Gemini (@GeminiApp)</span></div>
+                    <p class="card-summary">Gemini 3.7 Flash 现已向 Gemini 聊天中的 Pro 和 Ultra 用户开放。该模型更新提升了多步...</p>
+                    <a href="https://x.com/GeminiApp/status/2088326407730692538" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/SiliconFlowAI/status/2088127458558271885','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">4</div>
+                <div class="card-body">
+                    <h3 class="card-title">DeepSeek V4 Pro 登陆硅基流动，1M 上下文</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">X：硅基流动 SiliconFlow (@SiliconFlowAI)</span></div>
+                    <p class="card-summary">DeepSeek-V4-Pro-0813 正式上线硅基流动 SiliconFlow，提供 Day-0 支持，具备 1M ...</p>
+                    <a href="https://x.com/SiliconFlowAI/status/2088127458558271885" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-产品发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#ec4899">
+                <span class="section-icon" style="background:#ec4899">P</span>
+                <h2 class="section-title">产品发布/更新</h2>
+                <span class="section-count" style="background:#fdf2f8;color:#ec4899">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://github.com/anthropics/claude-code/releases/tag/v2.1.233','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">5</div>
+                <div class="card-body">
+                    <h3 class="card-title">Claude Code v2.1.233 发布：新增 GitLab MR 支持与内存 cgroup 限制</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Claude Code：GitHub Releases（RSS）</span></div>
+                    <p class="card-summary">Claude Code v2.1.233 发布，为 --worktree 标志和 agents 视图新增 GitLab ...</p>
+                    <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.233" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-行业动态" class="news-section">
+            <div class="section-header" style="border-left-color:#f59e0b">
+                <span class="section-icon" style="background:#f59e0b">I</span>
+                <h2 class="section-title">行业动态</h2>
+                <span class="section-count" style="background:#fffbeb;color:#f59e0b">4 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://arstechnica.com/ai/2026/08/openai-and-anthropic-in-price-war-as-chinese-ai-rivals-gain-ground','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">6</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI and Anthropic in price war as Chinese AI rivals gain ground</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Ars Technica：AI（RSS）</span></div>
+                    <p class="card-summary">价格战让模型API的成本弹性成为现实，原先因账单压力转向中国厂商的用户，可能在OpenAI和Anthropic降价后重新...</p>
+                    <a href="https://arstechnica.com/ai/2026/08/openai-and-anthropic-in-price-war-as-chinese-ai-rivals-gain-ground" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://cursor.com/blog/joining-spacex','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">7</div>
+                <div class="card-body">
+                    <h3 class="card-title">Cursor 正式被 SpaceX 收购</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Cursor Blog</span></div>
+                    <p class="card-summary">Cursor 已被 SpaceX 正式收购，完成自 4 月启动的收购流程。合并后 Cursor 将获得全球最大 GPU ...</p>
+                    <a href="https://cursor.com/blog/joining-spacex" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.anthropic.com/news/claude-text-watermark','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">8</div>
+                <div class="card-body">
+                    <h3 class="card-title">Claude 文本水印机制如何运作</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Anthropic：Newsroom（网页）</span></div>
+                    <p class="card-summary">未来 Claude 模型生成的文本将包含水印，用于判断文本由 Claude 撰写的可能性，这是 Anthropic 为遵...</p>
+                    <a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://blogs.nvidia.com/blog/ugm-indosat-nvidia-ai-technology-center','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">9</div>
+                <div class="card-body">
+                    <h3 class="card-title">印尼首个大学AI中心落成：UGM、Indosat与NVIDIA合作培养本地AI人才</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">NVIDIA Blog（RSS）</span></div>
+                    <p class="card-summary">印尼通信与数字事务部、Indosat、NVIDIA与加查马达大学（UGM）在日惹共同启动UGM Indosat NVID...</p>
+                    <a href="https://blogs.nvidia.com/blog/ugm-indosat-nvidia-ai-technology-center" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-技巧与观点" class="news-section">
+            <div class="section-header" style="border-left-color:#06b6d4">
+                <span class="section-icon" style="background:#06b6d4">T</span>
+                <h2 class="section-title">技巧与观点</h2>
+                <span class="section-count" style="background:#ecfeff;color:#06b6d4">6 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://huggingface.co/blog/state-of-open-models-summer-2026','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">10</div>
+                <div class="card-body">
+                    <h3 class="card-title">2026年夏季开源模型生态观察：中国前沿模型规模领先，AMD与NVIDIA主导发布量</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Hugging Face：Blog（RSS）</span></div>
+                    <p class="card-summary">2026年1至8月，Hugging Face公开模型仓库从243万增至296万，但85.6%的模型下载量不足200次，1...</p>
+                    <a href="https://huggingface.co/blog/state-of-open-models-summer-2026" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">11</div>
+                <div class="card-body">
+                    <h3 class="card-title">Claude Code 会话如何最大化 token 价值</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Claude：Blog（网页）</span></div>
+                    <p class="card-summary">Claude Code 的 token 成本由模型、输入/输出 token 和提示缓存三因素决定，输出 token 价格...</p>
+                    <a href="https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkyODk2MDQwNw%3D%3D&mid=2247487525&idx=1&sn=b9def9117e34b45fce50ab76eeed726c','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">12</div>
+                <div class="card-body">
+                    <h3 class="card-title">蚂蚁百灵与 ASystem 团队打通单机 Agentic RL 后训练闭环</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">公众号：蚂蚁百灵（Ling）</span></div>
+                    <p class="card-summary">蚂蚁百灵与 ASystem 团队合作，用 Ling-3.0-tiny 和 AReno 在 DGX Spark 上跑通单机...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=MzkyODk2MDQwNw%3D%3D&mid=2247487525&idx=1&sn=b9def9117e34b45fce50ab76eeed726c" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://openrouter.ai/blog/tutorials/send-image-to-llm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">13</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenRouter 视觉指南：如何通过 API 向多模态模型发送图像</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">OpenRouter：Announcements（RSS）</span></div>
+                    <p class="card-summary">OpenRouter 发布视觉指南，详解通过 Chat Completions API 向多模态模型发送图像的方法。请求...</p>
+                    <a href="https://openrouter.ai/blog/tutorials/send-image-to-llm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.tomtunguz.com/model-release-exhaustion','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">14</div>
+                <div class="card-body">
+                    <h3 class="card-title">谁真的需要SOTA模型？OpenRouter数据显示84%token来自非前沿模型</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Tomer Tunguz 博客（VC 分析）</span></div>
+                    <p class="card-summary">OpenRouter数据显示，84%的模型token并非来自SOTA模型，用户最常用的六款模型性能约为前沿模型的77%，...</p>
+                    <a href="https://www.tomtunguz.com/model-release-exhaustion" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.databricks.com/blog/using-aifunctions-your-data-warehouse-top-use-cases','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">15</div>
+                <div class="card-body">
+                    <h3 class="card-title">Databricks 如何在数据仓库中使用 AI_Functions：主要用例解析</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Databricks：Blog（RSS）</span></div>
+                    <p class="card-summary">Databricks 探讨在数据仓库中应用 AI_Functions 的主要场景，帮助组织在结构化数据之外处理非结构化数...</p>
+                    <a href="https://www.databricks.com/blog/using-aifunctions-your-data-warehouse-top-use-cases" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. 通义千问开源 Qwen3.8 系列：27B 原生多模态全面超越 Plus</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">X：通义千问 / Qwen (@Alibaba_Qwen)</span></div>
+                        <p class="card-summary">通义千问正式开源 Qwen3.8 系列，其中 Qwen3.8-27B 以仅 27B 参数的原生多模态稠密架构全面超越 Qwen3.7-Plus，原生支持 262K 上下文并通过 YaRN 可扩展至 1M tokens，采用 Apache 2.0 许可。同时，Max 级 Qwen3.8-2.4T-A95B 的开放权重也已同步发布。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">27B 参数实现多模态 + 超长上下文的组合，意味着中小团队可以在消费级硬件上部署接近旗舰模型的能力。建议立即评估 Qwen3.8-27B 在你现有业务场景（如文档分析、多模态检索）中的表现，其 Apache 2.0 许可为零成本商用提供了确定性。同时关注 2.4T-A95B 的 MoE 架构，这可能是私有化部署高端场景的新选择。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. GLM-5.3 发布：编程能力开源第一，并涌现网络安全能力</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">公众号：智谱（GLM）</span></div>
+                        <p class="card-summary">智谱发布 GLM-5.3，通过极致的后训练 Scaling 提升智能上界，编程能力较前代提升 50%，在 Terminal Bench 3.0 等公开基准中取得开源第一并接近 Claude Fable 5。模型在白盒代码审查等安全任务中表现持平 Mythos 5，在 CyberGym 测试中得分 84.5%，模型权重将在两周后开源。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">GLM-5.3 在编程和安全两个维度的同时突破值得高度关注——编程能力开源第一意味着代码生成工具的选型格局正在改变，而 84.5 分的网络安全能力则开辟了全新的应用场景（如自动化代码审计、漏洞检测）。建议两周后权重开源时立即进行内部基准测试，特别是针对你现有的代码审查流程做对比评估。安全能力的涌现也提示：在为客户提供 AI 服务时，&quot;AI 安全审计&quot;可能成为新的增值服务方向。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. OpenAI 与 Anthropic 价格战升级，中国 AI 对手持续施压</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">Ars Technica：AI（RSS）</span></div>
+                        <p class="card-summary">OpenAI 和 Anthropic 正陷入价格战，背景是中国 AI 对手的快速崛起。这一价格竞争正在重塑全球 AI 市场的定价体系，头部闭源模型的价格优势正在被快速侵蚀。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">价格战对创业者的直接影响是推理成本持续下降，这意味着 AI 应用的经济模型正在被重写。建议：第一，重新测算你的单位经济模型，成本下降可能让之前不成立的场景（如大规模 Agent 调用、实时个性化）变得可行；第二，不要绑定单一模型供应商，保持多模型路由能力以持续享受价格战红利；第三，关注中国模型的定价策略——它们往往是价格战的发起者，也是性价比的基准线。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. DeepSeek V4 Pro 登陆硅基流动：1M 上下文 + 三档推理强度</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">X：硅基流动 SiliconFlow (@SiliconFlowAI)</span></div>
+                        <p class="card-summary">DeepSeek-V4-Pro-0813 正式上线硅基流动，提供 Day-0 支持，具备 1M 上下文窗口及低/高/最大三档推理强度，侧重编码、工具调用与智能体工作流，保持 MIT 开源协议。定价为输入 $1.32/M、输出 $3.96/M、缓存命中 $0.44/M。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">1M 上下文 + 三档推理强度 + MIT 开源协议的组合，让 DeepSeek V4 Pro 成为构建长程 Agent 工作流的高性价比选择。三档推理强度意味着你可以根据任务复杂度动态调配成本——简单任务用低档、复杂推理用高档，这是成本优化的新维度。建议在硅基流动上试用其工具调用能力，特别是在需要处理超长文档或多步骤任务的场景中，对比现有方案的成本差异。MIT 协议也意味着可以放心用于商业产品。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. Cursor 被 SpaceX 收购：获全球最大 GPU 集群，Grok 4.6 为合作首秀</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">Cursor Blog</span></div>
+                        <p class="card-summary">Cursor 已被 SpaceX 正式收购，合并后将获得全球最大 GPU 集群，以构建更强且运行成本更低的模型。本周三发布的 Grok 4.6 是双方合作成果的早期体现，Cursor 将能以更低价格向客户提供更强大的模型。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">这是 AI 编程工具行业格局的重大变化——Cursor 获得 SpaceX 的算力底座后，模型能力和定价策略可能发生根本性变化。对依赖 Cursor 的开发者团队而言，短期需关注价格和功能变动；对创业者而言，这一收购释放的信号是&quot;AI 应用层 + 算力基础设施&quot;的垂直整合正在加速。建议关注 Grok 4.6 在 Cursor 中的实际表现，同时保持对其他 AI 编程工具（如 GitHub Copilot、通义灵码）的评估，避免单点依赖风险。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 15 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：08月15日 08:01</div>
+</div>
+</body>
+</html>
