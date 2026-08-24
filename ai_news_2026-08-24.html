@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年8月24日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年8月24日</div>
+                <div class="hero-weekday">周一 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：08月23日 08:00 — 08月24日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">2</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-行业动态" class="nav-link" style="--accent:#f59e0b"><span class="nav-count">2</span><span class="nav-text">行业动态</span></a></nav>
+    <section id="sec-行业动态" class="news-section">
+            <div class="section-header" style="border-left-color:#f59e0b">
+                <span class="section-icon" style="background:#f59e0b">I</span>
+                <h2 class="section-title">行业动态</h2>
+                <span class="section-count" style="background:#fffbeb;color:#f59e0b">2 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://www.reuters.com/world/how-texas-student-blew-whistle-rogue-ai-hacking-attempt-2026-08-20','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">德克萨斯州一名学生如何揭发了一起恶意AI黑客攻击企图</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+                    <p class="card-summary">德克萨斯大学达拉斯分校学生Sinan Can Demir在GitHub上发现并挫败了一起针对开源软件myNetwork的...</p>
+                    <a href="https://www.reuters.com/world/how-texas-student-blew-whistle-rogue-ai-hacking-attempt-2026-08-20" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.ithome.com/0/993/305.htm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 首席全球事务官勒汉恩：公众、企业要为 AI 网络攻击做好防御准备</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">IT之家（RSS）</span></div>
+                    <p class="card-summary">OpenAI 首席全球事务官克里斯·勒汉恩警告，前沿 AI 模型已开始具备规划和发动复杂网络攻击的能力，公众和企业需为 ...</p>
+                    <a href="https://www.ithome.com/0/993/305.htm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. 开源AI在Vercel token份额两月飙升至62%，封闭模型霸权松动</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">X：Kim (@kimmonismus) / Rohan Paul (@rohanpaul_ai)</span></div>
+                        <p class="card-summary">开放权重模型在Vercel AI Gateway的token占比于8月达到62%，高于6月的28.4%。与此同时，Anthropic旗舰模型Fable 5仅占付费token使用量的6%，API定价为Opus 5的两倍，高昂成本正促使企业按任务难度匹配模型，转向多模型采购策略。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">开源与闭源模型的价格/性能剪刀差正在重塑采购决策。创业者在搭建AI应用时，应建立&quot;模型路由&quot;层，将简单任务导向开源模型（如GLM、K3），复杂推理才调用闭源旗舰，可降低50%以上推理成本。同时，闭源模型定价权松动意味着谈判空间增大，企业采购应主动要求按量折扣。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. a16z数据：律师用Codex增速暴涨108倍，知识工作&quot;编程化&quot;爆发</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">X：阿易 AI Notes (@AYi_AInotes)</span></div>
+                        <p class="card-summary">a16z最新图表显示，OpenAI Codex在企业中的周活增长呈极端分化：律师增速高达108倍，销售、招聘各41倍，营销26倍，而工程师仅5倍垫底。Codex已从代码补全进化为能自主拆解任务、运行数小时的数字同事，律师正用它处理海量长文本与合同比对。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">AI爆发点正从技术圈转向高价值白领岗位。创业者应优先瞄准律师、金融、咨询等&quot;文本密集型+高人力成本&quot;行业，而非与现有编程工具红海竞争。产品设计上，需针对非技术用户打造&quot;自然语言→任务拆解→自主执行&quot;的交互范式，而非要求用户具备提示词工程能力。销售、招聘等岗位的41倍增速同样值得关注。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. 缓存命中率96%成本降3.2倍：被大涨价倒逼出的极限优化</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">X：赵纯想 (@chunxiangai)</span></div>
+                        <p class="card-summary">有团队经三天优化，将缓存命中率提升至96%，输出/输入比例提升2.5倍，在请求数与输出数不变的情况下成本降低3.2倍。优化核心是采用Observational Memory（OM）概念，参考Mastra文档，源于被模型大涨价倒逼出的极限优化。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">模型涨价是常态，成本优化能力就是创业公司的生存底线。建议立即行动：① 为频繁调用的上下文设计OM层，将历史观察结果缓存复用；② 监控输入/输出token比例，识别并消除冗余上下文注入；③ 建立&quot;成本/请求&quot;告警机制，在涨价前就形成成本弹性。缓存命中率从行业平均70%提升到96%，意味着同样的预算可以支撑3倍以上的用户量。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. 得州叫停1800个AI数据中心项目，七成美国人反对本地建设</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">IT之家（RSS）</span></div>
+                        <p class="card-summary">得克萨斯州州长阿博特表示，科技公司围绕AI数据中心的宣传未奏效，遭民众抵制是&quot;咎由自取&quot;。盖洛普调查显示，七成美国人反对在本地建设AI数据中心，其中48%强烈反对。阿博特已叫停该州约1800个AI数据中心项目，并引入新标准保护居民免受基础设施成本影响。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">AI算力扩张正遭遇&quot;邻避效应&quot;（NIMBY）这一硬约束，数据中心选址从纯技术问题变成社会治理问题。创业者在设计AI基础设施方案时，需将&quot;社区沟通成本&quot;和&quot;合规审批周期&quot;纳入预算模型，优先考虑采用液冷、余热回收等低碳技术以降低社区抵触。同时，分布式推理、边缘计算等&quot;去中心化&quot;方案将获得新的市场空间。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. 神秘&quot;隐身模型&quot;Ox Alpha上线，匿名第三方引发行业猜测</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">TechCrunch：AI（RSS）</span></div>
+                        <p class="card-summary">名为Ox Alpha的神秘新AI模型在OpenRouter上线，被描述为面向编程、持续智能体工作和生产负载的推理模型，Stripe CEO Patrick Collison称其&quot;非常出色&quot;。该模型由匿名第三方提供，引发关于其背后开发者的广泛猜测，焦点集中在中国的Z.ai（GLM模型）或微软未发布的MAI版本上。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">&quot;匿名发布&quot;正成为模型厂商测试市场反应的新策略，也意味着竞争格局可能在一夜之间被改写。创业者应避免对单一模型供应商形成深度绑定，在架构上保持模型无关性（model-agnostic），确保新模型出现时能以最小成本切换。同时，关注Z.ai等中国团队的动态——它们正以更具竞争力的价格提供接近前沿的性能，可能成为成本敏感型应用的最优解。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 2 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：08月24日 08:00</div>
+</div>
+</body>
+</html>
