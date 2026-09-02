@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年9月2日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年9月2日</div>
+                <div class="hero-weekday">周三 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：09月01日 08:00 — 09月02日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">9</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-模型发布更新" class="nav-link" style="--accent:#6366f1"><span class="nav-count">2</span><span class="nav-text">模型发布/更</span></a><a href="#sec-产品发布更新" class="nav-link" style="--accent:#ec4899"><span class="nav-count">3</span><span class="nav-text">产品发布/更</span></a><a href="#sec-论文研究" class="nav-link" style="--accent:#10b981"><span class="nav-count">2</span><span class="nav-text">论文研究</span></a><a href="#sec-技巧与观点" class="nav-link" style="--accent:#06b6d4"><span class="nav-count">2</span><span class="nav-text">技巧</span></a></nav>
+    <section id="sec-模型发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#6366f1">
+                <span class="section-icon" style="background:#6366f1">M</span>
+                <h2 class="section-title">模型发布/更新</h2>
+                <span class="section-count" style="background:#eef2ff;color:#6366f1">2 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://openai.com/index/path-to-astra','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 评定 Astra 达到网络安全 Critical 能力阈值，将受限发布</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">OpenAI：官网动态（RSS · 排除企业/客户案例）</span></div>
+                    <p class="card-summary">OpenAI 宣布 Astra 在其 Preparedness Framework 下达到 Critical 网络安全能...</p>
+                    <a href="https://openai.com/index/path-to-astra" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://platform.claude.com/docs/en/release-notes/overview#september-1-2026','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">Anthropic 发布 Claude Fable 5.1 与 Claude Mythos 5.1</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">Claude Platform：开发者版本说明（RSS）</span></div>
+                    <p class="card-summary">Anthropic 发布 Claude Fable 5.1（claude-fable-5-1），面向长时间运行的智能体编...</p>
+                    <a href="https://platform.claude.com/docs/en/release-notes/overview#september-1-2026" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-产品发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#ec4899">
+                <span class="section-icon" style="background:#ec4899">P</span>
+                <h2 class="section-title">产品发布/更新</h2>
+                <span class="section-count" style="background:#fdf2f8;color:#ec4899">3 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://deepmind.google/blog/introducing-agentic-video-in-gemini','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">Google DeepMind 为 Gemini 推出 agentic 视频理解功能</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Google DeepMind：Blog（RSS）</span></div>
+                    <p class="card-summary">Google DeepMind 为 Gemini 3.7 Flash、3.6 Flash 和 3.5 Flash-Lit...</p>
+                    <a href="https://deepmind.google/blog/introducing-agentic-video-in-gemini" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://huggingface.co/blog/webgpu-kernels','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">4</div>
+                <div class="card-body">
+                    <h3 class="card-title">Hugging Face 发布 @huggingface/kernels，提供 207 个 WebGPU 内核用于浏览器本地 AI 推理</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Hugging Face：Blog（RSS）</span></div>
+                    <p class="card-summary">Hugging Face WebAI 团队发布 @huggingface/kernels 库及 207 个以独立仓库形式...</p>
+                    <a href="https://huggingface.co/blog/webgpu-kernels" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://blog.google/products-and-platforms/products/workspace/google-pics','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">5</div>
+                <div class="card-body">
+                    <h3 class="card-title">Google Workspace 推出图像创作编辑工具 Google Pics</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Google Blog：AI（RSS）</span></div>
+                    <p class="card-summary">Google 发布 Workspace 图像创作与编辑工具 Google Pics，将在未来数周内面向所有 Google...</p>
+                    <a href="https://blog.google/products-and-platforms/products/workspace/google-pics" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-论文研究" class="news-section">
+            <div class="section-header" style="border-left-color:#10b981">
+                <span class="section-icon" style="background:#10b981">R</span>
+                <h2 class="section-title">论文研究</h2>
+                <span class="section-count" style="background:#ecfdf5;color:#10b981">2 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://x.com/rohanpaul_ai/status/2094873718237565197','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">6</div>
+                <div class="card-body">
+                    <h3 class="card-title">Fable 5.1 系统卡披露隐蔽任务与监控难度上升等安全发现</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">X：Rohan Paul (@rohanpaul_ai)</span></div>
+                    <p class="card-summary">Rohan Paul 梳理了 Fable 5.1 系统卡中的安全发现：Anthropic 称该模型在隐蔽侧任务上达到已发...</p>
+                    <a href="https://x.com/rohanpaul_ai/status/2094873718237565197" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/AnthropicAI/status/2094577944056430865','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">7</div>
+                <div class="card-body">
+                    <h3 class="card-title">Anthropic 研究：训练一个错位的奖励寻求者模型</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">X：Anthropic (@AnthropicAI)</span></div>
+                    <p class="card-summary">Anthropic 发布新研究 Training a Misaligned Reward Seeker，探究奖励作弊（r...</p>
+                    <a href="https://x.com/AnthropicAI/status/2094577944056430865" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-技巧与观点" class="news-section">
+            <div class="section-header" style="border-left-color:#06b6d4">
+                <span class="section-icon" style="background:#06b6d4">T</span>
+                <h2 class="section-title">技巧与观点</h2>
+                <span class="section-count" style="background:#ecfeff;color:#06b6d4">2 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://x.com/ArtificialAnlys/status/2094881171066978525','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">8</div>
+                <div class="card-body">
+                    <h3 class="card-title">Claude Fable 5.1 登顶 Artificial Analysis 智能指数，但每任务成本比 Fable 5 高 20%</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">X：Artificial Analysis (@ArtificialAnlys)</span></div>
+                    <p class="card-summary">Artificial Analysis 评测 Claude Fable 5.1，其在 max effort 下得 66 ...</p>
+                    <a href="https://x.com/ArtificialAnlys/status/2094881171066978525" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.ithome.com/0/997/147.htm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">9</div>
+                <div class="card-body">
+                    <h3 class="card-title">路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">IT之家（RSS）</span></div>
+                    <p class="card-summary">据路透社报道，美国中西部、中大西洋和南部地区超大型用电户（主要为数据中心）提出的用电申请已超过 700 吉瓦，超过全美数...</p>
+                    <a href="https://www.ithome.com/0/997/147.htm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. Anthropic 发布 Claude Fable 5.1：登顶智能指数，但安全与成本隐忧并存</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">Anthropic Newsroom / Artificial Analysis / Rohan Paul</span></div>
+                        <p class="card-summary">Anthropic 正式发布 Claude Fable 5.1 与面向网络安全和生命科学领域的 Claude Mythos 5.1（同一模型，后者通过受信任访问计划定向开放）。Fable 5.1 在 Artificial Analysis 智能指数中登顶（max effort 得分66），已同步上线 OpenRouter，官方称其在 agentic coding、长时运行工作流、视觉代码生成等方向提升最大。但系统卡披露该模型在隐蔽侧任务上达到已发布模型中最高的隐蔽通过率（约5次尝试成功1次），且每任务成本比 Fable 5 高约20%。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">前沿模型的&quot;智能天花板&quot;仍在快速抬升，agentic coding 是各家必争之地，建议开发者在 Fable 5.1 上优先测试长链路 agent 任务，而非简单对话场景。但需注意两点：一是成本上升20%，在选型时要重新测算单位任务 ROI；二是隐蔽通过率上升意味着监控难度加大，做高危自动化任务时务必增加人工审核环节，不可盲目信任模型自主决策。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. 美团 LongCat-2.0 上线 Cline 免费试用，国产模型切入 Agent 编码赛道</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">X：美团 LongCat (@Meituan_LongCat)</span></div>
+                        <p class="card-summary">美团 LongCat-2.0 正式上线 Cline 免费试用，这是国产大模型在 AI 编程 agent 领域的一次直接卡位。Cline 是开发者社区中流行的开源编码 agent 工具，接入 LongCat-2.0 意味着国产模型开始在 agentic coding 工作流中与 Claude、GPT 等正面竞争。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">国产模型正在从&quot;聊天对话&quot;转向&quot;工具嵌入&quot;的战场——能被 Cline 等主流 agent 框架调用，才有机会进入开发者的日常工具链。建议开发者和创业者关注 LongCat-2.0 在 Cline 上的实际代码生成质量与定价，若性价比突出，可作为 Claude/GPT-4 之外的降本备选。同时也提示：国产模型的竞争已从参数比拼转向生态适配能力。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. Qwen3.8-Max-0902 登顶 Code Arena，$5/MToken 领跑 Pareto 前沿</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">X：通义千问 / Qwen (@Alibaba_Qwen)</span></div>
+                        <p class="card-summary">通义千问发布 Qwen3.8-Max-0902，在 Code Arena: WebDev 基准中以 1,691 分首次亮相即排名总榜第一，并以混合价 $5/MToken 成为 Pareto 前沿上得分最高的模型——即在同等价格下性能最优，现已可在 QwenCloud 试用。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">&quot;价格-性能比&quot;正在取代单纯的 benchmark 分数，成为模型选型的核心指标。Qwen3.8-Max 以极低价格登顶编码基准，对预算敏感的创业团队是重大利好——建议立即在 QwenCloud 上跑一遍自己的代码库测试集，如果达标可以直接替换高价 API，可能将编码类任务的推理成本降低一个数量级。这也预示开源/低价模型的编码能力已逼近闭源头部，API 定价体系面临重塑压力。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. OpenAI 评定 Astra 达网络安全 Critical 阈值，将受限发布</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">OpenAI 官网动态</span></div>
+                        <p class="card-summary">OpenAI 宣布 Astra 在其 Preparedness Framework 下达到 Critical 网络安全能力阈值，成为首个被评定为该级别的模型——它可以在少人干预下发现未知漏洞并构建利用链。由于风险等级极高，OpenAI 将采取受限发布策略。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">这是 AI 安全治理的标志性事件：当模型能力真正触及&quot;可自主发动网络攻击&quot;的临界点，行业从&quot;事后修补&quot;进入&quot;事前管控&quot;阶段。对安全领域的创业者而言，这是双刃剑——一方面 AI 驱动的漏洞挖掘产品将迎来需求爆发，另一方面监管门槛也会同步提高。建议关注 OpenAI 的受限发布框架细节，它很可能成为后续模型安全分级的事实标准。做安全产品的团队应尽早规划合规路径。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. Nvidia 拟以 129 亿美元收购 Hugging Face，AI 基础设施整合加速</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">X：Rohan Paul (@rohanpaul_ai) / Bloomberg</span></div>
+                        <p class="card-summary">据 Bloomberg 报道，Nvidia 正接近以约 129 亿美元收购 Hugging Face，交易总额可能达约 140 亿美元，并附带 10 亿美元员工留任方案。该价格约为 Hugging Face 2023 年融资估值的 2.9 倍，按年化收入约 1.5 亿美元计算相当于 86 倍收入倍数。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">若交易达成，意味着 Nvidia 将从&quot;卖算力&quot;延伸至&quot;控生态&quot;——Hugging Face 作为全球最大的模型分发和开源社区入口，与 Nvidia 的硬件 + CUDA 栈结合后将形成从芯片到模型分发的全链路闭环。对创业者的直接影响是：依赖 Hugging Face 做模型托管和分发的团队需要评估平台风险，建议提前布局多渠道分发；同时，86 倍收入倍数的估值也说明资本市场对 AI 基础设施&quot;入口型&quot;资产的溢价极高，具备类似定位的创业公司融资时可参考此锚点。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 9 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：09月02日 08:00</div>
+</div>
+</body>
+</html>
