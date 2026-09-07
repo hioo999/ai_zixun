@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年9月7日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年9月7日</div>
+                <div class="hero-weekday">周一 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：09月06日 08:00 — 09月07日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">3</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-技巧与观点" class="nav-link" style="--accent:#06b6d4"><span class="nav-count">3</span><span class="nav-text">技巧</span></a></nav>
+    <section id="sec-技巧与观点" class="news-section">
+            <div class="section-header" style="border-left-color:#06b6d4">
+                <span class="section-icon" style="background:#06b6d4">T</span>
+                <h2 class="section-title">技巧与观点</h2>
+                <span class="section-count" style="background:#ecfeff;color:#06b6d4">3 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://openai.com/index/research-acceleration-view-inside-openai','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 发布内部研究加速报告：已达成自动化研究实习生目标，推进 2028 年 3 月自动化 AI 研究员</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">OpenAI：官网动态（RSS · 排除企业/客户案例）</span></div>
+                    <p class="card-summary">OpenAI 发文披露自动化研究进展，宣布已达成去年秋天设定的今年 9 月拥有自动化研究实习生（可在人类指导下完成耗时数...</p>
+                    <a href="https://openai.com/index/research-acceleration-view-inside-openai" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.ithome.com/0/998/927.htm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">Fortune 报道 OpenAI 多次修改 GPT-6 Astra 基准测试数据，部分成绩大幅变化</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">IT之家（RSS）</span></div>
+                    <p class="card-summary">据 Fortune 报道，OpenAI 自 9 月 3 日发布 GPT-6 Astra 公告以来多次修改评测基准数据：A...</p>
+                    <a href="https://www.ithome.com/0/998/927.htm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://openai.com/index/an-alien-mind','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 长文阐述对齐与监测困境，称 CoT 监控能力正在减弱</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">OpenAI：官网动态（RSS · 排除企业/客户案例）</span></div>
+                    <p class="card-summary">OpenAI 发布长文《An Alien Mind》，回溯 2023 年 RLSlow 项目中确认推理模型可扩展训练的起...</p>
+                    <a href="https://openai.com/index/an-alien-mind" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. OpenAI 官宣自动化研究实习生达成，内部 Agent 运行量已达人力 3.1 倍</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">OpenAI 官网 / X：Rohan Paul</span></div>
+                        <p class="card-summary">OpenAI 发文披露内部研究加速进展，宣布已达成去年设定的&quot;自动化研究实习生&quot;里程碑——可在人类监督下完成需数天的明确研究任务。截至 8 月中旬，其研究组织每投入 1 个人工工作日，就运行 3.1 个 agent 工作日，并计划在 2028 年 3 月前实现自动化 AI 研究员。OpenAI 首席科学家 Jakub Pachocki 同步发文，预期进展将走向机器递归自我改进（RSI）。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">3.1 倍运行时长只是起点，真正的拐点是 agent 从&quot;辅助工具&quot;变为&quot;研究协作者&quot;。AI 从业者应尽早将工作流拆解为可并行、可委托给 agent 的模块，而非观望。对创业者而言，&quot;AI 研究员&quot;的中间形态（半自动、需人类补全判断）本身就是巨大的产品机会——为专业领域构建带监督的 agent 闭环，比追求全自动更早落地。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. GPT-6 Astra 实测：自主操控专业软件完成数天级任务，执行能力贬值与判断力断层显现</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">公众号：数字生命卡兹克</span></div>
+                        <p class="card-summary">GPT-6 Astra 上线后，大量用户用它自主操控 Blender、Houdini、Unity、Aseprite 等专业软件完成复杂作品——包括 3D 复刻旧金山艺术宫，其中 Astra 自行搜索数百张参考图、翻到美国国会图书馆的老扫描文件找柱子尺寸，多数工作在夜间自主完成。作者卡兹克指出，执行能力正在快速贬值，而&quot;判断力&quot;成为新的稀缺能力。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">当 AI 能通宵完成执行层工作，&quot;知道什么值得做、什么算做好&quot;成为人的核心价值。对从业者：与其焦虑被替代，不如刻意训练自己的品味与判断力——这是 AI 短期内最难复制的。对创业者：面向&quot;AI 执行+人类判断&quot;协作模式的基础设施（如任务校验、质量评估工具）是确定性需求。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. 黄仁勋官宣&quot;AGI 已到来&quot;，GPT-6 Astra 由 10 万+ Blackwell GPU 训练；Gary Marcus 质疑无定义无证据</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">IT之家 / Gary Marcus：The Road to AI We Can Trust / X：Greg Brockman</span></div>
+                        <p class="card-summary">黄仁勋在 X 上祝贺 OpenAI 发布 GPT-6 Astra，称从 ChatGPT 到 o1 再到 Astra 仅用 4 年，AGI 已经到来，并透露 Astra 由约 10 万+ NVIDIA Grace Blackwell NVLink72 训练，下一批 40 万 GPU 即将上线。OpenAI 总裁 Greg Brockman 回应&quot;欢迎来到 AGI 时代&quot;。然而认知科学家 Gary Marcus 撰文批评黄仁勋未给出任何定义和证据，建议参考 agidefinition.AI 的严肃讨论。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">&quot;AGI 已到来&quot;的叙事会加速资本与人才向 AI 领域集中，也会影响监管节奏与客户预期。对创业者：不必纠结于 AGI 的定义之争，而应关注&quot;能力跃迁真实发生&quot;这一事实——10 万卡训练的前沿模型意味着能力上限再次大幅提升。务实策略：基于当前可用的最强模型设计产品，同时为&quot;定义尚不明确&quot;的监管环境预留合规弹性。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. OpenAI 长文自曝对齐困境：CoT 监控能力随模型变强而减弱，呼吁自愿放缓扩展</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">OpenAI 官网</span></div>
+                        <p class="card-summary">OpenAI 发布长文《An Alien Mind》，系统阐述目标对齐与价值对齐的区分，坦承链式思维（CoT）监控的效果正随着模型能力提升而逐步减弱。文章指出 GPT-6 Astra 在对齐上显著优于前代，但预期进展可能走向机器递归自我改进（RSI），并罕见地呼吁自愿放缓扩展、建立第三方安全门槛、加强国际协调。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">前沿实验室公开承认&quot;监控手段在失效&quot;，说明对齐问题没有简单解。对 AI 从业者：在构建 agent 系统时，不要默认&quot;模型越强越安全&quot;——需要设计独立于模型自述的验证机制（如外部工具校验、人工抽检）。对创业者：安全对齐与可观测性工具（尤其是针对长时程自主任务）将是未来两年的高价值赛道。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. Anthropic 15 亿美元版权和解金开始发放，分配争议不断；Seattle Times 与 Newsday 再诉 OpenAI 与微软</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">TechCrunch：AI（RSS） / IT之家 / The Verge</span></div>
+                        <p class="card-summary">Anthropic 15 亿美元版权和解金进入发放阶段，法院认定训练模型属合理使用，但盗版获取的近 50 万部作品每部赔偿原作者 3000 美元。然而出版商和文学经纪被指超额认领不属于自己的份额，引发作者群体强烈反弹。与此同时，Seattle Times 与 Newsday 起诉 OpenAI 与微软，指控其未经许可使用新闻报道训练并在用户提问时复现原文段落。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">版权问题正从&quot;训练是否合法&quot;转向&quot;利益如何分配&quot;，数据合规的灰色空间在快速收窄。对创业者：使用任何第三方数据训练或做 RAG 前，务必完成版权链条审计——诉讼风险已从大厂蔓延到整个生态。对从业者：涉及内容生成的 AI 产品，应在设计阶段就内置&quot;来源追溯&quot;与&quot;内容比对&quot;机制，这既是合规要求，也是建立用户信任的差异化优势。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 3 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：09月07日 08:00</div>
+</div>
+</body>
+</html>
