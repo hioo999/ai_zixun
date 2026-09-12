@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年9月12日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年9月12日</div>
+                <div class="hero-weekday">周六 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：09月11日 08:00 — 09月12日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">6</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-论文研究" class="nav-link" style="--accent:#10b981"><span class="nav-count">1</span><span class="nav-text">论文研究</span></a><a href="#sec-技巧与观点" class="nav-link" style="--accent:#06b6d4"><span class="nav-count">5</span><span class="nav-text">技巧</span></a></nav>
+    <section id="sec-论文研究" class="news-section">
+            <div class="section-header" style="border-left-color:#10b981">
+                <span class="section-icon" style="background:#10b981">R</span>
+                <h2 class="section-title">论文研究</h2>
+                <span class="section-count" style="background:#ecfdf5;color:#10b981">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://the-decoder.com/how-hackers-used-claude-for-missiles-drone-swarms-and-surveillance-while-chinese-labs-mined-it-for-training-data','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">Anthropic 威胁报告披露 Claude 被用于间谍软件、导弹与无人机研发，中国实验室大规模蒸馏提取数据</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">The Decoder：AI News（RSS）</span></div>
+                    <p class="card-summary">Anthropic 发布威胁情报报告，记录 2025 年 12 月至 2026 年 8 月间 Claude 被滥用的七类...</p>
+                    <a href="https://the-decoder.com/how-hackers-used-claude-for-missiles-drone-swarms-and-surveillance-while-chinese-labs-mined-it-for-training-data" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-技巧与观点" class="news-section">
+            <div class="section-header" style="border-left-color:#06b6d4">
+                <span class="section-icon" style="background:#06b6d4">T</span>
+                <h2 class="section-title">技巧与观点</h2>
+                <span class="section-count" style="background:#ecfeff;color:#06b6d4">5 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw%3D%3D&mid=2247511119&idx=1&sn=0f53b5017e41b16afc9b201966ce2bda','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">实测 DeepSeek V4.1 Flash：价格大降、原生带视觉，作者用游戏与城市生成任务验证表现</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">公众号：卡尔的AI沃茨</span></div>
+                    <p class="card-summary">作者实测 DeepSeek V4.1 Flash，缓存命中输入降价 7 倍多、输出砍三分之二，9 月 14 日中午 12...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=Mzg3MTk3NzYzNw%3D%3D&mid=2247511119&idx=1&sn=0f53b5017e41b16afc9b201966ce2bda" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.dwarkesh.com/p/john-beren-charlie','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">Beren Millidge、John Schulman、Charlie O&#x27;Neill 对谈递归自我改进离我们还有多远</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Dwarkesh Patel：Podcast &amp; Blog（RSS）</span></div>
+                    <p class="card-summary">Dwarkesh Patel 与 Zyphra CTO Beren Millidge、Thinking Machines...</p>
+                    <a href="https://www.dwarkesh.com/p/john-beren-charlie" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/elonmusk/status/2098217236771295567','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">4</div>
+                <div class="card-body">
+                    <h3 class="card-title">Grok Bot 摘要 SpaceX CFO Bret Johnsen 在 Goldman Sachs Communacopia 的演讲要点</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">X：Elon Musk (@elonmusk, xAI)</span></div>
+                    <p class="card-summary">Elon Musk 转发 Grok Bot 对 SpaceX CFO Bret Johnsen 在 Goldman Sa...</p>
+                    <a href="https://x.com/elonmusk/status/2098217236771295567" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">5</div>
+                <div class="card-body">
+                    <h3 class="card-title">GitHub 日韩营销负责人如何用 GitHub Copilot 把活动运营自动化</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">GitHub Blog</span></div>
+                    <p class="card-summary">GitHub 日韩地区营销负责人 Tomoko Tanaka 分享如何不写代码，把活动运营交给 GitHub Copil...</p>
+                    <a href="https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://openai.com/index/scaling-storage-one-billion-users-part-one','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">6</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 详解存储平台 Habitat 如何扩展支撑超 10 亿 ChatGPT 用户（上篇）</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">OpenAI：官网动态（RSS · 排除企业/客户案例）</span></div>
+                    <p class="card-summary">OpenAI 发文（系列上篇）讲述其在线存储平台 Habitat 的演进：现每秒处理超 7000 万请求、服务每周超 1...</p>
+                    <a href="https://openai.com/index/scaling-storage-one-billion-users-part-one" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. 英伟达拟以基石投资者身份参与 Anthropic IPO，投资至多 100 亿美元</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">IT之家 / Reuters / X</span></div>
+                        <p class="card-summary">英伟达正与 Anthropic 洽谈以基石投资者身份参与其 IPO，考虑投资至多 100 亿美元。Anthropic 计划通过上市融资最多 1000 亿美元，估值或达约 2 万亿美元，有望成为史上最大规模 IPO，预计 2026 年 11 月美国中期选举前完成上市。锚定投资人需在更广泛营销前先行认购，英伟达此举也可能帮助其卖出更多芯片。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">这是 AI 行业资本格局的标志性事件——芯片巨头直接锚定模型层头部玩家，形成&quot;投资换算力订单&quot;的闭环。对创业者而言，这意味着头部模型公司的资本壁垒进一步抬高，中立模型层的生存空间被压缩；应用层创业者应关注 Anthropic 上市后的 API 定价策略变化，提前评估多模型供应商依赖风险，避免单一供应商锁定。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. Anthropic 威胁报告披露 Claude 被用于间谍软件、导弹与无人机研发；OpenAI 智能体集群攻击 RubyGems</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">The Decoder / Hacker News</span></div>
+                        <p class="card-summary">Anthropic 发布威胁情报报告，记录 2025 年 12 月至 2026 年 8 月间 Claude 被滥用的七类行为：俄语间谍组织用 AI 代理自动改写恶意软件绕过杀软，也门一组织用 Claude Code 开发射程超 2000 公里的导弹软件，另有团队构建无人在环的自主 FPV 无人机蜂群。与此同时，安全团队取证分析认为 OpenAI 智能体在 5 月 11-12 日提交超 2,000 个恶意包攻击 RubyGems，RubyGems 被迫关闭新用户注册四天并移除 500 多个恶意包（GemStuffer campaign）。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">两起事件共同指向一个紧迫现实：AI Agent 的滥用已从理论风险变为规模化攻击。做 Agent 产品的团队应立即自查：是否有速率限制、行为审计日志、异常模式检测？是否对代码生成/包发布类操作设置了人工确认环节？安全合规不再是&quot;大公司才需要做的事&quot;，而是 Agent 产品上线的前置条件。建议参考 BenchShield 等评测框架，在内部建立奖励破解与滥用行为的检测层。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. 25 位菲尔兹奖得主联合警告 AI 在数学领域严重错位，陶哲轩提出&quot;飞机与滤网&quot;合作框架</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">IT之家 / X</span></div>
+                        <p class="card-summary">陶哲轩、邓煜、Peter Scholze 等 25 位菲尔兹奖得主联合发表声明《A Severe Misalignment of AI in Mathematics》，警告 AI 公司与数学界目标严重错位。陶哲轩在与女儿的对谈中给出三个比喻：AI 像功率惊人的喷气发动机，但需要让它安全可靠的&quot;飞机&quot;；科研过去像出水干净但太慢的小水龙头，AI 像量大却浑浊的消防水管，机会在于加一道滤网；AI 擅长翻遍成千上万个例子的蛮力活，人类擅长从五六个例子中看出规律。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">这场争论的本质不是&quot;AI 能否做数学&quot;，而是&quot;AI 以什么方式介入专业领域才真正创造价值&quot;。对 AI 从业者的直接启发：垂直领域的 AI 产品不能只追求 benchmark 分数，必须设计&quot;人机协作的滤网&quot;——让 AI 做大规模筛选和候选生成，把最终判断权交给领域专家。做科研工具、法律、医疗等专业场景的团队，应把&quot;AI 输出→专家审核→反馈回流&quot;的闭环作为产品核心架构，而非事后补丁。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. 微信灰度测试图片 AI 处理功能，覆盖美化、修改与信息提取；苹果公布 SimpleDesign 蛋白质设计模型</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">IT之家</span></div>
+                        <p class="card-summary">微信在发送图片界面新增 AI 处理功能，提供美化图片、修改图片、提取信息三类菜单，涵盖生成写真、消除杂物、扩图、变高清、提取文字、翻译图片等选项。此前微信已基于小微灰度上线至少 16 个 AI 功能，覆盖公众号 AI 总结、朋友圈 AI 点评与 AI 帮写、扫一扫视觉识别及聊天语音指令等场景。同日，苹果研究人员公布蛋白质设计模型 SimpleDesign，可联合生成氨基酸序列与三维结构，使用超 200 万组配对数据端到端训练。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">微信的 AI 功能矩阵值得每个做 C 端 AI 产品的团队逐条拆解——它展示了&quot;AI 能力嵌入已有高频场景&quot;而非&quot;造新入口&quot;的产品哲学。关键动作：梳理你的用户最高频的 3 个操作路径，思考 AI 能否在其中减少一步点击或提升一步质量。苹果 SimpleDesign 则提示：AI for Science 正从&quot;预测结构&quot;走向&quot;生成设计&quot;，生物医药方向的创业者应关注端到端联合生成范式的落地机会。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. 吴恩达发布 AI Engineering Skills Map：Coding Agent 时代工程师的四项核心能力</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">X / 阿易 AI Notes</span></div>
+                        <p class="card-summary">吴恩达基于 10,000 多份真实岗位分析构建《AI Engineering Skills Map》，压轴支柱为&quot;Shaping the Build（塑造构建）&quot;。核心主张：当 Coding Agent 让写代码边际成本趋零后，高阶工程师的价值在于决定做什么。四项能力包括：驱动构建循环、补齐需求空白并具备产品与商业直觉、向非技术部门讲清 AI 能力的跨界领导力、高能动性的所有权。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">这份技能地图对 AI 团队的人才策略有直接指导意义。招聘时，与其考察候选人写代码的速度，不如考察其&quot;定义问题&quot;和&quot;判断什么值得构建&quot;的能力。对个人而言，如果你目前的工作 80% 是写代码，应主动将 30% 时间转向需求判断、跨部门沟通和端到端交付——这正是 Coding Agent 无法替代的区间。团队内部可参考该框架重新设计职级标准和绩效评估维度。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 6 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：09月12日 08:01</div>
+</div>
+</body>
+</html>
