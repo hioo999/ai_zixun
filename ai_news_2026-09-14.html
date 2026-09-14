@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年9月14日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年9月14日</div>
+                <div class="hero-weekday">周一 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：09月13日 08:00 — 09月14日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">3</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-行业动态" class="nav-link" style="--accent:#f59e0b"><span class="nav-count">1</span><span class="nav-text">行业动态</span></a><a href="#sec-技巧与观点" class="nav-link" style="--accent:#06b6d4"><span class="nav-count">2</span><span class="nav-text">技巧</span></a></nav>
+    <section id="sec-行业动态" class="news-section">
+            <div class="section-header" style="border-left-color:#f59e0b">
+                <span class="section-icon" style="background:#f59e0b">I</span>
+                <h2 class="section-title">行业动态</h2>
+                <span class="section-count" style="background:#fffbeb;color:#f59e0b">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://clashreport.com/world/articles/houthis-used-claude-code-to-develop-missile-guidance-software-anthropic-s52mnx4pwpo','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">Anthropic 报告称胡塞组织用 Claude Code 开发导弹制导软件</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Hacker News：AI 热帖</span></div>
+                    <p class="card-summary">Anthropic 9 月威胁报告披露，据评估极可能关联胡塞组织的也门小组使用 Claude Code 开发制导火箭、射...</p>
+                    <a href="https://clashreport.com/world/articles/houthis-used-claude-code-to-develop-missile-guidance-software-anthropic-s52mnx4pwpo" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-技巧与观点" class="news-section">
+            <div class="section-header" style="border-left-color:#06b6d4">
+                <span class="section-icon" style="background:#06b6d4">T</span>
+                <h2 class="section-title">技巧与观点</h2>
+                <span class="section-count" style="background:#ecfeff;color:#06b6d4">2 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://www.marktechpost.com/2026/09/12/context-engineering-inside-the-harness-4-mechanisms-that-beat-context-overflow-and-goal-loss-on-long-horizon-tasks','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">Agent 长任务上下文工程解析：用预算控制、压缩、todo-state 和记忆对抗上下文溢出与目标丢失</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">MarkTechPost（RSS）</span></div>
+                    <p class="card-summary">文章解析 Agent harness 层应对长任务中上下文溢出与目标丢失的四类机制：上下文预算与卸载、压缩、todo-s...</p>
+                    <a href="https://www.marktechpost.com/2026/09/12/context-engineering-inside-the-harness-4-mechanisms-that-beat-context-overflow-and-goal-loss-on-long-horizon-tasks" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://garymarcus.substack.com/p/two-cheers-out-of-three-for-dario','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">Gary Marcus 评 Dario Amodei 的放慢 AI 发展提议：三份赞誉加两分怀疑</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Gary Marcus：The Road to AI We Can Trust（RSS）</span></div>
+                    <p class="card-summary">Gary Marcus 评析 Dario Amodei 倡导放慢 AI 发展并支持透明度的文章，Sam Altman 与...</p>
+                    <a href="https://garymarcus.substack.com/p/two-cheers-out-of-three-for-dario" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. 三大前沿实验室酝酿&quot;共同放缓&quot;：安全话语权争夺战正式打响</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">X（Sam Altman、Rohan Paul）、The Information、Gary Marcus Substack</span></div>
+                        <p class="card-summary">Sam Altman 在 Fortune 采访中确认，OpenAI、Anthropic 和 Google DeepMind 可能共同商定放缓前沿模型开发节奏，而非盲目竞赛；据 The Information 报道，三家自 7 月起已由 CEO 以下代表组成工作组，定期商讨设立前沿 AI 标准机构。Dario Amodei 同步在 CBS 表态&quot;放缓不等于停止发模型&quot;，而 Gary Marcus 则提出质疑——认为 METR 与 AI 公司关系过近、Anthropic 借对华威胁维持加速，该提议可能意在抢先于真正的监管。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">这是行业从&quot;各自狂奔&quot;转向&quot;联合定规&quot;的关键信号。对创业者而言，需关注两层影响：其一，前沿模型能力释放节奏可能被人为调控，依赖&quot;下一代模型能力跃升&quot;的产品路线图需预留缓冲期；其二，若行业标准机构落地，合规能力将从成本项变为竞争壁垒——建议尽早建立模型安全评估和审计追踪能力，而非等到强制要求出台。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. Anthropic 算力双线布局：137亿美元锁定6年算力，同时披露 Claude Code 被用于导弹制导</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">The Information、Anthropic 威胁报告</span></div>
+                        <p class="card-summary">Anthropic 与 RUM Group 旗下佐治亚州站点签署 137 亿美元、为期 6 年的算力协议（RUM Group 与特朗普阵营存在间接关联）；同期其 9 月威胁报告披露，据评估极可能关联胡塞组织的也门小组使用 Claude Code 开发制导火箭、射程超 2000 公里弹道导弹及高超声速滑翔载具概念软件。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">两条新闻叠加揭示了一个残酷现实——AI 能力的双用途风险已从理论走向实战。对 AI 从业者的直接冲击是：代码生成类工具的出口管制和滥用监控将加速收紧，面向中东等敏感地区的 AI 产品需提前评估合规风险。对创业者而言，Anthropic 的算力长约模式值得借鉴——在算力持续紧缺的环境下，锁定长期算力供应可能比优化模型架构更具战略优先级。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. OpenAI 发布 GPT Image 2.5 并展示视频生成能力，图像编辑一致性达 SOTA</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">X（Sherwin Wu、ZHO）、OpenAI 官网</span></div>
+                        <p class="card-summary">GPT Image 2.5 已在 ChatGPT 上线，在所有图像排行榜达到 SOTA，编辑图像时的一致性表现突出，此前因 GPT Image 2 编辑时人脸轻微变化而失望的用户可重新尝试。用户测试进一步显示，GPT Image 2.5 搭配 GPT-6 可直接生成视频——输出 121 帧、1080×1920、4.03 秒片段仅需 15 分钟，而此前逐帧转绘同样帧数需 40 分钟且仍有变形。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">图像编辑一致性是过去一年 AI 绘画商业化的最大瓶颈——电商产品图、品牌视觉资产等场景都因人脸/产品变形而难以规模化。GPT Image 2.5 若真如宣称达到 SOTA，将直接打开&quot;AI 批量生成品牌一致视觉内容&quot;的商业空间。更值得关注的是视频生成效率从 40 分钟压缩到 15 分钟（2.7 倍提速），这意味着 AI 视频广告、短视频批量生产的经济模型正在快速跑通，内容创作者和营销团队应尽快测试工作流整合。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. 豆包手机助手消费者版发布：推出 SAEP 协议，定义 AI 操作手机的行业规则</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">IT之家、豆包公众号</span></div>
+                        <p class="card-summary">豆包手机助手消费者版 9 月 14 日正式发布，支持 AI 键（带指纹鉴权）、语音唤醒、屏幕问答、本地数据搜索和飞书妙记录音体验。Beta 形式开放操作手机功能，并推出屏幕自动化操作声明协议 SAEP——第三方应用可声明允许或拒绝 AI 自动化操作，同步启动 30 天规则公示。首个消费者版将搭载于努比亚 NaviX Ultra，9 月 16 日发售。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">SAEP 协议的推出是本次发布最值得关注的信号——它试图在&quot;AI 代理操作手机&quot;这一必然趋势中，建立应用开发者与 AI 助手之间的权限协商机制。对 App 开发者而言，这意味着需要尽快决定：你的应用是拥抱 AI 自动化操作（提升用户体验），还是拒绝（保护数据壁垒）？这个决策将像当年&quot;是否适配移动端&quot;一样成为分水岭。对 AI 创业者，SAEP 模式可能成为其他平台（如微信、支付宝）的参考模板，值得深入研究其权限分级和审计机制。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. MIT 发布 HardFlow：无需重训练即可让生成式 AI 满足硬约束，安全关键场景落地提速</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">MIT News</span></div>
+                        <p class="card-summary">MIT 研究人员提出 HardFlow，一种可在部署阶段即插即用的采样算法，让预训练生成模型在最终输出上满足安全、物理等硬约束，无需重新训练。该方法把硬约束采样重构为轨迹优化问题，在机器人操作、迷宫导航和文本引导图像编辑实验中实现完全约束满足，解的质量持续优于基线，计算时间与多数对比方法相当或更低。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">这是将生成式 AI 推向工业级应用的关键拼图。此前，机器人控制、自动驾驶规划、医疗影像生成等场景因无法保证输出满足物理/安全硬约束而难以部署生成模型。HardFlow 的&quot;即插即用&quot;特性意味着现有预训练模型无需重训练即可获得硬约束保障，大幅降低落地成本。建议关注安全关键场景的 AI 团队立即评估该方法的适用性——尤其是机器人、自动驾驶和工业设计领域，这可能是从 demo 到产品化的关键一跃。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 3 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：09月14日 08:01</div>
+</div>
+</body>
+</html>
