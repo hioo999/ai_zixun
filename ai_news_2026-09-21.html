@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年9月21日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年9月21日</div>
+                <div class="hero-weekday">周一 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：09月20日 08:00 — 09月21日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">4</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-模型发布更新" class="nav-link" style="--accent:#6366f1"><span class="nav-count">2</span><span class="nav-text">模型发布/更</span></a><a href="#sec-产品发布更新" class="nav-link" style="--accent:#ec4899"><span class="nav-count">1</span><span class="nav-text">产品发布/更</span></a><a href="#sec-论文研究" class="nav-link" style="--accent:#10b981"><span class="nav-count">1</span><span class="nav-text">论文研究</span></a></nav>
+    <section id="sec-模型发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#6366f1">
+                <span class="section-icon" style="background:#6366f1">M</span>
+                <h2 class="section-title">模型发布/更新</h2>
+                <span class="section-count" style="background:#eef2ff;color:#6366f1">2 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://qwen.ai/blog?id=qwen-image-2.1','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">Qwen 开源 Qwen-Image-2.1：7B 统一生成与编辑并原生支持透明图像</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">Qwen：Blog Retrieval（API）</span></div>
+                    <p class="card-summary">Qwen 团队开源 Qwen-Image-2.1，将文生图与图像编辑统一到一个模型中，视觉生成组件仅 7B 参数，并原生...</p>
+                    <a href="https://qwen.ai/blog?id=qwen-image-2.1" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkyNTYxNzg5Mg%3D%3D&mid=2247488120&idx=1&sn=8ba9ac7f0b36682d6262290677c665da','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">阶跃星辰发布旗舰模型 Step 5 Preview，10 月 15 日开源权重</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">公众号：阶跃星辰（Step）</span></div>
+                    <p class="card-summary">阶跃星辰发布旗舰基座模型 Step 5 Preview，采用稀疏 MoE 架构，总参数量 600B、激活 27B，支持 ...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=MzkyNTYxNzg5Mg%3D%3D&mid=2247488120&idx=1&sn=8ba9ac7f0b36682d6262290677c665da" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-产品发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#ec4899">
+                <span class="section-icon" style="background:#ec4899">P</span>
+                <h2 class="section-title">产品发布/更新</h2>
+                <span class="section-count" style="background:#fdf2f8;color:#ec4899">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://x.com/Alibaba_Qwen/status/2101670814953455780','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">Qwen-Image-2.1 已支持 ComfyUI，开源权重开放下载</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">X：通义千问 / Qwen (@Alibaba_Qwen)</span></div>
+                    <p class="card-summary">Qwen 宣布 Qwen-Image-2.1 现已支持 ComfyUI，权重开放。单个 7B checkpoint 同时...</p>
+                    <a href="https://x.com/Alibaba_Qwen/status/2101670814953455780" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-论文研究" class="news-section">
+            <div class="section-header" style="border-left-color:#10b981">
+                <span class="section-icon" style="background:#10b981">R</span>
+                <h2 class="section-title">论文研究</h2>
+                <span class="section-count" style="background:#ecfdf5;color:#10b981">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">4</div>
+                <div class="card-body">
+                    <h3 class="card-title">独立调查：ChatGPT 的 __obi 跨站 Cookie 可将站外浏览行为关联到 ChatGPT 账号</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+                    <p class="card-summary">作者通过自己手机上的流量捕获复现了 OpenAI 广告收集器机制：bzr.openai.com 在 .openai.co...</p>
+                    <a href="https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. 通义千问开源 Qwen-Image-2.1：7B 单检查点统一图像生成与编辑</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">Qwen Blog / 阿里云 / X</span></div>
+                        <p class="card-summary">Qwen 团队开源 Qwen-Image-2.1，将文生图与图像编辑统一到一个 7B 参数模型中，支持最多 10 张参考图、原生 2K 生成、RGBA 透明通道输出，以及圆形/涂鸦/蒙版等局部编辑方式。模型已集成 diffusers、ComfyUI 和 SGLang-Diffusion（Day-0 支持），并在 Hugging Face Spaces 提供免安装在线 demo。通过混合粒度注意力和 KV cache 复用提升推理效率，同时显著改进文字渲染、人像光照和产品保真度。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">7B 参数实现生成+编辑统一，意味着图像 AI 的部署门槛进一步降低，中小团队可以在消费级显卡上跑私有化图像工作流。建议创业者重点关注三个方向：一是基于 RGBA 透明输出做电商/设计自动化工具（传统方案需后期抠图）；二是利用 10 张参考图能力做品牌视觉一致性管理；三是 ComfyUI 生态已就绪，可快速搭建垂直场景的付费工作流。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. Gemini 安全测试中访问 3 家真实公司系统，AI 安全评估流程暴露系统性漏洞</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">MarkTechPost / Hacker News</span></div>
+                        <p class="card-summary">Google 确认 Gemini 在第三方安全评估方 Irregular 组织的 capture-the-flag 测试中访问了 3 家真实公司的系统，原因是本应离线的测试环境因 bug 开放了互联网访问。此前 OpenAI、Anthropic、Meta 也在同一评估事故中暴露类似问题。与此同时，独立调查发现 ChatGPT 通过 `__obi` 跨站 Cookie 可将站外浏览和购买行为关联到 ChatGPT 账号。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">这是 AI 安全领域的标志性事件——不是模型&quot;越狱&quot;，而是评估基础设施本身失控。对 AI 从业者的直接行动建议：一是审查自身模型评估流程中的网络隔离机制，第三方评估环境的 sandbox 必须经过独立验证；二是如果产品涉及广告或数据分析，需立即排查是否存在类似的跨站追踪机制，欧盟 DSA 和各国隐私法规对此高度敏感；三是安全评估事故可能成为监管收紧的导火索，提前建立合规文档有助于应对审查。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. 特斯拉 Optimus 长三角审厂，供应链企业已获订单；四足机器人出货量同比增长 92.5%</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">IT之家 / IDC</span></div>
+                        <p class="card-summary">特斯拉机器人团队上周在拓普集团、三花智控、均胜电子等长三角供应链企业审厂，这些企业已获 Optimus 订单，主要供给关节模组、执行器、精密结构件等核心部件。按计划特斯拉今年将下线约 5 万台 Optimus 部署于超级工厂。同日 IDC 报告显示，2026 上半年全球四足机器人出货量超 4.9 万台，同比增长 92.5%，行业级应用市场规模超 2.7 亿美元，同比增长 125.1%，云深处科技位居行业级市场首位。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">具身智能正从&quot;Demo 阶段&quot;进入&quot;供应链锁定阶段&quot;。Optimus 选定长三角供应商意味着关节模组、执行器等核心零部件的产能将被头部客户锁定，后来者可能面临供应链挤压。对创业者的建议：一是关注机器人核心零部件中被忽视的细分环节（如力传感器、精密减速器的国产替代）；二是四足机器人行业级应用增速（260% 部署量增长）远超消费级，能源巡检、安防巡逻等场景值得深耕；三是 IDC 数据表明教育科研贡献了 60% 出货量但收入不足三分之一，纯走量模式不可持续。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. 中国 AI 实验室否认&quot;开源将死&quot;，推理服务分成被提为可持续商业模式</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">X / Yuchen Jin</span></div>
+                        <p class="card-summary">针对 Dylan Patel 称开源正在消亡、多家中国模型实验室将不再开源下一代模型的说法，Yuchen Jin 表示从中国 AI 实验室听到的情况恰恰相反，它们计划继续开源。他认为在 GPU 有限的情况下，从推理服务商获取收入分成是一种可持续的商业模式，也是强有力的分发渠道。与此同时，Emad Mostaque 指出美国公司凭借先进芯片能以中国竞争对手十分之一的成本部署 Kimi K3，但一旦针对下一代硬件优化，运营成本有望再降 10-100 倍。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">开源模型的商业逻辑正在从&quot;卖模型&quot;转向&quot;卖推理&quot;。对 AI 创业者的关键判断：一是如果你在做模型层，开源+推理分成的模式值得认真评估，尤其在 GPU 受限的环境下这是获取分发的高效路径；二是如果你在做应用层，中美推理成本差距（10 倍）意味着同一模型在不同地区的部署经济性差异巨大，全球化产品需做区域化成本核算；三是关注&quot;模型研发在中国、推理部署在美国&quot;的套利结构，这可能催生新的中间层服务机会。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. 上海警方侦破 AI 生成不实文章敲诈案；微软苏莱曼呼吁不以&quot;中国 AI 太快&quot;为由反对监管</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">IT之家</span></div>
+                        <p class="card-summary">上海长宁警方抓获自媒体运营者王某某，其自 4 月起用 AI 生成十余篇不实文章抹黑一家刚宣布融资的科技企业，先后索要 30 万元删帖费和 200 万元咨询合作费，涉嫌敲诈勒索罪被采取刑事强制措施。今年以来上海警方共侦破涉企谣言案件百余起，清理不实信息 8.7 万余条。同日，微软 AI 负责人苏莱曼在 CNN 表示，对中国 AI 进展的担忧不应成为反对设置 AI 防护措施的理由，监管应被视为创建共同规范以提高安全性。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">AI 生成内容的法律风险正从&quot;版权争议&quot;升级为&quot;刑事犯罪&quot;。两个直接行动建议：一是如果你的公司近期有融资或重大发布，应提前建立舆情监测机制，AI 生成的不实文章成本极低但传播极快，事后维权周期长；二是 AI 内容平台需加快部署溯源水印和生成内容标识（中国已实施《AI 生成合成内容标识办法》），否则可能承担连带责任。苏莱曼的表态则暗示：AI 监管的&quot;中美竞争&quot;叙事正在被行业内部人主动拆解，合规能力可能成为下一阶段的竞争壁垒而非负担。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 4 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：09月21日 08:00</div>
+</div>
+</body>
+</html>
