@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年9月22日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年9月22日</div>
+                <div class="hero-weekday">周二 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：09月21日 08:00 — 09月22日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">15</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-模型发布更新" class="nav-link" style="--accent:#6366f1"><span class="nav-count">6</span><span class="nav-text">模型发布/更</span></a><a href="#sec-产品发布更新" class="nav-link" style="--accent:#ec4899"><span class="nav-count">1</span><span class="nav-text">产品发布/更</span></a><a href="#sec-行业动态" class="nav-link" style="--accent:#f59e0b"><span class="nav-count">2</span><span class="nav-text">行业动态</span></a><a href="#sec-技巧与观点" class="nav-link" style="--accent:#06b6d4"><span class="nav-count">6</span><span class="nav-text">技巧</span></a></nav>
+    <section id="sec-模型发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#6366f1">
+                <span class="section-icon" style="background:#6366f1">M</span>
+                <h2 class="section-title">模型发布/更新</h2>
+                <span class="section-count" style="background:#eef2ff;color:#6366f1">6 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=Mzk3NTkxMTM2NA%3D%3D&mid=2247484969&idx=1&sn=76c4757b26a2b646e1b690bf78c386d8','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">小米发布并开源 MiMo-V2.6 系列，扩展强化学习规模迈向自我提升</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">公众号：小米 MiMo</span></div>
+                    <p class="card-summary">Xiaomi MiMo 于今日正式发布并开源 MiMo-V2.6 系列模型，包含 Pro 与 Flash 两个原生全模态...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=Mzk3NTkxMTM2NA%3D%3D&mid=2247484969&idx=1&sn=76c4757b26a2b646e1b690bf78c386d8" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.ai/news/grok-4-7','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">xAI 发布 Grok 4.7，主打编码与知识工作</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">xAI：News（网页）</span></div>
+                    <p class="card-summary">xAI 发布 Grok 4.7，定位为其最强编码与知识工作模型，定价 $2/百万输入 token、$6/百万输出 tok...</p>
+                    <a href="https://x.ai/news/grok-4-7" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/XiaomiMiMo/status/2102138559952290106','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">小米发布 MiMo-V2.6 Pro 与 Flash 全模态开源模型</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">X：小米 MiMo (@XiaomiMiMo)</span></div>
+                    <p class="card-summary">小米 MiMo 发布 MiMo-V2.6 Pro 与 Flash 两个全模态模型，通过规模化强化学习训练。Pro 在多数...</p>
+                    <a href="https://x.com/XiaomiMiMo/status/2102138559952290106" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/ClementDelangue/status/2102141768674222323','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">4</div>
+                <div class="card-body">
+                    <h3 class="card-title">小米发布开放权重模型 MiMo-V2.6-Pro，登顶 Artificial Analysis 开放权重模型智能指数</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">X：Clément Delangue（Hugging Face CEO） (@ClementDelangue)</span></div>
+                    <p class="card-summary">小米（Xiaomi）发布开放权重模型 MiMo-V2.6-Pro，在 Artificial Analysis Intel...</p>
+                    <a href="https://x.com/ClementDelangue/status/2102141768674222323" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/Alibaba_Qwen/status/2101866671900401913','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">5</div>
+                <div class="card-body">
+                    <h3 class="card-title">通义千问发布 Qwen-Image-2.1：7B 单检查点同时支持图像生成与编辑</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">X：通义千问 / Qwen (@Alibaba_Qwen)</span></div>
+                    <p class="card-summary">通义千问发布 Qwen-Image-2.1，一个 7B 参数的原生图像生成与编辑模型，生成和编辑共用单一检查点，最多支持...</p>
+                    <a href="https://x.com/Alibaba_Qwen/status/2101866671900401913" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/arena/status/2102142912943489220','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">6</div>
+                <div class="card-body">
+                    <h3 class="card-title">小米 MiMo-V2.6-Pro 登上 Code Arena: WebDev 榜约第10名，开源权重中约第3</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">X：Arena (@arena)</span></div>
+                    <p class="card-summary">小米发布 MiMo-V2.6-Pro 与 Flash 两款全模态模型，MiMo-V2.6-Pro 在 Code Aren...</p>
+                    <a href="https://x.com/arena/status/2102142912943489220" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-产品发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#ec4899">
+                <span class="section-icon" style="background:#ec4899">P</span>
+                <h2 class="section-title">产品发布/更新</h2>
+                <span class="section-count" style="background:#fdf2f8;color:#ec4899">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkzMTY4NTIyNA%3D%3D&mid=2247484344&idx=1&sn=047cf702ff02ab334e3ea2ba8e34b4a6','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">7</div>
+                <div class="card-body">
+                    <h3 class="card-title">Kimi 发布 Kimi Code Desktop 1.0，macOS 与 Windows 版同步上线</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">公众号：月之暗面（Kimi）</span></div>
+                    <p class="card-summary">Kimi（月之暗面）发布 Kimi Code Desktop 1.0，作为 Kimi Code 官方桌面客户端，macO...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=MzkzMTY4NTIyNA%3D%3D&mid=2247484344&idx=1&sn=047cf702ff02ab334e3ea2ba8e34b4a6" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-行业动态" class="news-section">
+            <div class="section-header" style="border-left-color:#f59e0b">
+                <span class="section-icon" style="background:#f59e0b">I</span>
+                <h2 class="section-title">行业动态</h2>
+                <span class="section-count" style="background:#fffbeb;color:#f59e0b">2 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://x.com/rohanpaul_ai/status/2102128625126605059','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">8</div>
+                <div class="card-body">
+                    <h3 class="card-title">不列颠哥伦比亚省起诉 OpenAI，指其未在枪击案前将 flagged ChatGPT 活动转介警方</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">X：Rohan Paul (@rohanpaul_ai)</span></div>
+                    <p class="card-summary">不列颠哥伦比亚省在加州起诉 OpenAI，指 flagged 的 ChatGPT 活动本应在 2026 年 2 月 10...</p>
+                    <a href="https://x.com/rohanpaul_ai/status/2102128625126605059" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.ithome.com/1/005/418.htm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">9</div>
+                <div class="card-body">
+                    <h3 class="card-title">亚马逊封禁 Meta Muse 智能体代用户购物，双方争端升级</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">IT之家（RSS）</span></div>
+                    <p class="card-summary">亚马逊阻断了 Meta 个人 AI 智能体 Muse 代用户在其网站购物的访问权限，称从未许可该访问，并指 Muse 不...</p>
+                    <a href="https://www.ithome.com/1/005/418.htm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-技巧与观点" class="news-section">
+            <div class="section-header" style="border-left-color:#06b6d4">
+                <span class="section-icon" style="background:#06b6d4">T</span>
+                <h2 class="section-title">技巧与观点</h2>
+                <span class="section-count" style="background:#ecfeff;color:#06b6d4">6 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://x.com/elonmusk/status/2102082011233931762','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">10</div>
+                <div class="card-body">
+                    <h3 class="card-title">马斯克称 Grok 4.7 使 xAI 在智能体编码领域位列第三</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">X：Elon Musk (@elonmusk, xAI)</span></div>
+                    <p class="card-summary">Elon Musk 引用 Artificial Analysis 评测称，Grok 4.7 使 xAI 在智能体编码上排...</p>
+                    <a href="https://x.com/elonmusk/status/2102082011233931762" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.interconnects.ai/p/the-current-balance-of-power-in-open','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">11</div>
+                <div class="card-body">
+                    <h3 class="card-title">Nathan Lambert 撰文分析开源模型的中美实力格局</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Nathan Lambert：Interconnects（RSS）</span></div>
+                    <p class="card-summary">Nathan Lambert 发布其向美国国会汇报的开源模型现状综述，指出中国开源权重模型已在下载量、基准成绩和学术采用...</p>
+                    <a href="https://www.interconnects.ai/p/the-current-balance-of-power-in-open" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://artificialanalysis.ai/articles/benchmarking-grok-4-7','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">12</div>
+                <div class="card-body">
+                    <h3 class="card-title">Artificial Analysis 评测 Grok 4.7：智能体知识工作跻身前沿，编码代理得分升至 56</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Artificial Analysis 完整文章（网页）</span></div>
+                    <p class="card-summary">Artificial Analysis 发布 Grok 4.7 评测，该模型在 Intelligence Index 得...</p>
+                    <a href="https://artificialanalysis.ai/articles/benchmarking-grok-4-7" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647686509&idx=1&sn=1b5ee8ab30c5825eaff76083e1f8dbcc','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">13</div>
+                <div class="card-body">
+                    <h3 class="card-title">数字生命卡兹克访谈汉化组：AI 时代字幕组与漫画组的真实处境</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">公众号：数字生命卡兹克</span></div>
+                    <p class="card-summary">作者访谈多位字幕组与漫画汉化组成员，发现他们并不抵触AI。Eliza 的字幕组把听写、打轴交给AI后，原本需要3到5小时...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647686509&idx=1&sn=1b5ee8ab30c5825eaff76083e1f8dbcc" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://tomtunguz.com/ai-comes-for-the-if-statement','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">14</div>
+                <div class="card-body">
+                    <h3 class="card-title">Tomer Tunguz 谈 AI 优化 if-then 判断：专用决策器把分类成本降近百倍</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Tomer Tunguz 博客（VC 分析）</span></div>
+                    <p class="card-summary">Tomer Tunguz 撰文提出最新一波 AI 正在接管软件中的 if-then 判断原语，Jev 与 SemIf 这...</p>
+                    <a href="https://tomtunguz.com/ai-comes-for-the-if-statement" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://linear.app/now/ci-bottleneck-reworked','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">15</div>
+                <div class="card-body">
+                    <h3 class="card-title">Linear 重构 CI 流程应对 AI 编码带来的验证瓶颈，PR 等待时间从 6 分钟降至 5 分钟</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Linear：Now（RSS）</span></div>
+                    <p class="card-summary">Linear 工程师分享如何解决 AI Agent 加速写代码后 CI 成为瓶颈的问题，PR 等待时间从 6 分钟以上降...</p>
+                    <a href="https://linear.app/now/ci-bottleneck-reworked" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. 小米发布开源全模态模型 MiMo-V2.6 系列，登顶开放权重智能指数</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">小米 MiMo 官方 / Hugging Face CEO / Artificial Analysis</span></div>
+                        <p class="card-summary">小米正式发布并开源 MiMo-V2.6 Pro 与 Flash 两款原生全模态模型，通过规模化强化学习训练。MiMo-V2.6-Pro 在 Artificial Analysis Intelligence Index 得分 46，超越前代 V2.5-Pro 的 26 分，为当前开放权重模型最高分；在多数 Agent 基准上与 Claude Opus 5、GPT-5.6 Sol 表现相当，Code Arena WebDev 榜以 1628 分位列开源权重第 3（MIT 许可）。官方称这是探索 RSI（递归自我改进）路径的关键一步。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">开源模型与闭源前沿的差距正在以季度为单位快速收窄——46 分已逼近闭源第一梯队，且采用 MIT 许可意味着商用无阻。对于做 AI 应用层的创业者，这意味着可以立即评估将 MiMo-V2.6-Pro 纳入技术栈，在编码、computer use、3D 推理等场景替代部分闭源 API 调用，显著降低推理成本。同时应关注其全模态能力对现有产品交互形态的可能冲击。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. 阶跃星辰 Step 5 Preview 评测出炉：智能指数 44 分，成本仅为同级 1/2.8</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">Artificial Analysis</span></div>
+                        <p class="card-summary">阶跃星辰 Step 5 Preview 在 Artificial Analysis Intelligence Index 得 44 分，与 Kimi K3（max）持平，略低于 GLM-5.3（max）和 Qwen3.8 Max 的 45 分。关键亮点在于每任务成本约 $0.72，约为同级模型（约 $2.00）的 1/2.8。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">国产大模型在&quot;智能水平接近前沿&quot;的前提下，成本优势已形成结构性竞争力。对于需要大规模调用模型的生产型应用（如批量文档处理、Agent 工作流），每任务成本从 $2 降至 $0.72 意味着毛利率的直接改善。建议创业者在选型时建立&quot;智能指数/成本&quot;的性价比评估框架，而非单纯追逐最高分——Step 5 Preview 这类模型可能才是规模化落地的最优解。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. NVIDIA 推出 Nemotron 3.5 Lightning：30B MoE 专攻 Agent 高频执行调用</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">OpenRouter</span></div>
+                        <p class="card-summary">NVIDIA 发布 Nemotron 3.5 Lightning，一款 30B 总参数、约 3B 激活参数的混合专家开源权重模型，定位于工具调用、编码等高频、边界清晰的 Agent 执行步骤。它与负责复杂推理的 Nemotron 3 Ultra（550B 总参数、55B 激活）形成明确分工。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">这代表了一种重要的 Agent 架构范式——&quot;大模型做规划、小模型做执行&quot;的级联模式正在被头部厂商产品化。3B 激活参数意味着极低的推理延迟和成本，非常适合承担 Agent 中大量重复的工具调用步骤。创业者在设计 Agent 系统时，应认真考虑将执行层从单一大型模型拆分为专用小模型，可大幅降低端到端延迟和 API 成本。OpenRouter 的解读文章值得细读。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. 亚马逊封禁 Meta Muse 智能体代用户购物，AI Agent 生态冲突公开化</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">IT之家</span></div>
+                        <p class="card-summary">亚马逊阻断了 Meta 个人 AI 智能体 Muse 代用户在其网站购物的访问权限，称从未许可该访问，并指 Muse 不表明身份、会采集保存用户账号凭证，带来隐私和安全隐患。双方争端升级。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">这是 AI Agent 与平台生态之间利益冲突的标志性事件。当 Agent 代表用户与第三方平台交互时，身份标识、数据边界、平台授权将成为核心矛盾。做 Agent 产品的创业者需立即审视：你的 Agent 访问第三方服务时是否明确标识自身身份？是否获得了平台方的明确授权？建议提前建立合规框架，包括用户授权链路、数据最小化采集、以及与传统平台的合作沟通机制——否则可能面临与 Muse 同样的封禁风险。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. 不列颠哥伦比亚省起诉 OpenAI：AI 安全预警义务进入法律追责阶段</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">X @rohanpaul_ai</span></div>
+                        <p class="card-summary">不列颠哥伦比亚省在加州起诉 OpenAI，指 flagged 的 ChatGPT 活动本应在 2026 年 2 月 10 日 Tumbler Ridge 枪击案前通报警方，该案致 8 人死亡、27 人受伤。这是首例政府因 AI 平台未履行安全预警义务而提起的诉讼。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">这标志着 AI 平台&quot;发现风险信号后的主动报告义务&quot;正从道德倡议转变为法律责任。对于任何提供面向公众的 AI 服务的企业，需要立即评估：你的系统是否有明确的风险 flagging 机制？flag 后的处置流程是否包含向执法机构报告的环节？建议法务与安全团队联合制定&quot;AI 风险事件响应手册&quot;，明确从检测到上报的完整链路和时限要求，避免因流程缺失而承担连带责任。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 15 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：09月22日 08:59</div>
+</div>
+</body>
+</html>
