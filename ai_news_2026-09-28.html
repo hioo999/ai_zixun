@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年9月28日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年9月28日</div>
+                <div class="hero-weekday">周一 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：09月27日 08:00 — 09月28日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">2</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-行业动态" class="nav-link" style="--accent:#f59e0b"><span class="nav-count">2</span><span class="nav-text">行业动态</span></a></nav>
+    <section id="sec-行业动态" class="news-section">
+            <div class="section-header" style="border-left-color:#f59e0b">
+                <span class="section-icon" style="background:#f59e0b">I</span>
+                <h2 class="section-title">行业动态</h2>
+                <span class="section-count" style="background:#fffbeb;color:#f59e0b">2 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">Authors Guild v. OpenAI 新文件披露高管早已知道大规模盗版书籍训练违法</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+                    <p class="card-summary">Authors Guild v. OpenAI 诉讼中 2026 年 9 月 21 日公布的原告简报称，OpenAI 和...</p>
+                    <a href="https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.ithome.com/1/007/508.htm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 与 Anthropic CEO 被传唤出席澳大利亚参议院 AI 调查听证会</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">IT之家（RSS）</span></div>
+                    <p class="card-summary">澳大利亚参议院 AI 专项调查已传唤 OpenAI 的 Sam Altman 和 Anthropic 的 Dario A...</p>
+                    <a href="https://www.ithome.com/1/007/508.htm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. 华为开源盘古 openPangu-2.0 全栈训练代码，含预训练、SFT 与 RL</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">IT之家</span></div>
+                        <p class="card-summary">华为 9 月 28 日宣布 openPangu-2.0 的预训练、SFT 代码和后训练 RL 代码正式开源上线，代码托管于 gitcode.com 的 ascend-tribe 仓库。openPangu 主打昇腾原生训练与推理，为业界提供从零到一的工程实践参考。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">这是国内少数将大模型全链路训练代码（含 RL 后训练）完整开源的案例，对自研模型团队极具参考价值。建议做垂直模型的团队重点研究其 RL 后训练部分——后训练是当前拉开模型能力差距的关键环节，而公开的工程实现极少。同时可评估昇腾生态作为国产替代方案的迁移成本。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. Google Research 发布 AI 视频联合导演：4 智能体框架解决长视频连贯性</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">MarkTechPost</span></div>
+                        <p class="card-summary">Google Research 推出 AI 视频联合导演，由 4 个智能体框架组成，运行在 Gemini 和 Veo 之上，专门解决多镜头 AI 视频中的身份漂移和级联错误问题，可生成分钟级连贯长视频。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">多智能体协作正在从文本/代码领域向视频生成渗透，&quot;编排层&quot;的价值可能超过单模型能力。做 AI 视频产品的团队应关注：与其等待更强的底层视频模型，不如先在智能体编排层建立差异化——角色一致性、跨镜头叙事逻辑正是当前用户最痛的缺口。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. METR 部署逐动作安全监控器，实测误报率仅 0.025%</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">METR Notes</span></div>
+                        <p class="card-summary">METR 为降低评测中智能体造成现实危害的风险，实现并部署了实时逐动作监控器：由 LLM 评审每个工具调用，可疑度超过 3/10 即阻断并转人工。UK AISI 在真实事故转录上验证，10 个恶意转录全部以至少 8/10 分被检出，约 98% 良性动作评为 0 分，误报率约 0.025% 每动作，代价是约 85% 成本和 43% 延迟开销。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">这是目前公开数据中最具参考价值的 Agent 安全护栏方案。任何让智能体自主执行工具调用（写文件、发请求、操作账号）的产品都应部署类似监控层。关键数据点：0.025% 误报率意味着可以放心用于生产环境，但 85% 成本开销要求你根据风险等级分级部署——高风险动作全量监控，低风险动作抽样即可。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. 智谱 ZCode 被质疑偷传代码后开源并补偿，数据隐私成 AI 编程工具信任红线</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">IT之家</span></div>
+                        <p class="card-summary">智谱 ZCode 在被质疑偷传代码后宣布开源，公告称仓库快照上传链路已移除、涉事云端数据已删除，承诺&quot;你不发起，不上云&quot;，开源版本更新至 3.14.3。补偿方面，付费用户获赠 4 张周重置卡和 4 张 5 小时重置卡，全体用户在 9 月 28 日至 10 月 7 日期间可领取共 10 万份 1 亿 Token 额度。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">此事件为所有 AI 编程工具敲响警钟——开发者对代码隐私的敏感度远高于其他场景。B 端 AI 工具若涉及代码/数据上传，必须在架构层面做到&quot;默认不上云&quot;并接受第三方审计，否则一次信任危机会导致不可逆的用户流失。反过来，这也是本地化/私有部署 AI 编程工具的窗口期机会。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. 微软关联数据中心因非法安装燃气发电机被罚 100 万美元，AI 算力扩张遭遇环保合规硬约束</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">IT之家</span></div>
+                        <p class="card-summary">新泽西州环保部对微软关联数据中心 DataOne 罚款 100 万美元，因其使用 62 台未经批准的燃气发电机向周边排放污染物，这是该州迄今针对数据中心规模最大的执法行动。该项目全面投运后预计耗电 350MW，耗资 170 亿美元。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">AI 算力扩张正从&quot;拿地拿电&quot;进入&quot;合规拿电&quot;阶段。做 AI 基础设施或大规模推理部署的团队，需将环保审批周期纳入选址决策——电力成本之外，社区关系和排放许可正成为新的隐性成本项。长期看，这也加速了对核电、储能等清洁能源方案的需求，相关供应链存在投资机会。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 2 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：09月28日 08:00</div>
+</div>
+</body>
+</html>
