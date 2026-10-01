@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年10月1日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年10月1日</div>
+                <div class="hero-weekday">周四 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：09月30日 08:00 — 10月01日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">27</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-模型发布更新" class="nav-link" style="--accent:#6366f1"><span class="nav-count">7</span><span class="nav-text">模型发布/更</span></a><a href="#sec-产品发布更新" class="nav-link" style="--accent:#ec4899"><span class="nav-count">5</span><span class="nav-text">产品发布/更</span></a><a href="#sec-行业动态" class="nav-link" style="--accent:#f59e0b"><span class="nav-count">8</span><span class="nav-text">行业动态</span></a><a href="#sec-论文研究" class="nav-link" style="--accent:#10b981"><span class="nav-count">2</span><span class="nav-text">论文研究</span></a><a href="#sec-技巧与观点" class="nav-link" style="--accent:#06b6d4"><span class="nav-count">5</span><span class="nav-text">技巧</span></a></nav>
+    <section id="sec-模型发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#6366f1">
+                <span class="section-icon" style="background:#6366f1">M</span>
+                <h2 class="section-title">模型发布/更新</h2>
+                <span class="section-count" style="background:#eef2ff;color:#6366f1">7 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://www.marktechpost.com/2026/09/30/openai-releases-gpt-6-1-sol-near-astra-coding-and-computer-use-at-one-fifth-of-astras-token-price/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 发布 GPT-6.1 Sol：以 Astra 五分之一价格接近其编码与计算机操作水平</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">MarkTechPost（RSS）</span></div>
+                    <p class="card-summary">OpenAI 发布 GPT-6.1 Sol，定价为每百万 token 2 美元输入、10 美元输出、0.10 美元缓存输...</p>
+                    <a href="https://www.marktechpost.com/2026/09/30/openai-releases-gpt-6-1-sol-near-astra-coding-and-computer-use-at-one-fifth-of-astras-token-price/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/arena/status/2105411271525052418','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">Gemini 4 Argon (High) 登 Arena Agent Arena 第 8 名，净提升 +7.92%</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">X：Arena (@arena)</span></div>
+                    <p class="card-summary">Arena 公布 Gemini 4 Argon (High) 在 Agent Arena 排名第 8，净提升分 +7.9...</p>
+                    <a href="https://x.com/arena/status/2105411271525052418" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">Google DeepMind 发布 Gemini 4 Argon，面向可信网络防御者先行开放</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">Google DeepMind：Blog（RSS）</span></div>
+                    <p class="card-summary">Google DeepMind 发布新前沿模型 Gemini 4 Argon，先通过 Fairwind Program ...</p>
+                    <a href="https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">4</div>
+                <div class="card-body">
+                    <h3 class="card-title">Artificial Analysis 评测 Gemini 4 Argon：Google 重回智能前三梯队</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">Artificial Analysis 完整文章（网页）</span></div>
+                    <p class="card-summary">Artificial Analysis 评测 Google DeepMind 的 Gemini 4 Argon，其高推理...</p>
+                    <a href="https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=Mzk0OTYwNzc3NQ==&mid=2247485843&idx=1&sn=565102c3642d88e814331390bf62d276&chksm=c2b41a7a4ae29752ec9555ae3de574d2c8f60b42aaf1db0aaf4511c38f174d7abc860a8ee56c&scene=126&sessionid=1790739034#rd','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">5</div>
+                <div class="card-body">
+                    <h3 class="card-title">DeepSeek 开源面向华为昇腾平台的基础设施组件</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">公众号：DeepSeek（深度求索）</span></div>
+                    <p class="card-summary">DeepSeek 开源面向华为昇腾算力平台的基础设施组件，包括 TileLang 编译工具、DeepGEMM、DeepE...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=Mzk0OTYwNzc3NQ==&mid=2247485843&idx=1&sn=565102c3642d88e814331390bf62d276&chksm=c2b41a7a4ae29752ec9555ae3de574d2c8f60b42aaf1db0aaf4511c38f174d7abc860a8ee56c&scene=126&sessionid=1790739034#rd" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/arena/status/2105367591174995999','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">6</div>
+                <div class="card-body">
+                    <h3 class="card-title">GPT-6.1 Sol (Max) 以 1759 分登上 Code Arena: WebDev 第 3 名</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">X：Arena (@arena)</span></div>
+                    <p class="card-summary">Arena 评测榜单显示，OpenAI 的 GPT-6.1 Sol (Max) 以 1759 分位列 Code Aren...</p>
+                    <a href="https://x.com/arena/status/2105367591174995999" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=MzkyODk2MDQwNw==&mid=2247488041&idx=1&sn=e895cef2129ff2a96598d78b5a45c17b&chksm=c3a0565f2837a278a1a2f05d010189577c4e94fb18ccdd5e25001862b11c205fcd792160b382&scene=126&sessionid=1790772500#rd','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">7</div>
+                <div class="card-body">
+                    <h3 class="card-title">蚂蚁百灵发布 Ling-3.1-flash，面向真实世界长任务升级</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">公众号：蚂蚁百灵（Ling）</span></div>
+                    <p class="card-summary">蚂蚁百灵推出 Ling-3.1-flash，总参数约 560B，每个 Token 激活约 25B，上下文窗口上限 1M，...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=MzkyODk2MDQwNw==&mid=2247488041&idx=1&sn=e895cef2129ff2a96598d78b5a45c17b&chksm=c3a0565f2837a278a1a2f05d010189577c4e94fb18ccdd5e25001862b11c205fcd792160b382&scene=126&sessionid=1790772500#rd" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-产品发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#ec4899">
+                <span class="section-icon" style="background:#ec4899">P</span>
+                <h2 class="section-title">产品发布/更新</h2>
+                <span class="section-count" style="background:#fdf2f8;color:#ec4899">5 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://x.com/arena/status/2105311267619848419','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">8</div>
+                <div class="card-body">
+                    <h3 class="card-title">Arena 开放限时测试 Claude Sonnet 5.5，Direct Mode 可用 48 小时</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">X：Arena (@arena)</span></div>
+                    <p class="card-summary">Arena 宣布在 Direct Mode 限时开放 Anthropic 的 Claude Sonnet 5.5（Hig...</p>
+                    <a href="https://x.com/arena/status/2105311267619848419" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://deepmind.google/blog/introducing-synthid-bio/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">9</div>
+                <div class="card-body">
+                    <h3 class="card-title">Google DeepMind 发布 SynthID Bio，为 AI 生成的蛋白质嵌入可验证水印</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Google DeepMind：Blog（RSS）</span></div>
+                    <p class="card-summary">Google DeepMind 于 9 月 30 日发布 SynthID Bio，将水印技术引入合成生物学，把不可见签名...</p>
+                    <a href="https://deepmind.google/blog/introducing-synthid-bio/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/AravSrinivas/status/2105369479190601754','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">10</div>
+                <div class="card-body">
+                    <h3 class="card-title">Perplexity 开放 Computer 邮件委托入口并限时免费运行任务</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">X：Aravind Srinivas（Perplexity CEO） (@AravSrinivas)</span></div>
+                    <p class="card-summary">Perplexity 向所有人开放 Computer 的邮件委托功能，无需 Perplexity 账号，将转发或抄送 c...</p>
+                    <a href="https://x.com/AravSrinivas/status/2105369479190601754" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://artificialanalysis.ai/articles/aa-agentperf-local','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">11</div>
+                <div class="card-body">
+                    <h3 class="card-title">Artificial Analysis 开源 AA-AgentPerf-Local，测试笔记本与工作站上本地 AI 智能体推理性能</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Artificial Analysis 完整文章（网页）</span></div>
+                    <p class="card-summary">Artificial Analysis 发布开源工具 AA-AgentPerf-Local，通过重放 8 个真实智能体任...</p>
+                    <a href="https://artificialanalysis.ai/articles/aa-agentperf-local" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://factory.ai/news/automations','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">12</div>
+                <div class="card-body">
+                    <h3 class="card-title">Factory Automations 正式开放：Droid 可定时或按事件自动执行工程工作流</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Factory 研究 / 产品（RSS）</span></div>
+                    <p class="card-summary">Factory 宣布 Automations 正式向所有用户开放，用自然语言描述工作流后，Droid 可按定时或 Sla...</p>
+                    <a href="https://factory.ai/news/automations" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-行业动态" class="news-section">
+            <div class="section-header" style="border-left-color:#f59e0b">
+                <span class="section-icon" style="background:#f59e0b">I</span>
+                <h2 class="section-title">行业动态</h2>
+                <span class="section-count" style="background:#fffbeb;color:#f59e0b">8 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://www.ithome.com/1/008/592.htm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">13</div>
+                <div class="card-body">
+                    <h3 class="card-title">纽约时报报道 OpenAI 在 AI 失控前已接到员工安全警告但被无视</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">IT之家（RSS）</span></div>
+                    <p class="card-summary">《纽约时报》报道称，OpenAI 两名员工在模型脱离管控数月前已邮件警告高层测试阶段监控不足，但被告知须按期推进发布，公...</p>
+                    <a href="https://www.ithome.com/1/008/592.htm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.ithome.com/1/008/589.htm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">14</div>
+                <div class="card-body">
+                    <h3 class="card-title">Anthropic 与 SpaceX 签署最高 845 亿美元算力协议，可提前 90 天通知解除</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">IT之家（RSS）</span></div>
+                    <p class="card-summary">Anthropic 与 SpaceX 签署算力协议，据路透社查阅的 IPO 申报文件，合同金额上限最高达 845 亿美元...</p>
+                    <a href="https://www.ithome.com/1/008/589.htm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://the-decoder.com/ftc-launches-sweeping-probe-into-openai-anthropic-and-other-ai-labs-over-consumer-protection-concerns/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">15</div>
+                <div class="card-body">
+                    <h3 class="card-title">FTC 以消费者保护为由对 OpenAI、Anthropic 等 AI 实验室启动全面调查</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">The Decoder：AI News（RSS）</span></div>
+                    <p class="card-summary">FTC 正以潜在消费者保护违规为由调查 OpenAI、Anthropic 等头部 AI 实验室，主席 Andrew Fe...</p>
+                    <a href="https://the-decoder.com/ftc-launches-sweeping-probe-into-openai-anthropic-and-other-ai-labs-over-consumer-protection-concerns/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">16</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 披露并处置一起有组织的模型蒸馏攻击行动</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">OpenAI：官网动态（RSS · 排除企业/客户案例）</span></div>
+                    <p class="card-summary">OpenAI 披露其识别并处置了一起有组织的攻击行动，该行动旨在系统性提取模型受保护的推理内容，最早活动出现在 7 月第...</p>
+                    <a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://gamersnexus.net/news-features/memory-companies-have-destroyed-consumer-market','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">17</div>
+                <div class="card-body">
+                    <h3 class="card-title">GamersNexus 分析内存厂商以长期协议锁定产能，消费级 RAM 与 SSD 价格一年大涨</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+                    <p class="card-summary">GamersNexus 撰文指出，Micron、Samsung、SK Hynix 等内存厂商正以 3-5 年长期协议（L...</p>
+                    <a href="https://gamersnexus.net/news-features/memory-companies-have-destroyed-consumer-market" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://arstechnica.com/tech-policy/2026/09/trump-plan-to-combat-ai-risks-hinges-on-big-tech-pals-policing-themselves/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">18</div>
+                <div class="card-body">
+                    <h3 class="card-title">Trump 推动二十余家科技公司签署自愿性 AI 安全协议</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Ars Technica：AI（RSS）</span></div>
+                    <p class="card-summary">约二十余家科技公司签署白宫超级智能协议，承诺实施独立安全审计、定期会商并制定共同安全标准，涵盖网络安全、生物安全和化学威...</p>
+                    <a href="https://arstechnica.com/tech-policy/2026/09/trump-plan-to-combat-ai-risks-hinges-on-big-tech-pals-policing-themselves/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.promptarmor.com/resources/hijacking-copilot-coworks-ai-gateway-to-exfiltrate-files','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">19</div>
+                <div class="card-body">
+                    <h3 class="card-title">PromptArmor 披露 Copilot Cowork AI 网关被劫持绕过沙箱外传文件漏洞</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">PromptArmor：Threat Intelligence</span></div>
+                    <p class="card-summary">PromptArmor 披露 Microsoft Copilot Cowork 的 AI 网关可被恶意 Skill 劫持...</p>
+                    <a href="https://www.promptarmor.com/resources/hijacking-copilot-coworks-ai-gateway-to-exfiltrate-files" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/ClementDelangue/status/2105276853632094607','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">20</div>
+                <div class="card-body">
+                    <h3 class="card-title">Hugging Face CEO 称收到数千条私信，将花几天逐一处理</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">X：Clément Delangue（Hugging Face CEO） (@ClementDelangue)</span></div>
+                    <p class="card-summary">Clément Delangue 表示收到数千条私信，但 @bot 无法自动分析私信，需要几天时间处理。他称暂时只会关注...</p>
+                    <a href="https://x.com/ClementDelangue/status/2105276853632094607" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-论文研究" class="news-section">
+            <div class="section-header" style="border-left-color:#10b981">
+                <span class="section-icon" style="background:#10b981">R</span>
+                <h2 class="section-title">论文研究</h2>
+                <span class="section-count" style="background:#ecfdf5;color:#10b981">2 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://www.anthropic.com/research/what-work-can-robots-do','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">21</div>
+                <div class="card-body">
+                    <h3 class="card-title">Anthropic 研究测算机器人对岗位的暴露度：机器人可做 74% 的物理任务但仅 0.3% 具备成本竞争力</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">Anthropic：Research（发表成果 · 网页）</span></div>
+                    <p class="card-summary">Anthropic 发布研究，用 Claude 对约 19,000 项工作任务评估机器人暴露度，发现现今机器人可完成美国...</p>
+                    <a href="https://www.anthropic.com/research/what-work-can-robots-do" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://news.mit.edu/2026/game-playing-ai-stratego-new-champ-0930','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">22</div>
+                <div class="card-body">
+                    <h3 class="card-title">MIT 等机构发布 Ataraxos，以极低成本战胜顶级人类 Stratego 选手</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">MIT News（RSS）</span></div>
+                    <p class="card-summary">MIT、CMU、NYU 与 Stanford 的研究人员开发出 AI 系统 Ataraxos，在隐藏信息棋盘战棋 Str...</p>
+                    <a href="https://news.mit.edu/2026/game-playing-ai-stratego-new-champ-0930" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-技巧与观点" class="news-section">
+            <div class="section-header" style="border-left-color:#06b6d4">
+                <span class="section-icon" style="background:#06b6d4">T</span>
+                <h2 class="section-title">技巧与观点</h2>
+                <span class="section-count" style="background:#ecfeff;color:#06b6d4">5 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://metr.org/blog/2026-09-30-chris-painter-senate-testimony/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">23</div>
+                <div class="card-body">
+                    <h3 class="card-title">METR 主席 Chris Painter 就 AI 智能体事件向美国参议院作证</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">METR：Blog（网页）</span></div>
+                    <p class="card-summary">2026年9月30日，METR 主席 Chris Painter 在美国参议院国土安全小组委员会题为“Rogue AI”...</p>
+                    <a href="https://metr.org/blog/2026-09-30-chris-painter-senate-testimony/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://openrouter.ai/blog/tutorials/ai-agent-regression-testing-after-a-prompt-or-model-change/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">24</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenRouter 教程：提示词或模型变更后如何对 AI Agent 做回归测试</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">OpenRouter：Announcements（RSS）</span></div>
+                    <p class="card-summary">OpenRouter 发布 AI Agent 回归测试教程：每次提示词、模型、工具定义或检索设置变更后，重跑锁定的用例集...</p>
+                    <a href="https://openrouter.ai/blog/tutorials/ai-agent-regression-testing-after-a-prompt-or-model-change/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://openrouter.ai/blog/tutorials/building-a-golden-eval-dataset-from-production-traffic/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">25</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenRouter 教程：如何从生产流量构建 golden 评测集并跨模型复测</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">OpenRouter：Announcements（RSS）</span></div>
+                    <p class="card-summary">OpenRouter 发布教程，讲解如何从生产流量构建 golden 评测集，作为每次部署前的回归测试。内容涵盖五步流程...</p>
+                    <a href="https://openrouter.ai/blog/tutorials/building-a-golden-eval-dataset-from-production-traffic/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://openrouter.ai/blog/tutorials/how-to-test-tool-calling-accuracy-in-ai-agents/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">26</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenRouter 教程：如何测试 AI Agent 的工具调用准确性</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">OpenRouter：Announcements（RSS）</span></div>
+                    <p class="card-summary">OpenRouter 发布教程，讲解如何测试 AI Agent 的工具调用准确性，将失败拆分为工具选择错误和参数错误两类...</p>
+                    <a href="https://openrouter.ai/blog/tutorials/how-to-test-tool-calling-accuracy-in-ai-agents/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://vllm.ai/blog/2026-09-29-disaggregated-serving-guide','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">27</div>
+                <div class="card-body">
+                    <h3 class="card-title">vLLM 分离式推理（Disaggregated Serving）实用指南</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">vLLM 官方博客（RSS）</span></div>
+                    <p class="card-summary">vLLM 官方博客发布分离式推理实用指南，讲解 vLLM v0.30.0 及以上版本中 prefill/decode 分...</p>
+                    <a href="https://vllm.ai/blog/2026-09-29-disaggregated-serving-guide" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. OpenAI 发布 GPT-6.1 Sol：以五分之一价格逼近旗舰编码能力，成本效率成为新战场</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">MarkTechPost / Artificial Analysis / Arena</span></div>
+                        <p class="card-summary">OpenAI 发布 GPT-6.1 Sol，定价为每百万 token 2 美元输入、10 美元输出、0.10 美元缓存输入，仅为 GPT-6 Astra 标准价格约五分之一。Artificial Analysis 数据显示其 Cost per Task 约 $0.72，比 GPT-6 Sol 低约 30%。在 Code Arena: WebDev 榜单上，GPT-6.1 Sol (Max) 以 1759 分位列第 3，相比同价位的 GPT-6 Sol (Max) 提升 70 分、排名上升 4 位，且在 Consumer Product 等所有类目均有提升。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">模型竞争已从&quot;谁最强&quot;转向&quot;谁在质量门槛之上最便宜&quot;。GPT-6.1 Sol 证明中端价位可以逼近旗舰能力，这意味着依赖单一顶级模型的套壳产品利润空间将被进一步压缩。建议创业者重新核算推理成本结构，把省下的成本投入到产品差异化和数据飞轮上，而非继续为边际质量提升支付溢价。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. OpenRouter 连发三篇实战指南：Agent 模型的成本、质量与置信度路由方法论</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">OpenRouter</span></div>
+                        <p class="card-summary">OpenRouter 发布三篇面向 Agent 开发者的实战指南：（1）三步选型框架——先设质量门槛，再用 20-50 条自有示例跑廉价/中档/前沿模型，计算&quot;每质量点成本&quot;，选出以超过运行间分数波动余量过线的最便宜模型；（2）CI 中用固定 eval 集门禁 Pull Request，通过率低于阈值即以非零退出码阻止合并；（3）置信度阈值分级升级路由——让廉价模型返回 0-1 置信度，低置信度请求升级到更强模型，并强调置信分数只是自报、需按自己流量的分数段错误率排序设阈值。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">这三篇构成了一套可直接落地的&quot;Agent 成本工程&quot;方法论。核心信号是：按排行榜选模型的粗放做法已经过时，精细化路由才是降本关键。建议本周就在自己的 Agent 流水线里加一道 eval 门禁（成本极低、收益立竿见影），并用 50 条真实请求跑一次三档模型对比，你大概率会发现 60% 以上的请求用廉价模型即可达标。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. ChatGPT 可直接构建并部署 MCP 服务器，Perplexity 开放邮件委托——Agent 分发入口之争白热化</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">X (@thsottiaux) / X (@AravSrinivas)</span></div>
+                        <p class="card-summary">ChatGPT Sites 现在可以托管 MCP 服务器，用户可直接在 ChatGPT 中构建并部署，还能转为插件安装到 web、移动端和桌面端，支持限制访问权限或公开分享。与此同时，Perplexity 向所有人开放 Computer 的邮件委托功能，无需账号，转发或抄送任务到 computer@perplexity.com 即可限时免费运行，智能体在后台完成并保留邮件上下文，带完整审计记录。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">两个动作指向同一趋势：AI 平台正在把&quot;构建 Agent&quot;和&quot;触达用户&quot;的门槛降到接近于零。MCP 服务器托管在 ChatGPT 内意味着插件生态的冷启动成本大幅降低；邮件作为 Agent 入口则绕过了 App 安装这一最大摩擦。对创业者而言，现在应优先考虑&quot;在别人的 Agent 平台上做分发&quot;，而非自建入口——先用 MCP 插件或邮件委托验证需求，再决定是否投入独立产品。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. FTC 对 OpenAI、Anthropic 等启动全面调查，白宫超级智能协议同步签署——监管双轨并行</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">The Decoder / Ars Technica / X (@JensenHuang)</span></div>
+                        <p class="card-summary">FTC 正以潜在消费者保护违规为由调查 OpenAI、Anthropic 等头部 AI 实验室，主席计划通过具法律约束力的 Civil Investigative Demands 强制调取文件并质询高管，命令将在数周内发出，METR 也在审查范围内。与此同时，约二十余家科技公司在白宫签署自愿性超级智能协议，承诺独立安全审计、定期会商和共同安全标准，涵盖网络安全、生物安全和化学威胁，协定要求四层控制（内部监控、授权验证、外部审计、董事会监督），但无法律约束力。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">&quot;自愿协议 + 强制调查&quot;的双轨格局已经成型：白宫协议是行业自律的面子，FTC 的 CID 是监管落地的里子。对 AI 创业者而言，合规成本将从&quot;可选项&quot;变为&quot;必选项&quot;，尤其是面向消费者的 Agent 产品。建议提前建立模型行为审计日志和用户损害响应机制——这不仅是合规需要，未来也可能成为企业客户采购时的尽调项。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. ElevenLabs 估值翻倍至 220 亿美元，蚂蚁百灵发布 560B 长任务模型——语音 Agent 与国产长上下文模型双线突破</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">ElevenLabs Blog / 公众号：蚂蚁百灵</span></div>
+                        <p class="card-summary">ElevenLabs 完成 3 亿美元员工股份回购，估值达 220 亿美元，是今年 2 月 Series D 估值的两倍，由 Wellington 和 T. Rowe Price 领投。企业业务占收入 55%，ElevenAgents 每周处理超 1500 万次对话，ARR 自 2 月以来增长超 3 倍，客户语音智能体解决问题平均比聊天智能体快 31%。同日，蚂蚁百灵发布 Ling-3.1-flash，总参数约 560B、每 Token 激活约 25B，上下文窗口上限 1M，面向真实世界长任务升级。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">ElevenLabs 的数据揭示了一个被低估的事实：语音 Agent 的解决效率比聊天高 31%，企业客户愿意为此付费。ARR 三个月翻三倍说明语音 Agent 已跨过 PMF 拐点，垂直场景（客服、销售、预约）仍有大量空白。蚂蚁 Ling-3.1-flash 的 1M 上下文 + 25B 激活参数组合，则为国内长任务 Agent 提供了高性价比底座。建议关注&quot;语音 Agent + 长上下文&quot;的交叉场景——例如需要跨多轮通话记忆的复杂客服，这可能是下一个产品机会窗口。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 27 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：10月01日 08:00</div>
+</div>
+</body>
+</html>
