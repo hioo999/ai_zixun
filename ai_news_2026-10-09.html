@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年10月9日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年10月9日</div>
+                <div class="hero-weekday">周五 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：10月08日 08:00 — 10月09日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">12</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-产品发布更新" class="nav-link" style="--accent:#ec4899"><span class="nav-count">3</span><span class="nav-text">产品发布/更</span></a><a href="#sec-行业动态" class="nav-link" style="--accent:#f59e0b"><span class="nav-count">7</span><span class="nav-text">行业动态</span></a><a href="#sec-论文研究" class="nav-link" style="--accent:#10b981"><span class="nav-count">1</span><span class="nav-text">论文研究</span></a><a href="#sec-技巧与观点" class="nav-link" style="--accent:#06b6d4"><span class="nav-count">1</span><span class="nav-text">技巧</span></a></nav>
+    <section id="sec-产品发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#ec4899">
+                <span class="section-icon" style="background:#ec4899">P</span>
+                <h2 class="section-title">产品发布/更新</h2>
+                <span class="section-count" style="background:#fdf2f8;color:#ec4899">3 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://claude.com/blog/dashboards-and-motion','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">Claude 推出 Dashboards 实时仪表盘与 Motion 动画讲解功能</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Claude：Blog（网页）</span></div>
+                    <p class="card-summary">Anthropic 发布 Claude Dashboards 和 Claude Motion 两项 beta 功能。</p>
+                    <a href="https://claude.com/blog/dashboards-and-motion" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">Anthropic 推出开源漏洞扫描服务 OSS Scanner，免费面向开源项目</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Anthropic：Research（发表成果 · 网页）</span></div>
+                    <p class="card-summary">Anthropic 发布 OSS Scanner，一个可选加入的开源漏洞扫描服务，用其最强模型（包括 Claude My...</p>
+                    <a href="https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://github.com/pingdotgg/ts-rust','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">ts-rust 发布：由 LLM 将 TypeScript 编译器、检查器和 LSP 移植到 Rust</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Hacker News：AI 热帖</span></div>
+                    <p class="card-summary">ts-rust（tsc-rs）将 microsoft/TypeScript（Go 实现）的编译器、类型检查器和语言服务器...</p>
+                    <a href="https://github.com/pingdotgg/ts-rust" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-行业动态" class="news-section">
+            <div class="section-header" style="border-left-color:#f59e0b">
+                <span class="section-icon" style="background:#f59e0b">I</span>
+                <h2 class="section-title">行业动态</h2>
+                <span class="section-count" style="background:#fffbeb;color:#f59e0b">7 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://the-decoder.com/ai-powered-hacking-tools-enabled-a-likely-single-attacker-to-breach-multiple-south-korean-banks/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">4</div>
+                <div class="card-body">
+                    <h3 class="card-title">Crowdstrike 报告疑似单人使用 AI 渗透工具攻击多家韩国银行</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">The Decoder：AI News（RSS）</span></div>
+                    <p class="card-summary">Crowdstrike 报告称，一名疑似中文使用者于2026年9月底至10月初利用 AI 驱动的开源渗透测试工具 ART...</p>
+                    <a href="https://the-decoder.com/ai-powered-hacking-tools-enabled-a-likely-single-attacker-to-breach-multiple-south-korean-banks/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.ithome.com/1/010/751.htm','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">5</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 年化营收被曝接近 500 亿美元，与此前预期差距约 200 亿美元</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">IT之家·人工智能</span></div>
+                    <p class="card-summary">据金融时报报道，OpenAI 向投资者披露截至 9 月底年化营收逼近 500 亿美元，大幅低于此前外界估算的 700 亿...</p>
+                    <a href="https://www.ithome.com/1/010/751.htm" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://the-decoder.com/some-mathematicians-call-for-openai-boycott-after-ai-generated-proofs-flood-their-field/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">6</div>
+                <div class="card-body">
+                    <h3 class="card-title">部分数学家呼吁抵制 OpenAI，AI 生成的数学证明涌入数学领域</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">The Decoder：AI News（RSS）</span></div>
+                    <p class="card-summary">AHM 组织在 Terence Tao 主持下发表声明，呼吁抵制 OpenAI，称其一次性发布 700 多个 AI 生成...</p>
+                    <a href="https://the-decoder.com/some-mathematicians-call-for-openai-boycott-after-ai-generated-proofs-flood-their-field/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://www.anthropic.com/news/2026-usage-policy-update','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">7</div>
+                <div class="card-body">
+                    <h3 class="card-title">Anthropic 发布 2026 年使用政策更新，11 月 12 日生效</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Anthropic：Newsroom（网页）</span></div>
+                    <p class="card-summary">Anthropic 发布新版使用政策，将于 11 月 12 日生效，多数变化是对既有规则的澄清。更新包括新设禁止欺骗性活...</p>
+                    <a href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/thsottiaux/status/2108040921044639779','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">8</div>
+                <div class="card-body">
+                    <h3 class="card-title">Codex 与 ChatGPT Work 活跃用户达 4000 万新高，付费账户重置已全部到账</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">X：Tibo (@thsottiaux)</span></div>
+                    <p class="card-summary">作者确认 banked reset 已到账所有账户，并转引 Day 3 动态称 Codex 与 ChatGPT Work...</p>
+                    <a href="https://x.com/thsottiaux/status/2108040921044639779" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://openai.com/index/disrupting-ai-enabled-false-front-operations','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">9</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 封禁俄罗斯与伊朗两个利用 ChatGPT 开展虚假前臆影响行动的账号集群</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">OpenAI：官网动态（RSS · 排除企业/客户案例）</span></div>
+                    <p class="card-summary">OpenAI 封禁了两个隐蔽影响行动，俄罗斯来源的 Dark Clark 通过假 persona Mia Clark 控...</p>
+                    <a href="https://openai.com/index/disrupting-ai-enabled-false-front-operations" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://waymo.com/blog/2026/10/waymo-closes-5-billion-debt-financing','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">10</div>
+                <div class="card-body">
+                    <h3 class="card-title">Waymo 完成 50 亿美元债务融资，加速业务扩张</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Waymo：Blog（网页）</span></div>
+                    <p class="card-summary">Waymo 宣布完成 50 亿美元定期贷款，这是其首次债务融资。PIMCO、Blackstone 和 Sixth Str...</p>
+                    <a href="https://waymo.com/blog/2026/10/waymo-closes-5-billion-debt-financing" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-论文研究" class="news-section">
+            <div class="section-header" style="border-left-color:#10b981">
+                <span class="section-icon" style="background:#10b981">R</span>
+                <h2 class="section-title">论文研究</h2>
+                <span class="section-count" style="background:#ecfdf5;color:#10b981">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://www.goodfire.com/research/production-cyber-monitors-on-kimi-k3','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">11</div>
+                <div class="card-body">
+                    <h3 class="card-title">Goodfire 为 Kimi K3 和 GLM 5.3 训练并部署生产级网络安全监控器</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">Goodfire Research（网页）</span></div>
+                    <p class="card-summary">Goodfire Research 为 Kimi K3 和 GLM 5.3 构建基于激活探针加 LLM judge 的监...</p>
+                    <a href="https://www.goodfire.com/research/production-cyber-monitors-on-kimi-k3" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-技巧与观点" class="news-section">
+            <div class="section-header" style="border-left-color:#06b6d4">
+                <span class="section-icon" style="background:#06b6d4">T</span>
+                <h2 class="section-title">技巧与观点</h2>
+                <span class="section-count" style="background:#ecfeff;color:#06b6d4">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://huggingface.co/blog/building-with-ml-intern','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#06b6d4">12</div>
+                <div class="card-body">
+                    <h3 class="card-title">Hugging Face 工程师用 ML Intern 以约 103 美元自制 7 个小模型</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfeff;color:#06b6d4">Hugging Face 官方团队博客</span></div>
+                    <p class="card-summary">Hugging Face 工程师 yuvraj sharma 用 HuggingChat 的 ML Intern 模式在...</p>
+                    <a href="https://huggingface.co/blog/building-with-ml-intern" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#06b6d4">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. OpenAI 年化营收逼近 500 亿美元但低于预期，引发科技股震荡</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">IT之家·人工智能</span></div>
+                        <p class="card-summary">据金融时报报道，OpenAI 向投资者披露截至9月底年化营收接近500亿美元，大幅低于外界此前估算的700亿美元，缺口约200亿美元。差异主要源于统计口径——Anthropic 计入 AWS 和谷歌云等合作方销售收入，而 OpenAI 剔除了该部分。消息发布后纳斯达克100指数收跌1.4%，英伟达跌2.9%，甲骨文跌5.5%。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">这条新闻揭示了两个关键信号：一是大模型公司的真实营收可能被市场系统性高估，创业者做商业计划时不应盲目对标头部公司的&quot;传闻数字&quot;；二是统计口径差异（是否计入云厂商分成）正在成为行业估值的新变量。建议创业者在融资叙事中明确收入确认方式，避免因口径问题在尽调阶段被质疑。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. Arena 完成 2 亿美元 B 轮融资，估值 31 亿美元并推出 Alignment Index</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">X：Arena (@arena)（多条合并）</span></div>
+                        <p class="card-summary">Arena 完成由 Lightspeed 和 Khosla Ventures 联合领投的 2 亿美元 B 轮融资，估值达 31 亿美元，a16z、Salesforce Ventures 等参投。平台累计 3.5 亿场次会话、6200 万次投票，年化收入超 1 亿美元，约 5 个月内产生 700 万次 Agent Arena 会话。同时发布基于真实智能体轨迹的 Alignment Index，从 Unauthorized Action、False Attribution 和 Deceptive Completion 三个维度评估 20 多个前沿模型。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">Arena 的崛起说明&quot;模型评测&quot;本身正在成为一门大生意——从学术项目到 31 亿美元估值仅用约两年。对创业者而言，Agent 评测（而非传统 benchmark）是当前明显的空白赛道，尤其是基于真实使用轨迹的行为对齐评估。如果你在做 Agent 产品，建议尽早接入 Alignment Index 类工具，既作为自我审计手段，也可作为向企业客户证明安全性的差异化卖点。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. 一条提示词即可劫持 AWS 账户内全部 AgentCore 智能体</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">The Decoder：AI News（RSS）</span></div>
+                        <p class="card-summary">Zenity Labs 披露名为 AgentCorruption 的漏洞链：只需对一个公开的 Amazon Bedrock AgentCore 智能体发送一条提示词，即可通过元数据服务 169.254.169.254 窃取其 AWS 凭据，进而控制同账户同区域内所有 AgentCore 智能体，读取私人对话、源代码和存储凭据，并能篡改长期记忆。同日 Crowdstrike 报告疑似单人使用 AI 渗透工具 ARTEX 攻击多家韩国银行，Shinhan Bank 超 25,000 条记录泄露。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">这两条新闻叠加释放了强烈信号：AI Agent 的安全攻击面远大于传统应用——元数据服务、长期记忆、跨 Agent 信任链都是薄弱环节。如果你的产品部署在 AWS AgentCore 或其他托管 Agent 平台上，建议立即检查：① Agent 是否绑定了过宽的 IAM 角色；② 是否禁用了 IMDSv1；③ 长期记忆是否有写入审计。同时，AI 驱动的攻击工具已将攻击门槛降到&quot;单人可操作&quot;，安全预算不再是可选项。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. Claude 九月大更新：Chat 与 Cowork 合一，5.5 系列模型上线</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">Claude：YouTube（RSS）</span></div>
+                        <p class="card-summary">Claude 发布九月更新回顾：Chat 与 Cowork 合并为统一的 Claude 体验，工作流可在云端运行，合上笔记本后任务继续执行。Claude Docs 支持团队与 Claude 在同一文档中协作编辑。新推出的 Claude 5.5 系列包含 Opus 5.5（重任务）和 Sonnet 5.5（快速修改），并支持通过 /slides、/docs、/designs 直接生成对应格式。此外，Anthropic 同步发布了基于 Claude Managed Agents 构建定时智能体自动化的实践指南。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">&quot;合上笔记本后任务继续&quot;意味着 Claude 正在从对话工具转向异步工作平台，这对做 AI 工作流产品的创业者是直接竞争信号。更值得关注的是 /slides、/docs、/designs 这类命令——模型厂商正在把&quot;最后一公里&quot;的格式输出内化，第三方套壳工具的空间进一步压缩。建议创业者向上游走：要么做 Claude 不擅长的垂直数据集成，要么做跨平台编排层，而非简单的格式转换。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. 数学家呼吁抵制 OpenAI，AI 生成证明文件引发学术界反弹</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">The Decoder：AI News（RSS）</span></div>
+                        <p class="card-summary">AHM 组织在 Terence Tao 主持下发表声明，呼吁抵制 OpenAI，称其一次性发布 700 多个 AI 生成证明文件是&quot;展示力量而非学术行为&quot;。此前 OpenAI 宣称内部模型一个月内解决逾 100 个开放数学问题，约 8000 个测试问题成功率约 5%，平均每个耗时 3 小时 GPT-Pro 级算力。与此同时，OpenAI 研究负责人发声明回应三名员工离职争议，称解雇与安全担忧无关，但内部调查发现&quot;重大信任违规&quot;。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">学术界对 AI 的态度正在从&quot;好奇&quot;转向&quot;防御&quot;，这对 AI 公司的人才招聘和品牌声誉有直接影响。对创业者的启示是：如果你的产品涉及专业领域（数学、法律、医学），&quot;批量生成&quot;策略可能引发行业反弹，更稳妥的路径是与领域专家共建而非替代。另外，OpenAI 的员工离职争议提醒我们，AI 安全治理正在成为公司内部政治的高压线，创业公司在处理安全相关人事问题时需格外谨慎。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 12 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：10月09日 08:00</div>
+</div>
+</body>
+</html>
