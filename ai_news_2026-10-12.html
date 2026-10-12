@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年10月12日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年10月12日</div>
+                <div class="hero-weekday">周一 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：10月11日 08:00 — 10月12日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">1</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-产品发布更新" class="nav-link" style="--accent:#ec4899"><span class="nav-count">1</span><span class="nav-text">产品发布/更</span></a></nav>
+    <section id="sec-产品发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#ec4899">
+                <span class="section-icon" style="background:#ec4899">P</span>
+                <h2 class="section-title">产品发布/更新</h2>
+                <span class="section-count" style="background:#fdf2f8;color:#ec4899">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://x.com/thsottiaux/status/2109430343346581527','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">GPT-6.1 Sol 在 Codex 与 Work 中默认上下文长度提升至 500k</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">X：Tibo (@thsottiaux)</span></div>
+                    <p class="card-summary">Tibo 宣布 GPT-6.1 Sol 在 Codex 与 Work 中的默认上下文长度从 272k 提升到 500k，...</p>
+                    <a href="https://x.com/thsottiaux/status/2109430343346581527" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. GPT-6.1 Sol 默认上下文提升至 500k，长上下文不再额外收费</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">X（Tibo/@thsottiaux）、IT之家</span></div>
+                        <p class="card-summary">OpenAI 宣布 GPT-6.1 Sol 在 Codex 与 Work 中的默认上下文长度从 272k 提升至 500k（增幅约80%），最大上限保持 1M。该调整经过充分测试，可显著降低上下文压缩（compaction）触发频率，且 OpenAI 明确不对此收取长上下文费用。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">长上下文免费化直接改变了 AI 产品的架构决策——过去为了控制 token 成本而设计的 RAG 分块、摘要压缩、多轮记忆管理等中间层，现在需要重新评估其必要性。建议开发者立即测试将现有 pipeline 中的&quot;压缩逻辑&quot;替换为&quot;全量上下文直投&quot;后的效果差异；对于法律合同审查、代码库级重构、长文档研究等此前受限于上下文窗口的场景，这是产品差异化的窗口期。同时注意：500k 默认值意味着用户会不自觉地塞入更多内容，你的 prompt 模板和输出解析逻辑需要做好压力测试。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. 阶跃 Step 5 Preview 上线腾讯 WorkBuddy：600B MoE + 1M 上下文，即将开源</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">IT之家、阶跃星辰公众号</span></div>
+                        <p class="card-summary">阶跃 Step 5 Preview 模型上线腾讯 WorkBuddy，采用稀疏 MoE 架构（总参数 600B、激活 27B），支持 100 万 Token 上下文，原生支持文本与视觉输入，面向 AI 编程、软件工程、金融等场景。10月12日至25日在 WorkBuddy 独家限免，并将于10月15日开源完整权重。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">这是国产大模型&quot;产品渠道+开源权重&quot;双轨策略的典型样本。对创业者而言有两个 actionable 的点：一是立即在 WorkBuddy 上限免测试 Step 5 在自身业务场景的表现，用两周窗口期做竞品对比评估；二是关注10月15日的开源权重——600B MoE 激活仅 27B 意味着推理成本可控，如果你的产品此前依赖闭源 API 且对数据隐私敏感，这是一个低成本切换或做私有化部署的候选方案。同时注意其 Agent 能力定位（自主拆解任务、调用工具），与 WorkBuddy 的办公场景深度绑定，说明模型厂商正在从&quot;卖 API&quot;转向&quot;嵌入工作流&quot;。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. 无问芯穹完成 23 亿元 C 轮融资，已秘密递交港交所 IPO 申请</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">IT之家（引彭博社）</span></div>
+                        <p class="card-summary">AI Infra 企业无问芯穹完成 23 亿元 C 轮融资，成立以来累计融资 43 亿元，单轮及累计融资额均创中国 AI 原生基础设施赛道最高纪录。公司已以保密形式向港交所递交 IPO 申请，目标最快 2027 年上半年挂牌。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">这条新闻释放了两个信号：第一，AI Infra（算力调度、推理优化、异构计算）在中国市场已被验证为可规模化营收的赛道，资本愿意给出头部溢价；第二，无问芯穹从成立到递交 IPO 的时间窗口极短，说明 AI 基础设施公司的估值逻辑正在从&quot;技术故事&quot;转向&quot;收入验证+上市退出&quot;。对 Infra 方向创业者：现在需要回答的问题不是&quot;你的技术多先进&quot;，而是&quot;你帮客户省了多少钱、效率提升了多少倍&quot;，且要开始准备合规的财务模型。对应用层创业者：Infra 成熟意味着推理成本将持续下降，产品设计时可以更大胆地假设&quot;算力便宜&quot;。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. 杨立昆 vs 王兴兴：世界模型与具身智能的临界点之争</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">IT之家（杨立昆首尔发言、王兴兴工博会发言）</span></div>
+                        <p class="card-summary">杨立昆在首尔表示下一代 AI 突破不会来自大语言模型，而将来自能理解、预测物理世界的&quot;世界模型&quot;，主张让 AI 学习物理规律与因果关系。同日，宇树科技王兴兴在中国工博会上表示&quot;过去十几年犯的最大错误就是对 AI 还不够相信&quot;，透露团队已将 GPT-6 部署至机器人测试且效果不错，认为具身智能行业临界点可能一两年内到来。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">两位行业领袖的观点看似对立，实则指向同一个方向：LLM 作为&quot;语言接口&quot;已趋于成熟，下一步价值增量在&quot;与物理世界交互&quot;。对创业者的具体建议：如果你在做机器人、自动驾驶、工业仿真、AR/VR 等方向，现在应该重点评估两个技术路线的融合——用 LLM 做任务规划与自然语言交互，用世界模型/物理仿真做底层控制与预测。王兴兴提到&quot;GPT-6 部署至机器人效果不错&quot;是一个可验证的信号，建议关注宇树后续是否发布具体的技术方案或 benchmark。同时，杨立昆对 LLM 局限性的判断提醒我们：不要把所有产品逻辑都押在&quot;语言模型能力持续提升&quot;这一个假设上。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. AI 逆向工程热潮：Claude Opus 5.5 重写 Adobe 全家桶，10天4.6万Star</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">X（卡兹克）、公众号（数字生命卡兹克）</span></div>
+                        <p class="card-summary">开发者 Brandon Thomas 因不满 Adobe 订阅规则，用 Claude Opus 5.5 以 Rust 逆向重写了 Photoshop、Illustrator 等 7 款 Adobe 软件的开源替代品（PhotoCraft、VectorCraft 等），其中 PS 项目不到 10 天获 4.6 万 Star，REA 项目整体逼近 10 万 Star。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">这个案例的价值不在于&quot;AI 能写代码&quot;，而在于展示了 AI 对成熟商业软件的&quot;降维打击&quot;路径：当一个产品的核心壁垒是&quot;工程复杂度&quot;而非&quot;不可替代的算法或数据&quot;时，AI 辅助的逆向重写可以在极短时间内复制核心功能并开源。对创业者有两层第一，审视自己的产品——如果护城河只是&quot;功能多、代码量大&quot;，需要警惕；第二，反向利用这个趋势——用 Claude/GPT 系列做竞品功能拆解和快速原型验证，把&quot;逆向理解+重新实现&quot;作为产品迭代的标准动作。同时注意法律风险：逆向工程在不同司法辖区的合法性差异很大，开源替代品若涉及专利或商标侵权仍可能被下架。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 1 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：10月12日 08:00</div>
+</div>
+</body>
+</html>
