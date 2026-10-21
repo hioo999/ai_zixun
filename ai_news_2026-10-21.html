@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年10月21日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年10月21日</div>
+                <div class="hero-weekday">周三 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：10月20日 08:00 — 10月21日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">12</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-模型发布更新" class="nav-link" style="--accent:#6366f1"><span class="nav-count">1</span><span class="nav-text">模型发布/更</span></a><a href="#sec-产品发布更新" class="nav-link" style="--accent:#ec4899"><span class="nav-count">4</span><span class="nav-text">产品发布/更</span></a><a href="#sec-行业动态" class="nav-link" style="--accent:#f59e0b"><span class="nav-count">6</span><span class="nav-text">行业动态</span></a><a href="#sec-论文研究" class="nav-link" style="--accent:#10b981"><span class="nav-count">1</span><span class="nav-text">论文研究</span></a></nav>
+    <section id="sec-模型发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#6366f1">
+                <span class="section-icon" style="background:#6366f1">M</span>
+                <h2 class="section-title">模型发布/更新</h2>
+                <span class="section-count" style="background:#eef2ff;color:#6366f1">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://www.inceptionlabs.ai/blog/introducing-mercury-3','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#6366f1">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">Inception Labs 发布扩散大语言模型 Mercury 3，速度达 1068 tokens/秒</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#eef2ff;color:#6366f1">Inception Labs：Blog（网页）</span></div>
+                    <p class="card-summary">Inception Labs 发布扩散式大语言模型 Mercury 3，称其在多项基准上超过 GPT-6 Luna 和 ...</p>
+                    <a href="https://www.inceptionlabs.ai/blog/introducing-mercury-3" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#6366f1">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-产品发布更新" class="news-section">
+            <div class="section-header" style="border-left-color:#ec4899">
+                <span class="section-icon" style="background:#ec4899">P</span>
+                <h2 class="section-title">产品发布/更新</h2>
+                <span class="section-count" style="background:#fdf2f8;color:#ec4899">4 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://mp.weixin.qq.com/s?__biz=Mzk0OTYwNzc3NQ%3D%3D&mid=2247485884&idx=1&sn=d457981abe7db1f1b5d600fc109dc836','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">2</div>
+                <div class="card-body">
+                    <h3 class="card-title">DeepSeek 全面开源内部推理框架 DeepInfer</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">公众号：DeepSeek（深度求索）</span></div>
+                    <p class="card-summary">DeepSeek 宣布将内部推理框架 DeepInfer 全面开源，并同步开源生产级 Token 编解码组件 deeps...</p>
+                    <a href="https://mp.weixin.qq.com/s?__biz=Mzk0OTYwNzc3NQ%3D%3D&mid=2247485884&idx=1&sn=d457981abe7db1f1b5d600fc109dc836" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://pytorch.org/blog/introducing-torchtpu/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">3</div>
+                <div class="card-body">
+                    <h3 class="card-title">Google 与 Meta 发布 TorchTPU：PyTorch 原生 TPU 后端</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">PyTorch：Blog（RSS）</span></div>
+                    <p class="card-summary">Google 与 Meta 发布开源项目 TorchTPU，为 Google TPU 提供原生 PyTorch 后端，模...</p>
+                    <a href="https://pytorch.org/blog/introducing-torchtpu/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://x.com/ChatGPT/status/2112597766333673624','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">4</div>
+                <div class="card-body">
+                    <h3 class="card-title">ChatGPT 推出 Locked Chats，可用 PIN 或生物识别锁定敏感对话</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">X：ChatGPT (@ChatGPT)</span></div>
+                    <p class="card-summary">ChatGPT 推出 Locked Chats 功能，把敏感对话从常规历史记录和搜索中移入受保护空间。用户在网页端和桌面...</p>
+                    <a href="https://x.com/ChatGPT/status/2112597766333673624" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#ec4899">5</div>
+                <div class="card-body">
+                    <h3 class="card-title">Google 发布 vLLM 与 SGLang 的 TorchTPU 原生推理引擎</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fdf2f8;color:#ec4899">Google Developers Blog（RSS）</span></div>
+                    <p class="card-summary">Google 在 PyTorch 相关公告中推出基于 TorchTPU 的 vLLM 和 SGLang 原生 PyTor...</p>
+                    <a href="https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#ec4899">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-行业动态" class="news-section">
+            <div class="section-header" style="border-left-color:#f59e0b">
+                <span class="section-icon" style="background:#f59e0b">I</span>
+                <h2 class="section-title">行业动态</h2>
+                <span class="section-count" style="background:#fffbeb;color:#f59e0b">6 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://x.com/rohanpaul_ai/status/2112455383356989598','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">6</div>
+                <div class="card-body">
+                    <h3 class="card-title">路透：OpenAI 拟在 Anthropic 上市前加速融资约 300 亿美元，估值超 1.4 万亿美元</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">X：Rohan Paul (@rohanpaul_ai)</span></div>
+                    <p class="card-summary">据 Reuters 报道，OpenAI 正赶在 Anthropic 上市前洽谈融资约 300 亿美元，估值超 1.4 万...</p>
+                    <a href="https://x.com/rohanpaul_ai/status/2112455383356989598" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://techcrunch.com/2026/10/20/spacexs-ai-business-is-beating-expectations/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">7</div>
+                <div class="card-body">
+                    <h3 class="card-title">SpaceX 财报显示 AI 业务超预期，占收入 52%</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">TechCrunch：AI（RSS）</span></div>
+                    <p class="card-summary">SpaceX 发布第三季度监管文件，披露营收 146 亿美元、净利润 44 亿美元，扭转去年同期 10 亿美元亏损。其更...</p>
+                    <a href="https://techcrunch.com/2026/10/20/spacexs-ai-business-is-beating-expectations/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://the-decoder.com/army-cyber-commands-echotribble-would-turn-ai-agents-into-self-spreading-cyberweapons/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">8</div>
+                <div class="card-body">
+                    <h3 class="card-title">美国陆军网络司令部 ECHOTRIBBLE 项目拟将 AI 智能体变成自主扩散的网络武器</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">The Decoder：AI News（RSS）</span></div>
+                    <p class="card-summary">据 The Intercept 获取的文件，美国陆军网络司令部（ARCYBER）正在开发代号 ECHOTRIBBLE 的...</p>
+                    <a href="https://the-decoder.com/army-cyber-commands-echotribble-would-turn-ai-agents-into-self-spreading-cyberweapons/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">9</div>
+                <div class="card-body">
+                    <h3 class="card-title">Redact 调查：WhatsApp 帮助页面隐藏 LLM 指令，让 AI 不推荐监管机构、不提 GDPR</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">Hacker News：AI 热帖</span></div>
+                    <p class="card-summary">Redact 发现 WhatsApp 帮助中心页面向 LLM 发送用户看不到的隐藏指令，指示其支持聊天机器人不推荐数据保...</p>
+                    <a href="https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://openai.com/index/openai-to-acquire-orchestra-bio','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">10</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 收购药物研发平台 Orchestra Bio 并入 Rosalind 生命科学体系</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">OpenAI：官网动态（RSS · 排除企业/客户案例）</span></div>
+                    <p class="card-summary">OpenAI 宣布收购 Orchestra Bio，一个帮助生物制药团队协调药物研发复杂流程的平台，其团队和技术将与 R...</p>
+                    <a href="https://openai.com/index/openai-to-acquire-orchestra-bio" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article><article class="card" onclick="window.open('https://techcrunch.com/2026/10/20/anthropics-cloud-partnerships-are-getting-messy/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#f59e0b">11</div>
+                <div class="card-body">
+                    <h3 class="card-title">Anthropic 云合作生变：AWS、Google、微软视其为竞争者</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#fffbeb;color:#f59e0b">TechCrunch：AI（RSS）</span></div>
+                    <p class="card-summary">据泄露给华尔街日报的 S-1 文件，Anthropic 难以从 AWS、Google 和 Microsoft 获得足够云...</p>
+                    <a href="https://techcrunch.com/2026/10/20/anthropics-cloud-partnerships-are-getting-messy/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#f59e0b">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section><section id="sec-论文研究" class="news-section">
+            <div class="section-header" style="border-left-color:#10b981">
+                <span class="section-icon" style="background:#10b981">R</span>
+                <h2 class="section-title">论文研究</h2>
+                <span class="section-count" style="background:#ecfdf5;color:#10b981">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://www.anthropic.com/research/claude-scorpion-toxin-binder-design','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">12</div>
+                <div class="card-body">
+                    <h3 class="card-title">Anthropic 用 Claude 设计出针对蝎子神经毒素的蛋白质迷你结合剂</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">Anthropic：Research（发表成果 · 网页）</span></div>
+                    <p class="card-summary">Anthropic 让内部研究模型在 Claude Science 中主要自主运行 64 小时，设计针对五种蝎子神经毒素...</p>
+                    <a href="https://www.anthropic.com/research/claude-scorpion-toxin-binder-design" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. SpaceX AI 算力业务收入超越 Starlink，成第一大收入来源；OpenAI 拟以超 1.4 万亿美元估值融资 300 亿美元</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">X（Rohan Paul）、TechCrunch</span></div>
+                        <p class="card-summary">SpaceX 第三季度财报显示，&quot;Super Intelligence&quot;算力租赁业务收入达 76 亿美元（Q2 为 25.6 亿美元），占公司总收入 52%，首次超过 Starlink 连接业务，客户包括 Anthropic 和 Google。同一天，路透报道 OpenAI 正抢在 Anthropic 上市前洽谈约 300 亿美元融资，估值超 1.4 万亿美元，较 3 月的 8520 亿美元至少高出 64%。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">算力租赁已成为比卫星互联网更赚钱的生意，说明&quot;卖铲子&quot;的商业模式在 AI 时代具备极强的现金流确定性。对创业者而言，这印证了两点：一是算力供给仍是当前最稀缺的资源，围绕算力调度、能效优化、异构调度的基础设施层创业窗口依然开放；二是头部模型公司估值快速膨胀的同时，融资节奏明显被 IPO 竞争驱动，早期创业者在与巨头合作时应警惕&quot;站队成本&quot;——算力供应商与模型公司正从客户关系演变为竞争关系。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. Anthropic IPO 草案曝光：上半年收入 163 亿美元，但承诺约 4500 亿美元算力支出，云厂商合作生变</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">X（Rohan Paul）、TechCrunch</span></div>
+                        <p class="card-summary">WSJ 获取的 Anthropic S-1 草案显示，其上半年收入 163 亿美元、纸面亏损 807 亿美元，并承诺约 4500 亿美元的算力支出。同时文件披露，AWS、Google、微软日益将 Anthropic 视为竞争者而非客户，导致其难以获得足够云算力。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">这是一组极具警示意义的数字：收入 163 亿 vs 算力承诺 4500 亿，杠杆倍数接近 28 倍。对创业者而言，有两点直接教训：第一，模型公司正在用长期算力承诺换取短期训练能力，这种&quot;重资产锁定&quot;模式一旦收入增速不及预期，将面临巨大的现金流断裂风险；第二，云厂商与模型公司的竞合关系正在恶化，依赖单一云生态的 AI 创业公司应尽早设计多云或混合部署架构，避免在供应链谈判中失去议价权。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. DeepSeek 开源内部推理框架 DeepInfer；蚂蚁与 vLLM 社区开源量化推理内核 Humming；llm-d 1.0 生产就绪</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">公众号 DeepSeek、vLLM 官方博客、IBM Research</span></div>
+                        <p class="card-summary">DeepSeek 宣布全面开源其内部推理框架 DeepInfer，同步开源生产级 Token 编解码组件 deepseek-recipe。同日，蚂蚁集团与 vLLM 社区开源量化推理内核库 Humming；IBM、Red Hat、Google 主导的 Kubernetes 原生分布式推理框架 llm-d 发布 1.0，支持任意模型、任意加速器、任意云。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">推理层开源生态在一天内迎来三连发，信号非常明确：推理优化正从各家私有护城河变为公共基础设施。对 AI 创业者来说，这意味着推理成本还将继续下探，基于推理效率差异化的创业窗口正在收窄。更务实的策略是：尽快将自研推理栈迁移到这些开源方案上，把工程资源从&quot;造轮子&quot;转向&quot;用轮子做场景&quot;；同时关注 llm-d 这类 K8s 原生方案，它降低了中小团队自建分布式推理集群的门槛，适合有多云部署需求的团队优先评估。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. OpenAI API 支持 12 小时 prompt 缓存，Codex 与 Work 用户缓存永久保留</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">X（Tibo）</span></div>
+                        <p class="card-summary">OpenAI 开发者账号宣布 API 现已支持可选的 12 小时 prompt 缓存，持续运行的智能体可在请求间隔数小时的情况下，以更低的缓存输入费率复用指令、工具和上下文。Codex 与 Work 中已登录用户的缓存永久保留，返回旧对话或数小时后恢复会话保证命中缓存，且无额外惩罚。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">12 小时缓存对长时间运行的 Agent 产品是实质性利好——此前多数 Agent 框架需要自行实现上下文压缩或外部记忆，现在可以直接依赖 API 层缓存降低长会话成本。建议做 Agent 产品的团队立即做两件事：一是重新测算长会话场景的 token 成本模型，缓存命中率可能让单位经济模型发生质变；二是重新评估是否还需要自建向量记忆层，部分场景下 API 原生缓存可以替代。对做个人助理、客服、编程助手类产品的团队，这是本周最值得动手测试的更新。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. Perplexity Computer 实现 Mac 完全本地运行；面壁智能 35B MoE 在手机端侧实时无损运行</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">X（Aravind Srinivas）、公众号 面壁智能</span></div>
+                        <p class="card-summary">Perplexity CEO 宣布 Perplexity Computer 现可在 Mac 上完全本地运行，无需云端推理和 WiFi，模型与智能体均在本机运行，可操作 Mac 原生应用和本地文件，敏感数据不出设备。同日，面壁智能介绍其前瞻专家调度（LES）技术，首次实现 35B-A3B 规模 MoE 在端侧实时无损运行，iPhone 18 Pro Max 实测解码超 20 token/s。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">端侧 AI 在同一天取得两个标志性进展：一是 Agent 级产品（不只是模型）实现完全本地化，二是 35B 级 MoE 在手机上达到可用速度。对创业者而言，这打开了两个明确的产品方向：面向隐私敏感行业（医疗、法律、金融）的本地 Agent 工具，以及不依赖网络连接的离线 AI 应用。建议关注端侧推理的团队重点评估 LES 这类专家调度方案，它让&quot;大模型上手机&quot;从演示走向产品；同时注意，本地化意味着分发渠道和商业模式可能从订阅 API 转向一次性授权或硬件捆绑。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 12 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：10月21日 08:00</div>
+</div>
+</body>
+</html>
