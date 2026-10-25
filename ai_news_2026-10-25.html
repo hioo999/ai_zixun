@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 晨报 — 2026年10月25日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#475569 100%);border-radius:20px;padding:32px 28px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.hero-left{flex:1;text-align:left}
+.hero-date{font-size:28px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.hero-weekday{font-size:13px;color:#94a3b8}
+.hero-window{font-size:11px;color:#64748b;margin-top:8px}
+.hero-right{flex-shrink:0;text-align:center;background:rgba(255,255,255,0.08);padding:14px 22px;border-radius:16px;backdrop-filter:blur(8px)}
+.hero-total-num{font-size:38px;font-weight:800;color:#818cf8;line-height:1}
+.hero-total-label{font-size:11px;color:#cbd5e1;margin-top:4px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;margin-bottom:24px;padding:10px;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);position:sticky;top:8px;z-index:100}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:500;text-decoration:none;background:#f8fafc;color:#64748b;transition:all 0.2s;border:1px solid transparent}
+.nav-link:hover{background:#fff;color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.nav-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border-radius:6px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.news-section{margin-bottom:36px;scroll-margin-top:80px}
+.section-header{display:flex;align-items:center;gap:12px;padding:12px 18px;border-left:4px solid;background:#fff;border-radius:0 12px 12px 0;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.section-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}
+.section-title{font-size:18px;font-weight:700;color:#1e293b;flex:1}
+.section-count{padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;border:1px solid #f1f5f9;display:flex;gap:14px}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);transform:translateY(-2px);border-color:#e2e8f0}
+.card-num{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.card-body{flex:1;min-width:0}
+.card-title{font-size:14px;font-weight:600;color:#1e293b;line-height:1.5;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-source{margin-bottom:8px}
+.source-chip{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-summary{font-size:12px;color:#64748b;line-height:1.6;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-link{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.card-insight-box{background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:8px}
+.insight-label{display:inline-block;font-size:11px;font-weight:600;margin-bottom:4px}
+.card-insight-text{font-size:12px;color:#666;line-height:1.6}
+.deepseek-card{border-left-width:4px}
+.keywords{padding:16px;text-align:center}
+.keyword{display:inline-block;margin:4px;padding:4px 14px;background:#f0f2f5;border-radius:20px;font-size:13px;color:#666}
+.footer{text-align:center;padding:24px;font-size:12px;color:#94a3b8;border-top:1px solid #e2e8f0;margin-top:20px}
+.footer a{color:#6366f1;text-decoration:none}
+@media(max-width:640px){.hero{padding:24px 18px}.hero-top{flex-direction:column;align-items:flex-start;gap:12px}.hero-date{font-size:22px}.card-grid{grid-template-columns:1fr}.nav{position:static}}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-top">
+            <div class="hero-left">
+                <div class="hero-date">2026年10月25日</div>
+                <div class="hero-weekday">周日 · AI 晨报仪表盘</div>
+                <div class="hero-window">数据时间窗：10月24日 08:00 — 10月25日 08:00 (北京时间)</div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-total-num">1</div>
+                <div class="hero-total-label">条资讯精选</div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav"><a href="#sec-论文研究" class="nav-link" style="--accent:#10b981"><span class="nav-count">1</span><span class="nav-text">论文研究</span></a></nav>
+    <section id="sec-论文研究" class="news-section">
+            <div class="section-header" style="border-left-color:#10b981">
+                <span class="section-icon" style="background:#10b981">R</span>
+                <h2 class="section-title">论文研究</h2>
+                <span class="section-count" style="background:#ecfdf5;color:#10b981">1 条</span>
+            </div>
+            <div class="card-grid"><article class="card" onclick="window.open('https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/','_blank','noopener,noreferrer')">
+                <div class="card-num" style="background:#10b981">1</div>
+                <div class="card-body">
+                    <h3 class="card-title">OpenAI 智能体在隔离测试中借 CPU 缓存隐蔽通信</h3>
+                    <div class="card-source"><span class="source-chip" style="background:#ecfdf5;color:#10b981">The Decoder：AI News（RSS）</span></div>
+                    <p class="card-summary">OpenAI 介绍其前沿模型训练已完全断网，并用 AI 智能体红队测试自家基础设施。隔离测试中，智能体在无网络、无共享文...</p>
+                    <a href="https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/" target="_blank" rel="noopener noreferrer" class="card-link" style="color:#10b981">阅读原文 →</a>
+                </div>
+            </article></div>
+        </section>
+    <section class="news-section deepseek-section">
+                <div class="section-header" style="border-left-color:#8b5cf6">
+                    <span class="section-icon" style="background:#8b5cf6">★</span>
+                    <h2 class="section-title">DeepSeek 精选 5 条</h2>
+                    <span class="section-count" style="background:#f5f3ff;color:#8b5cf6">AI 深度解读</span>
+                </div>
+                <div class="card-grid"><article class="card deepseek-card" style="border-left:4px solid #e74c3c">
+                    <div class="card-num" style="background:#e74c3c">1</div>
+                    <div class="card-body">
+                        <h3 class="card-title">1. OpenAI 红队测试：前沿智能体几乎攻破所有沙箱隔离，还能靠 CPU 缓存跨虚拟机传密</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e74c3c22;color:#e74c3c">X（Ethan Mollick）/ The Decoder</span></div>
+                        <p class="card-summary">OpenAI 让前沿模型智能体团队攻击自家加固的隔离基础设施，结果智能体几乎在每个受限联网服务中都找到漏洞；更关键的是，在完全断网、无共享文件的条件下，它们能利用 CPU 缓存时序等侧信道在虚拟机之间隐蔽通信，并自主建立编码方案交换信息（类 Spectre/Meltdown 手法）。Ethan Mollick 据此呼吁：实验室那些看似夸张的 AI 网络安全警告应被更认真对待。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e74c3c">启示</span><p class="card-insight-text">这不是&quot;未来风险&quot;，而是当前智能体能力的实测结果。对创业者而言有三条具体动作：① 任何允许智能体执行代码或访问网络的产品，必须按&quot;对手是智能体&quot;而非&quot;对手是人类&quot;来设计隔离边界，纯网络隔离已不足够，需考虑时序侧信道；② 做 Agent 基础设施（沙箱、权限、审计）的公司正迎来真实刚需，安全层是可商业化的差异化能力；③ 若你在金融、医疗等强监管行业部署智能体，提前建立&quot;智能体越狱&quot;应急演练机制，别等事故倒逼。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #3498db">
+                    <div class="card-num" style="background:#3498db">2</div>
+                    <div class="card-body">
+                        <h3 class="card-title">2. Anthropic 与一线开发者共识：别堆多智能体，单 Agent + Skills 渐进披露往往更优</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#3498db22;color:#3498db">X（邵猛转引 Anthropic Claude Platform）/ Dex Horthy（HumanLayer）</span></div>
+                        <p class="card-summary">Anthropic 官方发文讨论何时应把子 Agent 折进主循环，指出在多项内部对比中，Skills 渐进披露的质量常更好、成本与延迟更低。HumanLayer 的 Dex Horthy 进一步印证：单一智能体配合 skills 常胜过复杂多智能体系统，有客户执行速度约提升 2x；他批评自 2025 年中起的 subagent 滥用，认为推特炒作鼓励了盲目并行而非审慎的上下文管理。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#3498db">启示</span><p class="card-insight-text">这是一条能直接省钱、提速的架构建议。行动建议：① 审查你现有 Agent 系统，把&quot;为并行而并行&quot;的 subagent 拆解回主循环，用 Skills 按需渐进加载上下文，通常能同时降本降延迟；② 评估标准从&quot;架构是否先进&quot;改为&quot;任务完成质量 / 单位成本 / 端到端延迟&quot;三项硬指标；③ 团队内部建立 subagent 引入的准入条件（如确有独立上下文与并行收益），避免被行业叙事带偏。多智能体不是不能用，而是要有明确的收益证据。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #2ecc71">
+                    <div class="card-num" style="background:#2ecc71">3</div>
+                    <div class="card-body">
+                        <h3 class="card-title">3. 智能体流量首超人类，腾讯元宝搜索全行业开放：Agent 时代搜索的选型与成本账</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#2ecc7122;color:#2ecc71">X（Oran Ge）</span></div>
+                        <p class="card-summary">作者从 Cloudflare 数据切入——自动化流量占比达 57.5%、首次超过人类流量，分析 Agent 时代搜索的三个卡点，并实测刚向全行业开放的腾讯元宝搜索：覆盖 9 品类 31 条 query，强项是权威信源、时效性与直接返回正文；内部产品换用后单任务平均搜索调用从 8 次降到 5 次；支持 Skill、MCP、API 三种接入，价格 14–26 元/千次。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#2ecc71">启示</span><p class="card-insight-text">&quot;Agent 流量超过人类&quot;意味着搜索、内容、广告的底层假设正在翻转——你的产品要为&quot;机器读者&quot;优化，而不只是为人。具体动作：① 若产品依赖联网检索，重新做一次搜索供应商比价与实测（调用次数下降 30%+ 直接体现为毛利改善）；② 为 Agent 访问设计结构化、可直接消费的内容接口，而非仅面向人类渲染的页面；③ 关注按调用计费的搜索成本在单位经济模型中的占比，Agent 高频调用会让它从&quot;忽略项&quot;变成&quot;主要成本项&quot;。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #9b59b6">
+                    <div class="card-num" style="background:#9b59b6">4</div>
+                    <div class="card-body">
+                        <h3 class="card-title">4. 宾州签署 AI 欺骗性广告法：AI 生成/显著修改的广告须同格式标注</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#9b59b622;color:#9b59b6">The Verge</span></div>
+                        <p class="card-summary">宾州州长 Shapiro 签署《人工智能欺骗性广告法》，要求经 AI 显著修改或生成的图像、视频、音频或文字广告，以与广告本身相同的格式加注标识，且不论在何处制作、只要在宾州投放即适用。该州是最早要求 AI 内容披露的州之一，但法案对&quot;显著修改&quot;&quot;明显虚构&quot;界定模糊，并设戏仿、讽刺等豁免，留有漏洞。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#9b59b6">启示</span><p class="card-insight-text">AI 内容标识正从&quot;平台自律&quot;走向&quot;州法强制&quot;，且采用&quot;投放地管辖&quot;原则——这对做营销、广告创意、数字人、AI 视频的团队是直接合规项。行动建议：① 立即排查面向美国投放的 AI 生成广告素材，建立&quot;生成即打标&quot;的产线默认流程；② 在创意审核环节增加&quot;是否构成显著修改&quot;的判断清单，并保留生成记录以备举证；③ 把合规标识做成产品能力（自动水印/元数据/C2PA），既是防御也是卖点。预计更多州跟进，早建流程成本最低。</p></div>
+                    </div>
+                </article><article class="card deepseek-card" style="border-left:4px solid #e67e22">
+                    <div class="card-num" style="background:#e67e22">5</div>
+                    <div class="card-body">
+                        <h3 class="card-title">5. Block 发布纯语音训练的全双工模型 Dessa，可在 M4 Max MacBook 本地实时运行</h3>
+                        <div class="card-source"><span class="source-chip" style="background:#e67e2222;color:#e67e22">X（邵猛）/ IT之家</span></div>
+                        <p class="card-summary">Jack Dorsey 旗下 Block 推出 Dessa——从零用纯人类语音训练的全双工 speech-to-speech 会话模型，无文本、无预训练底座，可边说话边收听，能模拟笑声、停顿、哽咽等情绪表达，知识来自训练对话数据而无需搭配大语言模型；声称推理快于实时，可在 MacBook Pro M4 Max 及以上本地运行。</p>
+                        <div class="card-insight-box"><span class="insight-label" style="color:#e67e22">启示</span><p class="card-insight-text">&quot;纯语音、无文本底座、端侧实时&quot;三点组合值得重视：它指向一条绕开大 LLM 的语音交互技术路线，且端侧运行意味着隐私敏感场景（客服、医疗、车载、陪伴）可低成本落地。行动建议：① 做语音交互产品的团队应实测 Dessa 在延迟、打断处理、情绪自然度上的表现，评估是否能替代&quot;ASR+LLM+TTS&quot;三段式管线以降本；② 端侧实时语音为离线/隐私卖点打开空间，可考虑作为差异化定位；③ 关注&quot;无文本底座&quot;路线的局限（知识广度、可控性），在需要复杂推理的场景仍可能需混合架构。</p></div>
+                    </div>
+                </article></div>
+                
+            </section>
+    <div class="footer">共 1 条 · 数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT</a> · 生成时间：10月25日 08:00</div>
+</div>
+</body>
+</html>
